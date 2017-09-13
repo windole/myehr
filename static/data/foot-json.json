@@ -1,0 +1,93 @@
+﻿{
+    "base_url": "http:\/\/101.201.196.198\/adminsys\/",
+    "seo": {
+        "SEO_Title": "\u4eba\u529b\u8d44\u6e90\u7ba1\u7406\u8f6f\u4ef6_HR\u5e38\u7528\u529e\u516c\u8f6f\u4ef6_EHR\u4fe1\u606f\u7cfb\u7edf\u2014\u4e07\u53e4\u79d1\u6280",
+        "SEO_Description": "\u4e07\u53e4\u79d1\u6280\u662f\u56fd\u5185\u4e13\u4e1a\u7684ehr\u7cfb\u7edf\u63d0\u4f9b\u5546\uff0c\u63d0\u4f9b\u6743\u5a01\u7684\u4eba\u529b\u8d44\u6e90\u7ba1\u7406\u4fe1\u606f\u5e73\u53f0\uff0c\u5e2e\u52a9HR\u9ad8\u6548\u5b8c\u6210\u4eba\u4e8b\u7ba1\u7406\u3002",
+        "SEO_Keywords": "e-HR\u89e3\u51b3\u65b9\u6848,e-HR\u7ba1\u7406\u7cfb\u7edf,\u4eba\u529b\u8d44\u6e90\u7ba1\u7406\u8f6f\u4ef6,HCM"
+    },
+    "plan": [
+        {
+            "PlanId": "2",
+            "PlanTitle": "\u4eba\u4e8b\u7ba1\u7406\u89e3\u51b3\u65b9\u6848"
+        }, {
+            "PlanId": "3",
+            "PlanTitle": "\u85aa\u916c\u798f\u5229\u89e3\u51b3\u65b9\u6848"
+        }, {
+            "PlanId": "4",
+            "PlanTitle": "\u6d41\u7a0b\u7ba1\u7406\u89e3\u51b3\u65b9\u6848"
+        }, {
+            "PlanId": "5",
+            "PlanTitle": "\u7ee9\u6548\u7ba1\u7406\u89e3\u51b3\u65b9\u6848"
+        }, {
+            "PlanId": "6",
+            "PlanTitle": "\u65f6\u95f4\u7ba1\u7406\u89e3\u51b3\u65b9\u6848"
+        }, {
+            "PlanId": "7",
+            "PlanTitle": "\u57f9\u8bad\u53ca\u4eba\u624d\u53d1\u5c55\u89e3\u51b3\u65b9\u6848"
+        }, {
+            "PlanId": "8",
+            "PlanTitle": "\u9884\u7b97\u7ba1\u7406\u89e3\u51b3\u65b9\u6848"
+        }, {
+            "PlanId": "9",
+            "PlanTitle": "\u62db\u8058\u7ba1\u7406\u89e3\u51b3\u65b9\u6848"
+        }
+    ],
+    "product": [
+        {
+            "ProductId": "4",
+            "ProductTitle": "HR SAAS"
+        }, {
+            "ProductId": "1",
+            "ProductTitle": "\u4e07\u5ba2\u79fb\u52a8\u5e94\u7528\u7aef"
+        }, {
+            "ProductId": "3",
+            "ProductTitle": "\u4e07\u5ba2\u5728\u7ebf\u6781\u901f\u80cc\u8c03"
+        }, {
+            "ProductId": "5",
+            "ProductTitle": "\u4e07\u5ba2\u4e91\u89c6\u9891"
+        }, {
+            "ProductId": "2",
+            "ProductTitle": "\u4e07\u5ba2\u76f4\u8058App"
+        }
+    ],
+    "case": [
+        {
+            "CaseTypeId": "1",
+            "CaseTypeTitle": "\u4e92\u8054\u7f51"
+        }, {
+            "CaseTypeId": "2",
+            "CaseTypeTitle": "\u623f\u5730\u4ea7"
+        }, {
+            "CaseTypeId": "3",
+            "CaseTypeTitle": "\u91d1\u878d"
+        }, {
+            "CaseTypeId": "4",
+            "CaseTypeTitle": "IT"
+        }, {
+            "CaseTypeId": "5",
+            "CaseTypeTitle": "\u5feb\u6d88"
+        }, {
+            "CaseTypeId": "7",
+            "CaseTypeTitle": "\u6c7d\u8f66"
+        }, {
+            "CaseTypeId": "9",
+            "CaseTypeTitle": "\u7535\u5b50\u5de5\u7a0b"
+        }, {
+            "CaseTypeId": "10",
+            "CaseTypeTitle": "\u533b\u836f"
+        }, {
+            "CaseTypeId": "22",
+            "CaseTypeTitle": "\u54a8\u8be2\u670d\u52a1"
+        }, {
+            "CaseTypeId": "6",
+            "CaseTypeTitle": "\u670d\u9970"
+        }
+    ],
+    "company": {
+        "BackUp": "\u4eacICP\u590715039515\u53f7-3",
+        "CopyRight": "@2016 \u4e07\u53e4\u79d1\u6280\u7248\u6743\u6240\u6709",
+        "WeixinCode": "images\/2017-06-16\/201706161532206640.jpg",
+        "APPCode": "images\/2017-05-17\/201705171442582515.jpg",
+        "Tel": "400-810-8819"
+    }
+}
