@@ -1,0 +1,303 @@
+{
+    "content": [
+        {
+            "CaseTypeId": "1",
+            "CaseTypeTitle": "金融行业",
+            "caseinfo": [
+                {
+                    "CaseId": "6",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/1.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "7",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/2.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "8",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/3.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "9",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/4.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "10",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/5.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "7",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/6.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "8",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/7.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "9",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/8.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "10",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/9.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "7",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/10.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "8",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/11.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "9",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/12.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "10",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/13.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "7",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/14.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "8",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/15.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "9",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/16.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "10",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/17.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }, {
+                    "CaseId": "7",
+                    "CaseTitle": "农业银行",
+                    "ThumbPicture": "./img/company/money/18.jpg",
+                    "CreateDate": "2017-06-07 14:33:14",
+                    "Url": ""
+                }
+            ]
+        }, {
+            "CaseTypeId": "2",
+            "CaseTypeTitle": "制造行业",
+            "caseinfo": [
+                {
+                    "CaseId": "22",
+                    "CaseTitle": "\u7f8e\u6797\u57fa\u4e1a",
+                    "ThumbPicture": "./img/company/made/2.jpg",
+                    "CreateDate": "2017-06-06 16:54:22",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/made/2.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }
+            ]
+        }, {
+            "CaseTypeId": "3",
+            "CaseTypeTitle": "国企单位",
+            "caseinfo": [
+                {
+                    "CaseId": "22",
+                    "CaseTitle": "\u7f8e\u6797\u57fa\u4e1a",
+                    "ThumbPicture": "./img/company/country/2.jpg",
+                    "CreateDate": "2017-06-06 16:54:22",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/country/2.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }
+            ]
+        }, {
+            "CaseTypeId": "4",
+            "CaseTypeTitle": "集团企业",
+            "caseinfo": [{
+                    "CaseId": "22",
+                    "CaseTitle": "\u7f8e\u6797\u57fa\u4e1a",
+                    "ThumbPicture": "./img/company/company/2.jpg",
+                    "CreateDate": "2017-06-06 16:54:22",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/company/2.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }]
+        }, {
+            "CaseTypeId": "5",
+            "CaseTypeTitle": "生活服务",
+            "caseinfo": [{
+                    "CaseId": "22",
+                    "CaseTitle": "\u7f8e\u6797\u57fa\u4e1a",
+                    "ThumbPicture": "./img/company/life/2.jpg",
+                    "CreateDate": "2017-06-06 16:54:22",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/life/2.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }]
+        }, {
+            "CaseTypeId": "6",
+            "CaseTypeTitle": "医药行业",
+            "caseinfo": [{
+                    "CaseId": "22",
+                    "CaseTitle": "\u7f8e\u6797\u57fa\u4e1a",
+                    "ThumbPicture": "./img/company/medicine/1.jpg",
+                    "CreateDate": "2017-06-06 16:54:22",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/2.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/3.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/4.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/5.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/6.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/7.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/8.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/9.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/10.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/11.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/12.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/13.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/14.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/15.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/medicine/16.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }]
+        }, {
+            "CaseTypeId": "7",
+            "CaseTypeTitle": "其他行业",
+            "caseinfo": [{
+                    "CaseId": "22",
+                    "CaseTitle": "\u7f8e\u6797\u57fa\u4e1a",
+                    "ThumbPicture": "./img/company/other/2.jpg",
+                    "CreateDate": "2017-06-06 16:54:22",
+                    "Url": ""
+                }, {
+                    "CaseId": "23",
+                    "CaseTitle": "\u9ad8\u5fb7\u7f6e\u5730",
+                    "ThumbPicture": "./img/company/other/2.jpg",
+                    "CreateDate": "2017-06-06 12:08:47",
+                    "Url": ""
+                }]
+        }
+    ]
+}
