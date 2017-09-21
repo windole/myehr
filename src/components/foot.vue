@@ -1,5 +1,9 @@
 <template>
     <div class="footer page">
+        <div class="foot-header">
+            <h1>高端人力资源，激发企业活力</h1>
+            <button>免费体验</button>
+        </div>
         <div class="foot_wrap clear">
             <div class="friend clear">
                 <div class="item">
@@ -52,9 +56,6 @@
                 </div>
             </div>
             <div class="code">
-                <div class="logo">
-                    <img src="../../static/img/logo_footer.png">
-                </div>
                 <div class="code_item clear">
                     <div class="item">
                         <div class="img">
@@ -68,6 +69,11 @@
                         </div>
                         <p>官方微博二维码</p>
                     </div>
+                </div>
+                <div class="logo">
+                    <!-- <img src="../../static/img/logo_footer.png"> -->
+                    <p>电话：13122069450</p>
+                    <p>邮箱：myehr@163.com</p>
                 </div>
             </div>
         </div>
@@ -110,9 +116,13 @@
 
 .footer {
     top: 5rem;
-    background: rgb(84,102,126);
+    background: #fff;
 }
-
+.foot-header{
+    padding: 4rem;height: 14rem;text-align: center;background: #076ce0;
+}
+.foot-header h1{color: #fff;padding-bottom: 2rem;}
+.foot-header button{border: none;outline: none;padding: 10px 50px;background: rgb(240,171,0);border-radius: 5px;font-size: 17px;letter-spacing: 1px;color: #fff;}
 .footer .foot_wrap {
     width: 78.125%;
     margin: 0 auto;
@@ -138,17 +148,17 @@
     font-weight: 400;
     line-height: 3rem;
     font-size: 18px;
-    color: #fff
+    color: rgb(105,105,105);
 }
 
 .footer .foot_wrap .friend .item .list .list-item {
     font-size: 14px;
     line-height: 1.8rem;
-    color: #fff
+    color: rgb(105,105,105);
 }
 
 .footer .foot_wrap .friend .item .list .list-item a {
-    color: #fff
+    color: rgb(105,105,105);
 }
 
 .footer .foot_wrap .code {
@@ -159,7 +169,7 @@
 
 .footer .foot_wrap .code div.logo {
     height: 3rem;
-    line-height: 3rem;
+    /*line-height: 3rem;*/
     margin-bottom: 4rem
 }
 
@@ -197,7 +207,7 @@
 
 .footer .foot_wrap .code .code_item .item p {
     font-size: 12px;
-    color: #fff;
+    color: rgb(105,105,105);
     text-align: center
 }
 
@@ -209,7 +219,7 @@
 .footer .btm .wrap {
     text-align: center;
     font-size: 12px;
-    color: #fff;
+    color: rgb(105,105,105);
     line-height: 4rem
 }
 

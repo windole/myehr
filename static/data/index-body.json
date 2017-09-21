@@ -13,7 +13,7 @@
                 "SlideTitle": "高端人力资源，激发企业活力",
                 "SlideTitlePlus": "MyeHR 社交化 实时互动",
                 "SlideIntro": "18年创新之路 专注eHR 500强企业首选",
-                "SlideImage": "static/img/banner/banner2.png"
+                "SlideImage": "static/img/banner/banner2.jpg"
             },
             {
                 "SlideTitle": "高端人力资源，激发企业活力",
@@ -23,7 +23,126 @@
             }
         ]
     },
-    "BannerBottom": "images\/2017-06-06\/201706061324091604.jpg",
+    "menu": [
+        {
+            "menuItemName":"首页",
+            "menuItemPath": "./index",
+            "menuItemContent": []
+        },{
+            "menuItemName":"Pass平台",
+            "menuItemPath": "./pass",
+            "menuItemContent": []
+        },{
+            "menuItemName":"HR应用",
+            "menuItemPath": "./HR",
+            "menuItemContent": [
+                {
+                    "secondName":"生产力管理",
+                    "secondPath":""
+                },{
+                    "secondName":"执行力管理",
+                    "secondPath":""
+                },{
+                    "secondName":"AI招聘",
+                    "secondPath":""
+                },{
+                    "secondName":"培训管理",
+                    "secondPath":"training"
+                },{
+                    "secondName":"组织管理",
+                    "secondPath":"organzeManagement"
+                },{
+                    "secondName":"员工管理",
+                    "secondPath":""
+                },{
+                    "secondName":"薪酬管理",
+                    "secondPath":"compensationManagement"
+                },{
+                    "secondName":"报表门户",
+                    "secondPath":""
+                },{
+                    "secondName":"领导决策",
+                    "secondPath":""
+                }
+
+            ]
+        },{
+            "menuItemName":"员工服务",
+            "menuItemPath": "./stuffServers",
+            "menuItemContent": [
+                {
+                    "secondName":"员工关怀",
+                    "secondPath":""
+                },{
+                    "secondName":"积分激励",
+                    "secondPath":""
+                },{
+                    "secondName":"福利商城",
+                    "secondPath":""
+                },{
+                    "secondName":"学习成长",
+                    "secondPath":""
+                },{
+                    "secondName":"共享服务",
+                    "secondPath":""
+                }
+            ]
+        },{
+            "menuItemName":"案例",
+            "menuItemPath": "./case",
+            "menuItemContent": [
+                {
+                    "secondName":"金融行业",
+                    "secondPath":""
+                },{
+                    "secondName":"制造行业",
+                    "secondPath":""
+                },{
+                    "secondName":"国企行业",
+                    "secondPath":""
+                },{
+                    "secondName":"集团行业",
+                    "secondPath":""
+                },{
+                    "secondName":"生活服务",
+                    "secondPath":""
+                },{
+                    "secondName":"医药行业",
+                    "secondPath":""
+                },{
+                    "secondName":"其他行业",
+                    "secondPath":""
+                }
+            ]
+        },{
+            "menuItemName":"生态",
+            "menuItemPath": "./ecology",
+            "menuItemContent": [
+                {
+                    "secondName":"合作伙伴",
+                    "secondPath":""
+                },{
+                    "secondName":"直客计划",
+                    "secondPath":""
+                }
+            ]
+        },{
+            "menuItemName":"MyeHR",
+            "menuItemPath": "./MyeHR",
+            "menuItemContent": [
+                {
+                    "secondName":"关于我们",
+                    "secondPath":""
+                },{
+                    "secondName":"新闻中心",
+                    "secondPath":""
+                },{
+                    "secondName":"人才招聘",
+                    "secondPath":""
+                }
+            ]
+        }
+    ],
     "plan": [
         {
             "PlanPath": "./index",

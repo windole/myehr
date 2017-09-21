@@ -102,4 +102,9 @@ a {
 input[placeholder], [placeholder], *[placeholder] { 
 color:#fff !important; 
 } 
-
+.blue{background-color: #5082BD;}
+.red{background-color:#C0514E;}
+.green{background-color:#9CBB5A;}
+.purple{background-color:#8165A3;}
+.littleBlue{background-color:#4CADC6;}
+.orange{background-color:#F79747;}

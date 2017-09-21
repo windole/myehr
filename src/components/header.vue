@@ -29,92 +29,29 @@
                     </form>
                 </div>
                 <ul class="list clear" ref="menu">
-                    <li class="list-item active">
+                   <!--  <li class="list-item active">
                         <router-link to="/">
                             <span class="icon"></span>
                             <span>首页</span>
                         </router-link>
                         <span class="line"></span>
+                    </li> -->
+
+                    <li class="list-item" v-for="(item, index) in menuList" :class="{ active : index === currentIndex}" @click = "chooseMenu(index)">
+                        <router-link :to="{path: item.menuItemPath}">
+                            <span class="icon"></span>
+                            <span>{{item.menuItemName}}</span>
+                        </router-link>
+                        <span class="line"></span>
+                        <div class="submenu" :class="'width'+item.menuItemContent.length" v-if="item.menuItemContent.length">
+                            <ul class="sub_wrap clear">
+                                <li class="sub_list" v-for="item2 in item.menuItemContent">
+                                    <router-link :to="{path:item.menuItemPath +'#'+item2.secondPath}">{{item2.secondName}}</router-link>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
 
-                    <li class="list-item">
-                        <router-link to="/pass">
-                            <span class="icon"></span>
-                            <span>Pass平台</span>
-                        </router-link>
-                        <span class="line"></span>
-                        <div class="submenu" :class="'width'+plan.length">
-                            <ul class="sub_wrap clear">
-                                <li class="sub_list" v-for="item in plan">
-                                    <router-link :to="{path:'/solutionDetail/'+item.PlanId}">{{item.PlanTitle}}</router-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="list-item">
-                        <router-link to="/HR">
-                            <span class="icon"></span>
-                            <span>HR应用</span>
-                        </router-link>
-                        <span class="line"></span>
-                        <div class="submenu" :class="'width'+product.length">
-                            <ul class="sub_wrap clear">
-                                <li class="sub_list">
-                                    <router-link to="/solution">
-                                        eHR
-                                    </router-link>
-                                </li>
-                                <li class="sub_list" v-for="item in product">
-                                    <router-link :to="{path:'/productDetail/'+item.ProductId}">{{item.ProductTitle}}</router-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="list-item">
-                        <router-link to="/stuffServers">
-                            <span class="icon"></span>
-                            <span>员工服务</span>
-                        </router-link>
-                        <span class="line"></span>
-                    </li>
-                    <li class="list-item">
-                        <router-link to="/case">
-                            <span class="icon"></span>
-                            <span>案例</span>
-                        </router-link>
-                        <span class="line"></span>
-                    </li>
-                    <li class="list-item">
-                        <router-link to="/ecology">
-                            <span class="icon"></span>
-                            <span>生态</span>
-                        </router-link>
-                        <span class="line"></span>
-                    </li>
-                    <li class="list-item" style="display:none;">
-                        <router-link to="/news">
-                            <span class="icon"></span>
-                            <span>资讯中心</span>
-                        </router-link>
-                        <span class="line"></span>
-                        <div class="submenu width2 fixed" style="width:12rem;">
-                            <ul class="sub_wrap clear">
-                                <li class="sub_list">
-                                    <router-link to="/news">新闻中心</router-link>
-                                </li>
-                                <li class="sub_list">
-                                    <router-link to="/discover">WE发现</router-link>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="list-item">
-                        <router-link to="/MyeHR">
-                            <span class="icon"></span>
-                            <span>MyeHR</span>
-                        </router-link>
-                        <span class="line"></span>
-                    </li>
                 </ul>
             </div>
             <div class="menu_icon clear" @click="openMenu" ref="menuIcon">
@@ -128,29 +65,36 @@
 </template>
 <script type="text/ecmascript-6">
     import $ from 'jquery';
-
+    import axios from 'axios';
     export default{
-        props: ['dark', 'plan', 'product'],
+        props: ['dark'],
         data() {
             return {
                 head: {},
                 scroll: '',
                 width: null,
                 pcSearch: '请输入关键词',
-                planList: []
+                menuList: [],
+                currentIndex: 0
             };
-        },
-        watch: {
-            '$route': 'menuActive'
         },
         created() {
             this.getDate();
         },
         methods: {
             getDate() {
+                axios.get('./../static/data/index-body.json').then((response) => {
+                    // console.log(response);
+                    let data = response.data;
+                    this.menuList = data.menu;
+                    console.log(data.menu);
+                });
             },
             menu() {
                 this.scroll = document.body.scrollTop;
+            },
+            chooseMenu(index) {
+                this.currentIndex = index;
             },
             openMenu() {
                 if ($(this.$refs.menuIcon).hasClass('active')) {
@@ -177,24 +121,6 @@
                 $(this.$refs.menuIcon).removeClass('active').siblings('div.logo').stop().fadeIn(600);
                 $(this.$refs.menuList).stop().animate({'left': '100%'}, 400);
                 $('.header .header_wrap div.shadow').css('z-index', '-1').css('display', 'none');
-            },
-            menuActive() {
-                if (this.$route.name === 'home') {
-                    $(this.$refs.menu).children().eq(0).addClass('active').siblings().removeClass('active');
-                } else if (this.$route.name === 'pass') {
-                    $(this.$refs.menu).children().eq(1).addClass('active').siblings().removeClass('active');
-                } else if (this.$route.name === 'hr') {
-                    $(this.$refs.menu).children().eq(2).addClass('active').siblings().removeClass('active');
-                } else if (this.$route.name === 'stuffServers') {
-                    $(this.$refs.menu).children().eq(3).addClass('active').siblings().removeClass('active');
-                } else if (this.$route.name === 'case') {
-                    $(this.$refs.menu).children().eq(4).addClass('active').siblings().removeClass('active');
-                } else if (this.$route.name === 'ecology') {
-                    $(this.$refs.menu).children().eq(5).addClass('active').siblings().removeClass('active');
-                } else if (this.$route.name === 'MyeHR') {
-                    $(this.$refs.menu).children().eq(6).addClass('active').siblings().removeClass('active');
-                }
-                sessionStorage['route'] = this.$route.path;
             },
             clearVal() {
                 $(this.$refs.pcSearch).val('');
@@ -301,7 +227,7 @@
 
 .header .header_wrap .menu .list .list-item:hover div.submenu {
     height: 10rem;
-    display: none;
+    display: block;
 }
 
 .header .header_wrap .menu .list .list-item:hover div.submenu.fixed {
@@ -319,8 +245,7 @@
     position: absolute;
     top: 5rem;
     left: 0;
-    display: block;
-    height: 0;
+    display: none;
     width: auto;
     background: hsla(0, 0%, 100%, .4);
     z-index: 100;
@@ -606,7 +531,7 @@
     }
     div.header div.header_wrap div.menu ul.list li.list-item.active span.line,
     div.header div.header_wrap div.menu ul.list li.list-item div.submenu {
-        display: none
+        display: none!important;
     }
     /**/
     div.header div.header_wrap div.menu ul.list li.list-item.active a span.icon {
@@ -714,7 +639,7 @@
         width: 100%;
         float: right;
         height: .15rem;
-        background: #fff;
+        background: #000;
         margin-bottom: .52rem;
         transition: all .6s;
         -webkit-transition: all .6s;
