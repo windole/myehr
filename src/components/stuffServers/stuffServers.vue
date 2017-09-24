@@ -19,8 +19,22 @@
                                 </div>
                             </div>
                         </swiper-slide>
+                        <swiper-slide class="item"  key="index">
+                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner11.jpg)'}"></div>
+                            <div class="txt">
+                                <div class="tit clear">
+                                    <h4>社交化人才管理模式</h4>
+                                    <div class="tips" style="display:block;">
+                                        <!-- <p style="width:100%;"></p> -->
+                                    </div>
+                                </div>
+                                <div class="en">
+                                    <p>提高全员参与度</p>
+                                </div>
+                            </div>
+                        </swiper-slide>
                         <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                <div class="swiper-button-next btn next" slot="button-next"></div>
+                      <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
                 </div>
             </div>
@@ -28,7 +42,8 @@
             <!-- 解决方案 -->
             <div class="part scenenet page-3 page">
                 <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>员工服务应用场景</p>
+                    <p>员工服务新模式</p>
+                    <p class="desc">社交化、游戏化，充分发挥主观能动性，实现组织目标</p>
                     <span class="line"></span>
                 </div>
                 <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
@@ -47,124 +62,90 @@
             </div>
             <!-- 挑战 -->
             <div class="part challenge page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>新挑战下，管理如何开展 ？</p>
+                    <p class="desc">通过员工贴心服务及员工个人发展计划，帮助激发员工活力</p>
                     <span class="line"></span>
                 </div>
                 <div class="cont flexbox">
-                  <div class="inner"><span></span>
-                    <li class="inimg"><img src="/static/img/challenge/challenge1.png" alt="" /></li>
+                  <div class="inner">
+                    <li class="inimg"><img src="/static/img/challenge/icon2.png" alt="" /></li>
                     <li class="inhead"><p>激发员工活力</p></li>
                     <li class="indetail"><p>让员工能在工作中得到实时激励</p></li>
                   </div>
-                  <div class="inner"><span></span>
-                    <li class="inimg"><img src="/static/img/challenge/challenge2.png" alt="" /></li>
+                  <div class="inner">
+                    <li class="inimg"><img src="/static/img/challenge/icon3.png" alt="" /></li>
                     <li class="inhead"><p>员工贴心服务</p></li>
                     <li class="indetail"><p>帮助员工解决工作和生活中遇到的问题</p></li>
                   </div>
-                  <div class="inner"><span></span>
-                    <li class="inimg"><img src="/static/img/challenge/challenge3.png" alt="" /></li>
+                  <div class="inner">
+                    <li class="inimg"><img src="/static/img/challenge/icon7.png" alt="" /></li>
                     <li class="inhead"><p>员工时间管理</p></li>
                     <li class="indetail"><p>利用碎片化时间提升员工工作技能</p></li>
                   </div>
-                  <div class="inner"><span></span>
-                    <li class="inimg"><img src="/static/img/challenge/challenge4.png" alt="" /></li>
+                  <div class="inner">
+                    <li class="inimg"><img src="/static/img/challenge/icon8.png" alt="" /></li>
                     <li class="inhead"><p>个人价值实现</p></li>
                     <li class="indetail"><p>鼓励员工提出建设性的意见及创意</p></li>
                   </div>
                   <div class="inner">
-                    <li class="inimg"><img src="/static/img/challenge/challenge5.png" alt="" /></li>
+                    <li class="inimg"><img src="/static/img/challenge/icon7.png" alt="" /></li>
                     <li class="inhead"><p>员工能力发挥</p></li>
                     <li class="indetail"><p>满足员工深度需求，获得个人成就感</p></li>
                   </div>
                 </div>
             </div>
             <div class="part scene page-3 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>员工服务应用场景</p>
+                    <p class="desc">通过多场景员工自助服务，有效帮助员工快速融入组织</p>
                     <span class="line"></span>
                 </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contentwrap">
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene1.jpg" alt="">
-                            <h3>接到Offer</h3>
-                          </div>
-                          <div class="text">
-                            <p>过邮件短信获得入职提醒，可了解企业基本信息，快速熟悉公司环境；</p>
-                          </div>
-                        </div>
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene2.jpg" alt="">
-                            <h3>初入职场</h3>
-                          </div>
-                          <div class="text">
-                            <p>快速了解公司架初入职场构及企业文化，在系统中与同部门同事线上便捷沟通；</p>
-                          </div>
-                        </div>
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene3.jpg" alt="">
-                            <h3>培训学习</h3>
-                          </div>
-                          <div class="text">
-                            <p>人事部门会帮助新人安排培训内容，帮助员工快速融入公司，当天学习内容可在系统中记录及查询；</p>
-                          </div>
-                        </div>
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene4.jpg" alt="">
-                            <h3>工作安排</h3>
-                          </div>
-                          <div class="text">
-                            <p>工作安排可方便查询领导本周及今日的工作安排，也可以自己安排工作内容，领导可直接在系统中查
-                          看。</p></div>
-                        </div>
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene5.jpg" alt="">
-                            <h3>答疑解惑</h3>
-                          </div>
-                          <div class="text">
-                            <p>有工作不懂的问题，在系统里快速检索专家帮你解决吧。 </p>
-                          </div>
-                        </div>
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene6.jpg" alt="">
-                            <h3>假期管理</h3>
-                          </div>
-                          <div class="text">
-                            <p>自己管理自己的假期，可一键查询剩余假期等情况，再也不用麻烦人事帮忙查询了。</p>
-                          </div>
-                        </div>
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene7.jpg" alt="">
-                            <h3>能力提升</h3>
-                          </div>
-                          <div class="text">
-                          <p>想提升职业技能，不知道学习哪方面的知识，在系统里可快速查找自身岗位需要学习的内容；再也不用为学 习内容发愁了。</p>
-                          </div>
-                        </div>
-                        <div class="contentItem">
-                          <div class="pic">
-                            <img src="static/img/scene/scene8.jpg" alt="">
-                            <h3>离职关怀</h3>
-                          </div>
-                          <div class="text">
-                              <p>离职之后想了解公司的发展情况，系统在入职周年发送关怀邮件，与离职员工建立情感纽带。</p>
-                          </div>
-                        </div>
-                    </div>
+                <div class="cont">
+                    <div class="cont grid" ref="aboutus">
+                      <div class="row">
+                          <div class="ui item slide down instant reveal" v-for="item in scene.row1">
+                              <div class="visible content">
+                                  <div class="graphic health content" :style="{backgroundImage:'url('+ item.SceneThumb +')'}">
+                                      <div class="cell">
+                                          <p v-html="item.SceneTitle"></p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="hidden content">
+                                  <div class="text dark content">
+                                      <div class="cell">
+                                          <p v-html="item.SceneTitlePlus"></p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>    
+                      </div>
+                      <div class="row">
+                          <div class="ui item slide down instant reveal" v-for="item2 in scene.row2">
+                              <div class="visible content">
+                                  <div class="graphic health content" :style="{backgroundImage:'url('+ item2.SceneThumb +')'}">
+                                      <div class="cell">
+                                          <p v-html="item2.SceneTitle"></p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="hidden content">
+                                  <div class="text dark content">
+                                      <div class="cell">
+                                          <p v-html="item2.SceneTitlePlus"></p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>    
+                      </div>
+                  </div>
                 </div>
             </div>
 
             <!-- scene1 -->
             <div class="part attendance scene1 page">
-              <div class="AtteL">
+              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之考勤管理</h3>
                   <p>根据地理位置定位，轻松打卡，</p>
@@ -180,7 +161,7 @@
               <div class="AtteL">
                 <img class="AtteRimg" src="/static/img/attendance/page69.png" alt="" />
               </div>
-              <div class="AtteR">
+              <div class="AtteR" v-animate="{value: 'bounceInRight', delay: 0}">
                   <div class="AtteLtext">
                       <h3>MyeHR员工自助之即时沟通</h3>
                       <p>在系统内方便了解本部门同事，</p>
@@ -190,7 +171,7 @@
             </div>
             <!-- scene3 -->
             <div class="part attendance scene3 page">
-              <div class="AtteL">
+              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之任务管理</h3>
                   <p>系统自动推送给员工需完成任务，</p>
@@ -206,7 +187,7 @@
               <div class="AtteL">
                 <img class="AtteRimg" src="/static/img/attendance/page71.png" alt="" />
               </div>
-              <div class="AtteR">
+              <div class="AtteR" v-animate="{value: 'bounceInRight', delay: 0}">
                   <div class="AtteLtext">
                       <h3>MyeHR员工自助之社区服务</h3>
                       <p>形成员工服务社区，可进行问题互动讨论，<br/>
@@ -218,7 +199,7 @@
             </div>
             <!-- scene5 -->
             <div class="part attendance scene5 page">
-              <div class="AtteL">
+              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之工资查询</h3>
                   <p>员工可自助查询个人工资信息及发放明细，</p>
@@ -234,7 +215,7 @@
               <div class="AtteL">
                 <img class="AtteRimg" src="/static/img/attendance/page73.png" alt="" />
               </div>
-              <div class="AtteR">
+              <div class="AtteR" v-animate="{value: 'bounceInRight', delay: 0}">
                   <div class="AtteLtext">
                       <h3>MyeHR员工自助之请假管理</h3>
                       <p>员工可自助查询个人请假额度，</p>
@@ -244,7 +225,7 @@
             </div>
             <!-- scene7 -->
             <div class="part attendance scene7 page">
-              <div class="AtteL">
+              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之感恩的心</h3>
                   <p>企业内部好人好事积分及时奖励系统，</p>
@@ -276,6 +257,7 @@
                 dark: false,
                 plus: [],
                 projectData: [],
+                scene: {},
                 currentType: 1,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
@@ -331,15 +313,15 @@
                 this.showSol = false;
                 this.showSolBn = false;
                 axios.get('./../../static/data/index-body.json').then((response) => {
-                    // console.log(response);
+                    console.log(response);
                     let data = response.data;
                     that.bannerUrl = data.base_url;
                     // 获取baner数据
-                    // that.bannerLoop = data.head.slide;
-                    // console.log(that.bannerLoop);
                     that.showBanner = true;
                     // 获取解决方案
                     that.projectData = data.project;
+                    that.scene = data.scene;
+                    console.log(data.scene);
                 });
             }
         },
@@ -352,73 +334,59 @@
     };
 </script>
 <style type="text/css">
-.fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
-.page{top:2rem;}
 .stuffServers{width:100%;color: rgb(105,105,105);}
 
-.part .title{/*padding-top:1.3rem;*/padding-bottom:2.5rem;text-align:center;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;-webkit-transform:translateY(30%);-moz-transform:translateY(30%);-o-transform:translateY(30%);transform:translateY(30%);-ms-transform:translateY(30%);-ms-transition:all 1s;}
-.part .title p{color:#333;font-size:24px;line-height:4.3rem;}
-.part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
-.part .title p.desc{margin-top:1.6rem;color:#666;font-size:16px;line-height:1rem;}
-
-.item a{position:relative;display:block;width:100%;height:100%;}
-.item a .img{position:relative;overflow:hidden;width:100%;height:50%;background-position:center;background-size:cover;transition:all .6s;transform:rotateY(0);}
-.item a .img img{height:100%;-webkit-transition:all .6s;transition:all .6s;transform:scale(1);}
-.item a .img .shadow{position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:rgba(0,0,0,.4);opacity:0;transition:all .6s;filter:alpha(opacity=0);}
-.item a:hover .img a,.item a:hover .img img{-webkit-transform:scale(1.1);transform:scale(1.1);}
-.item a:hover .img .shadow{opacity:1;filter:alpha(opacity=100);}
-.item a:hover .img .shadow span.icon{-webkit-transform:translate(-50%,-50%) scale(1);transform:translate(-50%,-50%) scale(1);}
+.stuffServers .item a{position:relative;display:block;width:100%;height:100%;}
+.stuffServers .item a .img{position:relative;overflow:hidden;width:100%;height:50%;background-position:center;background-size:cover;transition:all .6s;transform:rotateY(0);}
+.stuffServers .item a .img img{height:100%;-webkit-transition:all .6s;transition:all .6s;transform:scale(1);}
+.stuffServers .item a .img .shadow{position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:rgba(0,0,0,.4);opacity:0;transition:all .6s;filter:alpha(opacity=0);}
+.stuffServers .item a:hover .img a,.stuffServers .item a:hover .img img{-webkit-transform:scale(1.1);transform:scale(1.1);}
+.stuffServers .item a:hover .img .shadow{opacity:1;filter:alpha(opacity=100);}
+.stuffServers .item a:hover .img .shadow span.icon{-webkit-transform:translate(-50%,-50%) scale(1);transform:translate(-50%,-50%) scale(1);}
 
 /*服务场景*/
 .part.scenenet .cont{height: calc(100% - 144px);width: 100%;}
 .part.scenenet .cont .contentwrap{width: 80%;margin-left: 10%;height:100%;background: url(../../../static/img/scenenet.png) no-repeat center;background-size: 65%;position: relative;}
 .part.scenenet .cont .contentwrap .item{width: 65px;height: 65px;border-radius:50%;background-color: hotpink;line-height: 65px;text-align: center;color: #fff;position: absolute;}
-.part.scenenet .cont .contentwrap .item:nth-child(1){top: 27.8%;left: 27.2%;}
-.part.scenenet .cont .contentwrap .item:nth-child(2){top: 51%;left: 38.5%;}
-.part.scenenet .cont .contentwrap .item:nth-child(3){top: 55.8%;left: 27.2%;}
-.part.scenenet .cont .contentwrap .item:nth-child(4){top: 29%;left: 40%;}
-.part.scenenet .cont .contentwrap .item:nth-child(5){top: 71%;left: 45%;}
-.part.scenenet .cont .contentwrap .item:nth-child(6){top: 30%;left: 55%;}
-.part.scenenet .cont .contentwrap .item:nth-child(7){left: 65%;top: 35%;}
-.part.scenenet .cont .contentwrap .item:nth-child(8){top: 44%;left: 49%;}
-.part.scenenet .cont .contentwrap .item:nth-child(9){top: 56%;left: 62%;}
+.part.scenenet .cont .contentwrap .item:nth-child(1){top: 23.8%;left: 27.2%;background-color: rgb(79,129,189);}
+.part.scenenet .cont .contentwrap .item:nth-child(2){top: 51%;left: 38.5%;background-color: rgb( 192,80,77);}
+.part.scenenet .cont .contentwrap .item:nth-child(3){top: 55.8%;left: 27.2%;background-color: rgb(34,128,195);}
+.part.scenenet .cont .contentwrap .item:nth-child(4){top: 29%;left: 40%;background-color: rgb(155,187,89);}
+.part.scenenet .cont .contentwrap .item:nth-child(5){top: 71%;left: 45%;background-color: rgb( 88,88,172);}
+.part.scenenet .cont .contentwrap .item:nth-child(6){top: 30%;left: 55%;background-color: rgb(128,100,162);}
+.part.scenenet .cont .contentwrap .item:nth-child(7){left: 65%;top: 35%;background-color: rgb(75,172,198);}
+.part.scenenet .cont .contentwrap .item:nth-child(8){top: 44%;left: 49%;background-color: rgb(135,61,171);}
+.part.scenenet .cont .contentwrap .item:nth-child(9){top: 56%;left: 62%;background-color: rgb( 247,150,70);}
 
 /*管理开展  begin*/
 .flexbox{display:flex;margin-top:5rem;padding:0 2%;flex-direction:row;flex-wrap:wrap;}
-.inner{position:relative;box-sizing:border-box;margin:0 2%;padding-bottom:16%;width:16%;height:0;border-radius:10px;background:#8a4182;}
-.inner:nth-child(1){background-color: rgb(220,85,98) ;}   
-.inner:nth-child(1)>span{border-left:solid 25px rgb(220,85,98);}
-.inner:nth-child(2){background-color: rgb(250,157,76) ;}
-.inner:nth-child(2)>span{border-left:solid 25px rgb(250,157,76);}
-.inner:nth-child(3){background-color: rgb(177,188,57) ;}
-.inner:nth-child(3)>span{border-left:solid 25px rgb(177,188,57);}
-.inner:nth-child(4){background-color: rgb(57,141,227) ;}
-.inner:nth-child(4)>span{border-left:solid 25px rgb(57,141,227);}
-.inner:nth-child(5){background-color: rgb(142,92,212) ;}
+.inner{position:relative;box-sizing:border-box;margin:0 2%;padding-bottom:16%;width:16%;height:0;}
 
-.inner>span{height:0;width:0;border-top:solid 20px transparent;border-bottom:solid 20px transparent;display:block;position:absolute;right:-25px;top:50%;transform:translateY(-50%)}
-.inner li{width:100%;padding-top:5%}
+.inner li{width:100%;padding-top:5%;text-align: center;}
 .inner li p{font-size:14px}
-.inner .inimg{padding-top:7%;text-align:center}
-.inner .inhead p{text-align:center}
-.inner .indetail p{color:#fff;padding:0 10%}
+.inner .inimg{padding-top:7%;text-align:center;height: 80px;}
+.inner .inhead p{text-align:center;color: #333;font-size: 20px;}
+.inner .indetail p{color:#666;padding:0 10%}
 .inner img{width:30%}
 
 /*管理开展  begin*/
 
 /*scene应用场景*/
-.part.scene .cont .contentwrap{width: 70%;margin-left: 15%;display: flex;flex-wrap: wrap;}
-.part.scene .cont .contentwrap .contentItem{width: 25%;position: relative;height: 0;padding-bottom: 22%;text-align: center;}
-.part.scene .cont .contentwrap .contentItem .pic img{width: 100%;}
-.part.scene .cont .contentwrap .contentItem .text{display: none;position: absolute;text-align: center;background:rgba(255,255,255,.3);height: 100%;color: #fff;}
-.part.scene .cont .contentwrap .contentItem:hover .pic{display: none;} 
-.part.scene .cont .contentwrap .contentItem:hover .text{display: block;}
+.part.scene .cont{width: 80%;margin-left: 10%;}
+.part.scene .cont .row .ui.item{width: 24%;height: 0;padding-bottom: 22%;margin-right: 1%;box-sizing: border-box;}
+.part.scene .cont .row .ui .content{width: 100%;height: 0;padding-bottom: 100%;background-color: rgba(0,0,0,.3);}
+.part.scene .cont .row .ui .cell {display: table-cell;width: 240px;height: 192px;vertical-align: middle;text-align: center;background-color: rgba(0,0,0,.3);}
+.part.scene .cont .row .hidden .text {height: 100%;background-color: #0cf;}
+.part.scene .cont .row .ui  .cell p {color: #fff;font-size: 16px;width: 80%;margin: 0 auto;}
+.part.scene .cont .row .ui .hidden  .cell p {font-size: 12px;}
+
 
 /*考勤管理 begin*/
-.attendance{background:#076ce0}
-.attendance>div{height:100%;width:50%;position:relative;float:left}
+.attendance{background:#076ce0;opacity: 1!important;}
+.attendance>div{height:100%;width:50%;position:relative;float:left;opacity: 1!important;}
 .AtteLtext{height:40%;width:80%;color: #fff;padding: 80px 20px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
 .attendance h3{font-size: 2rem;font-weight: 100;line-height: 2em;}
+.attendance p{font-size: 16px;line-height: 26px;}
 .AtteRimg{width:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
 /*考勤管理end*/
 

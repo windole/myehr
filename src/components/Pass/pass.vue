@@ -6,7 +6,7 @@
                 <div class="bannerLoop" ref="bannerLoop">
                     <swiper :options="bannerOption" ref="bannerOption" class="clear">
                         <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner6.jpg)'}"></div>
+                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner7.jpg)'}"></div>
                             <div class="txt">
                                 <div class="tit clear">
                                     <h4>基于乐高式的配置组件</h4>
@@ -19,8 +19,36 @@
                                 </div>
                             </div>
                         </swiper-slide>
+                        <swiper-slide class="item"  key="index">
+                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner6.jpg)'}"></div>
+                            <div class="txt">
+                                <div class="tit clear">
+                                    <h4>灵活可扩展的应用平台</h4>
+                                    <div class="tips" style="display:block;">
+                                        <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
+                                    </div>
+                                </div>
+                                <div class="en">
+                                    <p>深度满足企业业务需求</p>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide class="item"  key="index">
+                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner8.jpg)'}"></div>
+                            <div class="txt">
+                                <div class="tit clear">
+                                    <h4>多种可配置建模引擎</h4>
+                                    <div class="tips" style="display:block;">
+                                        <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
+                                    </div>
+                                </div>
+                                <div class="en">
+                                    <p>实现项目的快速交付</p>
+                                </div>
+                            </div>
+                        </swiper-slide>
                         <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                <div class="swiper-button-next btn next" slot="button-next"></div>
+                        <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
                 </div>
             </div>
@@ -28,7 +56,7 @@
             <!-- 解决方案 -->
             <!-- 优势 -->
             <div class="part advantage page-2 page">
-                <div class="cont" style="height:100%;background:#076ce0 url(static/img/advantage.png) no-repeat 80% center;background-size:50%;">
+                <div v-animate="{value: 'bounceInLeft', delay: 0}" style="height:100%;background:url(static/img/advantage.png) no-repeat 80% center;background-size:50%;">
                     <ul>
                         <h2>MyeHR移动办公平台</h2>
                         <li>一次开发 多端运行</li>
@@ -41,7 +69,7 @@
             </div>
             <!-- 数据建模 -->
             <div class="part modal clear page-3 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p class="desc">MyeHR统一技术平台</p>
                     <p>多平台数据建模</p>
                     <span class="line"></span>
@@ -52,7 +80,7 @@
             </div>
             <!-- 架构 -->
             <div class="part architecture clear page-4 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p class="desc">MyeHR产品设计理念</p>
                     <p>技术平台总体架构</p>
                     <span class="line"></span>
@@ -156,25 +184,18 @@
         }
     };
 </script>
-<style type="text/css">
-.fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
-.page{top:2rem;}
+<style type="text/css" scoped>
 .pass{width:100%;color: rgb(105,105,105);}
 
-.part .title{/*padding-top:1.3rem;*//*padding-bottom:2.5rem;*/text-align:center;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;-webkit-transform:translateY(30%);-moz-transform:translateY(30%);-o-transform:translateY(30%);transform:translateY(30%);-ms-transform:translateY(30%);-ms-transition:all 1s;}
-.part .title p{color:#333;font-size:24px;line-height:4.3rem;}
-.part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
-.part .title p.desc{margin-top:1.6rem;color:#666;font-size:16px;line-height:1rem;}
-.bannerLoop .txt .en {margin-top: 2.5rem;color: #fff;font-size: 2rem;line-height: 1;}
 /*优势*/
-.part.advantage ul{padding: 15% 0 0 15%;color: #fff;}
+.part.advantage ul{padding: 13% 0 0 15%;color: #333;}
 .part.advantage ul h2{font-size: 24px;font-weight: 100;margin-bottom: 10px;}
-.part.advantage ul li{line-height: 40px;list-style: disc;font-size: 16px;}
+.part.advantage ul li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
 /*modal*/
-.part.modal .cont{height: calc(100% - 150px);background: url(../../../static/img/pass-modal.png) no-repeat center;background-size: 65%;}
+.part.modal .cont{height: calc(100% - 115px);background: url(../../../static/img/pass-modal.png) no-repeat center;background-size: 78%;}
 
 /*架构*/
-.architecture .cont{height: calc(100% - 150px);background: url(../../../static/img/architecture.png) no-repeat center;background-size: 52%;}
+.architecture .cont{height: calc(100% - 115px);background: url(../../../static/img/architecture.png) no-repeat center;background-size: 52%;}
 
 
 @media screen and (max-width:767px){

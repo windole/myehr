@@ -6,7 +6,7 @@
                 <div class="bannerLoop" ref="bannerLoop">
                     <swiper :options="bannerOption" ref="bannerOption" class="clear">
                         <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner2.jpg)'}"></div>
+                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner9.jpg)'}"></div>
                             <div class="txt">
                                 <div class="tit clear">
                                     <h4>标准化流程实现快速交付</h4>
@@ -19,15 +19,29 @@
                                 </div>
                             </div>
                         </swiper-slide>
+                        <swiper-slide class="item"  key="index">
+                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner10.jpg)'}"></div>
+                            <div class="txt">
+                                <div class="tit clear">
+                                    <h4>全面一站式人才管理解决方案</h4>
+                                    <div class="tips" style="display:block;">
+                                        <!-- <p style="width:100%;">MyeHR 社交化 实时互动</p> -->
+                                    </div>
+                                </div>
+                                <div class="en">
+                                    <p>优化企业信息化管理模式应用</p>
+                                </div>
+                            </div>
+                        </swiper-slide>
                         <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                <div class="swiper-button-next btn next" slot="button-next"></div>
+                        <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
                 </div>
             </div>
             <loading v-if="!showBanner"></loading>
             <!-- 解决方案 -->
             <div class="part project page-2 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR解决方案</p>
                     <span class="line"></span>
                 </div>
@@ -37,13 +51,14 @@
                             <div class="left-img" :style="{backgroundImage:' url(\'static/'+item.ProjectIcon+'\')'}" >
                             </div>
                             <div class="right-con">{{item.ProjectTit}}</div>
+                            <p>{{item.ProjectContent}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- 组织管理 -->
             <div class="part control page-3 page" id="organzeManagement">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>全面集团化管控</p>
                     <p class="desc">通过岗位职责、招聘、考核及标准组织管理模型的标准化管理，实现集团化管控；</p>
                     <span class="line"></span>
@@ -55,7 +70,7 @@
                                 <div class="right"></div>
                                 <div class="left">
                                     <h3>多维度组织管理</h3>
-                                    <p>建立多纬度（行政纬度、地域纬度、事业部纬度、信息纬度，财务纬度）的组织管理</p>
+                                    <p>建立多纬度的组织管理</p>
                                 </div>
                             </div>
                             <div class="item">
@@ -69,7 +84,7 @@
                                 <div class="right"></div>
                                 <div class="left">
                                     <h3>岗位管理</h3>
-                                    <p>建立部门与岗位的隶属关系及岗位之间的上下级关系</p>
+                                    <p>建立部门与岗位的隶属关系</p>
                                 </div>
                             </div>
                             <div class="item">
@@ -92,7 +107,7 @@
                                 <div class="left"></div>
                                 <div class="right">
                                     <h3>组织机构管理</h3>
-                                    <p>根据企业战略发展的需要，要求能够完成组织机构的新增、合并、转移、撤消、拆分等业务</p>
+                                    <p>根据企业战略发展的需要</p>
                                 </div>
                             </div>
                              <div class="item">
@@ -106,14 +121,14 @@
                                 <div class="left"></div>
                                 <div class="right">
                                     <h3>组织模板</h3>
-                                    <p>建立部门模板和岗位模板，形成标准组织模型</p>
+                                    <p>建立部门模板和岗位模板，<br/>形成标准组织模型</p>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="left"></div>
                                 <div class="right">
                                     <h3>组织规划</h3>
-                                    <p>包含能力素质模型定义及职务发展通道定义</p>
+                                    <p>包含能力素质模型定义及<br/>职务发展通道定义</p>
                                 </div>
                             </div>
                             <div class="item">
@@ -130,7 +145,7 @@
 
             <!-- 薪酬管理 -->
             <div class="part compensationManagement page-4 page" id="compensationManagement">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>精准高效薪酬管控</p>
                     <p class="desc">预算与薪酬额度管控，确保企业人工成本的可控性；</p>
                 </div>
@@ -176,7 +191,7 @@
 
             <!-- 人事管理 -->
             <div class="part peopleManagement page-5 page" id="peopleManagement">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>人员事务管理</p>
                     <p class="desc">丰富人事管理业务，人员职场全周期管控；</p>
                     <span class="line"></span>
@@ -187,13 +202,14 @@
 
             <!-- 培训管理 -->
             <div class="part training page-6 page" id="training">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>员工学习成长</p>
                     <p class="desc">清晰明确的员工成长路径，全面提升企业人才价值；</p>
                     <span class="line"></span>
                 </div>
-                <div class="cont">
-                    <ul>
+                <div class="cont" v-animate="{value: 'bounceInLeft', delay: 0}">
+                    <ul class="lefttxt">
+                        <h2>MyeHR培训管理解决方案</h2>
                         <li>培训资源/培训讲师/培训场地管理</li>
                         <li>培训需求汇总</li>
                         <li>培训计划制定及汇报审批管理</li>
@@ -204,7 +220,7 @@
 
             <!-- 考勤管理 -->
             <div class="part attenceManagement page-7 page" id="attenceManagement">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>生产效能提升</p>
                     <p class="desc">提高生产效率，生产力与任务的高度匹配</p>
                 </div>
@@ -260,7 +276,7 @@
 
             <!-- 招聘管理 -->
             <div class="part recruitManagement page-8 page" id="recruitManagement">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>人岗精准匹配</p>
                     <p class="desc">岗位胜任要求管理，全面提升招聘效率</p>
                 </div>
@@ -317,19 +333,19 @@
             
             <!-- 报表管理 -->
             <div class="part baobiao page-9 page" id="baobiao">
-                <div class="cont">
-                    <h2>MyeHR报表管理</h2>
-                    <p>为领导决策提供数据支持</br>
-                        优化企业人员管理流程</br>
-                        提升企业效能</br>
-                        </p>
+                <div class="cont"  v-animate="{value: 'bounceInRight', delay: 0}">
+                    <ul class="lefttxt">
+                        <h2>MyeHR报表管理</h2>
+                        <li>为领导决策提供数据支持</li>
+                        <li>优化企业人员管理流程</li>
+                        <li>提升企业效能</li>
+                    </ul>
                 </div>
             </div>
             
             <!-- 绩效管理 -->
             <div class="part jixiao page-10 page" id="jixiaoManagement">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p class="desc">MyeHR绩效管理</p>
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>提升员工执行力</p>
                     <p class="desc">企业战略目标的全面有效落地及全过程管控</p>
                 </div>
@@ -369,7 +385,7 @@
 
             <!-- 解决方案管理 -->
             <div class="part solve page-11 page" id="solve">
-                <div class="cont">
+                <div class="cont" v-animate="{value: 'zoomIn'}">
                     <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                         <p>提升员工执行力</p>
                     </div>
@@ -471,30 +487,16 @@
         }
     };
 </script>
-<style type="text/css">
-.fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
-.page{top:2rem;}
+<style type="text/css" scoped>
 .hr{width:100%;color: rgb(105,105,105);}
-
-.part .title{/*padding-top:1.3rem;*/padding-bottom:2.5rem;text-align:center;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;-webkit-transform:translateY(30%);-moz-transform:translateY(30%);-o-transform:translateY(30%);transform:translateY(30%);-ms-transform:translateY(30%);-ms-transition:all 1s;}
-.part .title p{color:#333;font-size:24px;line-height:4.3rem;}
-.part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
-.part .title p.desc{margin-top:.6rem;color:#666;font-size:16px;line-height:1rem;}
 
 .project .cont{width: 70%;margin-left: 15%;}
 .project .cont .contentwrap{width: 100%;display: flex; flex-wrap: wrap;}
-.project .cont .contentwrap .contentitem{display: inline-block;width: 33.3%;padding-top: 3rem;text-align: center;}
-.project .cont .contentwrap .contentitem .left-img{width: 70px;height: 70px;border-radius: 10px;display: inline-block;vertical-align: middle;margin-bottom:10px;background-position: center;background-repeat: no-repeat;}
-.contentitem:nth-child(1) .left-img{background-color: rgb(79,129,189);}
-.contentitem:nth-child(2) .left-img{background-color: rgb(192,80,77);}
-.contentitem:nth-child(3) .left-img{background-color: rgb(155,187,89);}
-.contentitem:nth-child(4) .left-img{background-color: rgb(128,100,162);}
-.contentitem:nth-child(5) .left-img{background-color: rgb(75,172,198);}
-.contentitem:nth-child(6) .left-img{background-color: rgb(247,150,70);}
-.contentitem:nth-child(7) .left-img{background-color: rgb(34,128,195);}
-.contentitem:nth-child(8) .left-img{background-color: rgb(88,88,172);}
-.contentitem:nth-child(9) .left-img{background-color: rgb(142,92,212);}
-.project .cont .contentwrap .contentitem .right-con{display: inline-block;font-size: 16px;width: 100px;}
+.project .cont .contentwrap .contentitem{display: inline-block;width: 33.3%;padding-top: 2rem;text-align: center;opacity: 1!important;-webkit-animation-name: bounceInUp;animation-name: bounceInUp;-webkit-transform-origin: center bottom;transform-origin: center bottom;}
+.project .cont .contentwrap .contentitem .left-img{width: 65px;height: 65px;border-radius: 10px;margin:0 auto 10px;background-position: center;background-repeat: no-repeat;}
+.project .cont .contentwrap .contentitem .right-con{display: inline-block;font-size: 18px;line-height: 26px;color: #333;}
+.project .cont .contentwrap .contentitem p{color: #666;font-size: 14px;margin-top: .6em;}
+
 
 /*组织掌控*/
 .control .cont{width: 70%;margin-left: 15%;margin-top: 3rem;}
@@ -544,12 +546,13 @@
 .compensationManagement .cont .three-cols .brnone{border-right: 0;}
 
 /*人事管理*/
-.part.peopleManagement .cont{height: calc(100% - 150px);background: url(../../../static/img/renshi.png) no-repeat center;background-size: 65%;}
+.part.peopleManagement .cont{height: calc(100% - 115px);background: url(../../../static/img/renshi.png) no-repeat center;background-size: 65%;}
 
 /*培训管理*/
-.part.training .cont{height: calc(100% - 150px);background: url(../../../static/img/training.png) no-repeat right;background-size: 60%;}
-.part.training .cont ul{padding:10% 0 0 15%;}
-.part.training .cont ul li{font-size: 18px;height: 32px;}
+.part.training .cont{height: calc(100% - 115px);background: url(../../../static/img/training.png) no-repeat right;background-size: 60%;}
+.cont ul.lefttxt{padding: 10% 0 0 15%;color: #333;opacity: 1!important;}
+.cont ul.lefttxt h2{font-size: 24px;font-weight: 100;margin-bottom: 10px;}
+.cont ul.lefttxt li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
 
 /*考勤管理*/
 .part.attenceManagement{background-color:rgb(7, 108, 224); }
@@ -579,7 +582,7 @@
 /*招聘管理*/
 .recruitManagement .cont{width: 60%;margin-left: 20%;margin-top: 2em;}
 .recruitManagement .cont .contentwrap{width: 100%;display: flex; flex-wrap: wrap;}
-.recruitManagement .cont .contentwrap .contentItem{display: inline-block;width: 20%;margin:0 5% 1em;text-align: center;border-radius: 10px;}
+.recruitManagement .cont .contentwrap .contentItem{display: inline-block;width: 20%;margin:0 6.5% 1em;text-align: center;border-radius: 10px;}
 .recruitManagement .cont .contentwrap .contentItem img{margin:1em auto;width: 45px;}
 .recruitManagement .cont .contentwrap .contentItem h3{color: #fff;font-weight: 100;margin-bottom: 1em;}
 .recruitManagement .cont .contentwrap .contentItem .left-img{width: 70px;height: 70px;border-radius: 10px;display: inline-block;vertical-align: middle;margin-bottom:10px;background-position: center;background-repeat: no-repeat;}
@@ -598,7 +601,8 @@
 .recruitManagement .cont .contentwrap .contentItem:hover p{display: block;}
 
 /*报表*/
-.part.baobiao .cont{padding:15% 0 0 15%;height: 100%;background:url(../../../static/img/baobiao.png)no-repeat 80%/45%;}
+.part.baobiao .cont{height: 100%;background:url(../../../static/img/baobiao.png)no-repeat 80%/45%;}
+.part.baobiao .cont ul{opacity: 1!important;}
 .part.baobiao .cont h2{font-size: 24px;line-height: 40px;}
 
 /*绩效*/

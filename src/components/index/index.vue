@@ -27,7 +27,7 @@
             <loading v-if="!showBanner"></loading>
             <!-- 服务模式 -->
             <div class="part solution clearfix page-2 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR服务模式</p>
                     <span class="line"></span>
                 </div>
@@ -72,23 +72,21 @@
                         <div class="swiper-button-prev btn prev" slot="button-prev"></div>
                         <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
-                    <div class="more">
-                        <router-link to="/solution">查看更多</router-link>
-                    </div>
                 </div>
             </div>
             <!-- 解决方案 -->
             <div class="part project page-3 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR解决方案</p>
                     <span class="line"></span>
                 </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="cont" ref="project">
                     <div class="contentwrap">
-                        <div v-for="item in projectData" class="contentitem">
+                        <div v-for="item in projectData" class="contentitem zoomInDown" v-animate="{value: 'zoomInDown'}">
                             <div class="left-img" :style="{backgroundImage:' url(\'static/'+item.ProjectIcon+'\')'}" >
                             </div>
-                            <div class="right-con">{{item.ProjectTit}}</div>
+                            <h3 class="right-con">{{item.ProjectTit}}</h3>
+                            <p>{{item.ProjectContent}}</p>
                         </div>
                     </div>
                 </div>
@@ -127,8 +125,8 @@
  -->
             <!-- 优势 -->
             <div class="part advantage page-4 page">
-                <div class="cont" style="height:100%;background:#076ce0 url(static/img/advantage.png) no-repeat 80% center;background-size:50%;">
-                    <ul>
+                <div v-animate="{value: 'bounceInLeft', delay: 0}" style="height:100%;background:url(static/img/advantage.png) no-repeat 80% center;background-size:50%;opacity:1!important;">
+                    <ul >
                         <h2>MyeHR移动办公平台</h2>
                         <li>一次开发 多端运行</li>
                         <li>人性化UI设计</li>
@@ -141,38 +139,37 @@
 
             <!-- 产品与服务 -->
             <div class="part product page-5 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
+                <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
                     <p>为什么选择MyeHR？</p>
+                    <span class="line"></span>
                 </div>
-                <div class="cont" ref="aboutus">
-                    <div class="iconwarp clear">
-                     <div class="iconitem iconitem1" v-animate="{value: 'bounceInLeft'}">
-                        <img src="/static/img/icon_1.png" alt="">
-                        <h2>600万个人用户<br/>8千家企业用户</h2>
-                        <p>HR用户体验，积累丰富的行业经验</p>
-                     </div>
-                     <div class="iconitem iconitem2" v-animate="{value: 'bounceInLeft'}">
-                       <img src="/static/img/icon_2.png" alt="">
-                       <h2>18年行业耕耘</h2>
-                       <p>专业人力资源管理信息化软件服务</p>
-                     </div>
-                     <div class="iconitem iconitem3" v-animate="{value: 'bounceInLeft'}">
-                       <img src="/static/img/icon_3.png" alt="">
-                       <h2>22家全国性分支机构</h2>
-                       <p>国内专业eHR专业厂商最强</p>
-                     </div>
-                     <div class="iconitem iconitem4" v-animate="{value: 'bounceInLeft'}">
-                       <img src="/static/img/icon_4.png" alt="">
-                       <h2>450名专业实施团队</h2>
-                       <p>包含咨询顾问、项目经理、软件工程师等专业团队</p>
-                     </div>
-                   </div>
+                <div class="cont grid" ref="aboutus">
+                    <div class="row">
+                        <div class="ui item slide down instant reveal" v-for="item in product">
+                            <div class="visible content">
+                                <div class="graphic health content" :style="{backgroundImage:'url('+ item.ProductThumb +')'}">
+                                    <div class="cell">
+                                        <p v-html="item.ProductTitle"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden content">
+                                <div class="text dark content">
+                                    <div class="cell">
+                                        <p v-html="item.ProductTitlePlus"></p>
+                                        <a class="ui inverted button">查看详情</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
                 </div>
             </div>
             <!-- 我们的客户 -->
             <div class="part client case clear page-6 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR典型客户</p>
+                    <span class="line"></span>
                 </div>
                 <div class="case_list" >
                     <div class="title">
@@ -196,6 +193,7 @@
                 <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR战略伙伴联盟</p>
                     <span class="line"></span>
+                    <p class="desc">携手多家合作伙伴，共同打造人力资源生态联盟</p>
                 </div>
                 <div class="cont">
                     <!-- <div class="company-left"></div>
@@ -283,7 +281,7 @@
                 opts: {
                     start: 0,
                     dir: 'v',
-                    duration: 500
+                    duration: 1000
                 }
             };
         },
@@ -406,6 +404,7 @@
                     that.proBnCn = data.product_intro;
                     // 获取解决方案
                     that.projectData = data.project;
+                    that.product = data.product;
                 });
             },
             getCaseList() {
@@ -456,35 +455,18 @@
 </script>
 <style type="text/css">
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
-.page{top:2rem;}
 .index{width:100%;color: rgb(105,105,105);}
 .index .swiper-button-disabled{pointer-events:auto;}
 
-.index .part .title{/*padding-top:1.3rem;*/padding-bottom:2.5rem;text-align:center;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;-webkit-transform:translateY(30%);-moz-transform:translateY(30%);-o-transform:translateY(30%);transform:translateY(30%);-ms-transform:translateY(30%);-ms-transition:all 1s;}
+.index .part .title{padding-bottom:.5rem;text-align:center;}
 .index .part .title p{color:#333;font-size:24px;line-height:4.3rem;}
 .index .part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
 .index .part .title p.desc{margin-top:1.6rem;color:#666;font-size:16px;line-height:1rem;}
 .index .product.part .title p{color:rgb(105,105,105);}
-.index .product.part .title span.line{background:#fff;}
-.iconwarp{margin:0 auto;padding-top:120px;padding-bottom:60px;width:905px;}
-.iconitem{position:relative;top:0;float:left;margin:13px;width:200px;height:200px;border-radius:50%;text-align:center;opacity:1!important;transition:all 1s;}
-.iconitem:nth-child(1){background: rgb(79,129,189);}
-.iconitem:nth-child(2){background: rgb(192,80,77);}
-.iconitem:nth-child(3){background: rgb(155,187,89);}
-.iconitem:nth-child(4){background: rgb(128,100,162);}
-.iconitem h2{margin:20px 0;color:#fff;font-size: 1.3em;font-weight: 100;}
-.iconitem:hover{background: rgba(0,0,0,.75);}
-.iconitem:hover h2,.iconitem:hover img{display: none;}
-.iconitem:hover p{display: block;}
-.iconitem p{padding:0 27px;color:#fff;font-size:12px;display: none;position: absolute;top: 45%;}
-.iconitem img{margin-top:38px;}
 
 
+/*解决方案*/
 .index .part .title.active{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0);-ms-transform:translateY(0);}
-.index .part .cont .more{margin:3rem auto 5rem;width:10rem;height:2.8rem;border-radius:1.4rem;background:url(../../../static/img/more_border.png) no-repeat center center;background-size:contain;}
-.index .part .cont .more:hover{background-image:url(../../../static/img/more_active.png);}
-.index .part .cont .more:hover a{color:#fff;}
-.index .part .cont .more a{display:block;width:100%;height:100%;color:#0079ef;text-align:center;font-size:16px;line-height:2.8rem;}
 .index .solution.part .cont{margin:0 auto;width:100%;max-width:1100px;-webkit-transition:all 1s .2s;-moz-transition:all 1s .2s;-o-transition:all 1s .2s;transition:all 1s .2s;-webkit-transform:translateY(3%);-moz-transform:translateY(3%);-o-transform:translateY(3%);transform:translateY(3%);-ms-transform:translateY(3%);-ms-transition:all 1s .2s;}
 .index .solution.part .cont .swiper-container{position:relative;height:42rem;}
 .index .solution.part .cont .swiper-container .swiper-wrapper{height:100%!important;}
@@ -526,9 +508,9 @@
 
 .index .project .cont{width: 70%;margin-left: 15%;}
 .index .project .cont .contentwrap{width: 100%;display: flex; flex-wrap: wrap;}
-.index .project .cont .contentwrap .contentitem{display: inline-block;width: 33.3%;padding-top: 3rem;text-align: center;}
-.index .project .cont .contentwrap .contentitem .left-img{width: 70px;height: 70px;border-radius: 10px;display: inline-block;vertical-align: middle;margin-bottom:10px;background-position: center;background-repeat: no-repeat;}
-.contentitem:nth-child(1) .left-img{background-color: rgb(79,129,189);}
+.index .project .cont .contentwrap .contentitem{display: inline-block;width: 33.3%;padding-top: 2rem;text-align: center;opacity: 1!important;-webkit-animation-name: bounceInUp;animation-name: bounceInUp;-webkit-transform-origin: center bottom;transform-origin: center bottom;}
+.index .project .cont .contentwrap .contentitem .left-img{width: 65px;height: 65px;border-radius: 10px;margin:0 auto 10px;background-position: center;background-repeat: no-repeat;}
+/*.contentitem:nth-child(1) .left-img{background-color: rgb(79,129,189);}
 .contentitem:nth-child(2) .left-img{background-color: rgb(192,80,77);}
 .contentitem:nth-child(3) .left-img{background-color: rgb(155,187,89);}
 .contentitem:nth-child(4) .left-img{background-color: rgb(128,100,162);}
@@ -536,10 +518,10 @@
 .contentitem:nth-child(6) .left-img{background-color: rgb(247,150,70);}
 .contentitem:nth-child(7) .left-img{background-color: rgb(34,128,195);}
 .contentitem:nth-child(8) .left-img{background-color: rgb(88,88,172);}
-.contentitem:nth-child(9) .left-img{background-color: rgb(142,92,212);}
-.index .project .cont .contentwrap .contentitem .right-con{display: inline-block;font-size: 16px;width: 100px;}
-
-.index .part.compare{background:#076ce0;color: #fff;padding-top: 5rem;}
+.contentitem:nth-child(9) .left-img{background-color: rgb(142,92,212);}*/
+.index .project .cont .contentwrap .contentitem .right-con{display: inline-block;font-size: 18px;line-height: 26px;color: #333;}
+.index .project .cont .contentwrap .contentitem p{color: #666;font-size: 14px;margin-top: .6em;}
+/*.index .part.compare{background:#076ce0;color: #fff;padding-top: 5rem;}
 .index .part.compare>div{width: 49%;display: inline-block;vertical-align: top;}
 .index .part.compare>div h2.title{font-size: 2em; font-weight: 400;}
 .index .part.compare .compare-left .content{width: 100%;padding: 0 10% 6rem;border-right: 1px dotted #f1f1f1;display: flex;    flex-wrap: wrap;margin-top: 5rem;}
@@ -550,11 +532,10 @@
 .index .part.compare .compare-left .content li:nth-child(2) .img{background: rgb(177,188,57) url(../../../static/img/compare2.png)no-repeat center;background-size: 55%;}
 .index .part.compare .compare-left .content li:nth-child(3) .img{background: rgb(57,141,227) url(../../../static/img/compare3.png)no-repeat center;background-size: 55%;}
 .index .part.compare .compare-left .content li:nth-child(4) .img{background: rgb(142,92,212) url(../../../static/img/compare4.png)no-repeat center;background-size: 55%;}
-
 .index .part.compare .compare-right .content{margin-top:5rem;text-align: center;}
-.index .part.compare .compare-right .content img{width: 260px;}
+.index .part.compare .compare-right .content img{width: 260px;}*/
 
-.index .part.company .cont{height: calc(100% - 144px);background: rgb(7,108,224) url(../../../static/img/allcompany1.png) no-repeat center;background-size: 85%;}
+.index .part.company .cont{height: calc(100% - 123px);background:#086DE1 url(../../../static/img/allcompany1.png) no-repeat center;background-size: 85%;}
 .index .part.company .cont>div{width: 49%;display: inline-block;vertical-align: top;height: 100%;}
 
 .index .part.company .cont img{width: 60%;}
@@ -564,17 +545,26 @@
 
 
 
-.index .part.advantage ul{padding: 15% 0 0 15%;color: #fff;}
+.index .part.advantage ul{padding: 13% 0 0 15%;color: #333;opacity: 1!important;}
 .index .part.advantage ul h2{font-size: 24px;font-weight: 100;margin-bottom: 10px;}
-.index .part.advantage ul li{line-height: 40px;list-style: disc;font-size: 16px;}
+.index .part.advantage ul li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
 
 
-.index .part.product .cont .tp{padding-top:2rem;padding-right:10.5rem;padding-left:10.5rem;}
+.index .part.product .cont{width: 80%;margin-left: 10%;margin-top: 5rem;}
+.index .part.product .cont .row .ui.item{width: 24%;height: 0;padding-bottom: 22%;margin-right: 1%;box-sizing: border-box;}
+.index .part.product .cont .row .ui .content{width: 100%;height: 0;padding-bottom: 100%;}
+.index .part.product .cont .row .ui .cell {display: table-cell;width: 260px;height: 220px;vertical-align: middle;text-align: center;}
+.index .part.product .cont .row .hidden .text {height: 100%;background-color: #0cf;}
+.index .part.product .cont .row .ui  .cell p {color: #fff;font-size: 16px;margin-top: 12px;}
+
+
+
+
+/*.index .part.product .cont .tp{padding-top:2rem;padding-right:10.5rem;padding-left:10.5rem;}
 .index .part.product .cont .tp .item{margin-bottom:8rem;}
 .index .part.product .cont .tp .item:last-child{margin-bottom:7rem;}
 .index .part.product .cont .tp .item:last-child a .img{float:right;margin-right:3rem;}
-.index .part.product .cont .tp .item:last-child a .text{position:relative;margin-top:4rem;padding-top:0;padding-left:2rem;-webkit-transition:all .5s .15s;-moz-transition:all .5s .15s;-o-transition:all .5s .15s;transition:all .5s .15s;-webkit-transform:translateX(-30%);-moz-transform:translateX(-30%);-o-transform:translateX(-30%);transform:translateX(-30%);-ms-transform:translateX(-30%);-ms-transition:all .5s .15s;}
-.index .part.product .cont .tp .item:last-child a .text span.line{position:absolute;top:0;left:-.35rem;display:inline-block;width:.3rem;height:4rem;background:-moz-linear-gradient(top,#5da1e3,#5ae5b7);background:-webkit-linear-gradient(top,#5da1e3,#5ae5b7);background:-o-linear-gradient(top,#5da1e3,#5ae5b7);background:-ms-linear-gradient(top,#5da1e3,#5ae5b7);FILTER:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#5da1e3',endColorStr='#5da1e3');}
+.index .part.product .cont .tp .item:last-child a .text{position:relative;margin-top:4rem;padding-top:0;padding-left:2rem;-webkit-transition:all .5s .15s;-moz-transition:all .5s .15s;-o-transition:all .5s .15s;transition:all .5s .15s;-webkit-transform:translateX(-3%);-moz-transform:translateX(-30%);-o-transform:translateX(-30%);transform:translateX(-30%);-ms-transform:translateX(-30%);-ms-transition:all .5s .15s;}
 .index .part.product .cont .tp .item:last-child a .text p{margin-top:0;vertical-align:top;}
 .index .part.product .cont .tp .item:last-child a .text p.tit{display:inline-block;margin-top:0;}
 .index .part.product .cont .tp .item a{position:relative;display:block;font-size:0;}
@@ -598,7 +588,7 @@
 .index .part.product .cont .btm .item:last-child a{padding-top:4rem;text-align:center;}
 .index .part.product .cont .btm .item:last-child a i.iconfont{float:none;margin-bottom:1.5rem;}
 .index .part.product .cont .btm .item:last-child a .txt{float:none;}
-.index .part.product .cont .btm .item:last-child a .txt p{font-size:18px;line-height:1;}
+.index .part.product .cont .btm .item:last-child a .txt p{font-size:18px;line-height:1;}*/
 .index .part.client{width:100%;background: rgb(7, 108, 224);}
 .index .part.client .ad{width:100%;height:33rem;background-size:cover;-webkit-transition:all .6s;-moz-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(20%);-moz-transform:translateY(20%);-o-transform:translateY(20%);transform:translateY(20%);-ms-transform:translateY(20%);-ms-transition:all .6s;}
 .index .part.client .ad.active{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0);-ms-transform:translateY(0);}

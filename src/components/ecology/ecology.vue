@@ -129,9 +129,8 @@
         }
     };
 </script>
-<style type="text/css" scope>
+<style type="text/css" scoped>
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
-.page{top:2rem;}
 .ecology{width:100%;color: rgb(105,105,105);}
 
 .part .title{/*padding-top:1.3rem;*/padding-bottom:2.5rem;text-align:center;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;-webkit-transform:translateY(30%);-moz-transform:translateY(30%);-o-transform:translateY(30%);transform:translateY(30%);-ms-transform:translateY(30%);-ms-transition:all 1s;}

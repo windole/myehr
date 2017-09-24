@@ -44,14 +44,10 @@
                         <span>解决方案</span>
                     </h4>
                     <ul class="list">
-                        <li class="list-item"><router-link to="/about/two">组织管理</router-link></li>
-                        <li class="list-item"><router-link to="/about/three">人事管理</router-link></li>
-                        <li class="list-item"><router-link to="/about/four">薪酬福利</router-link></li>
-                        <li class="list-item"><router-link to="/about/six">考勤管理</router-link></li>
-                        <li class="list-item"><router-link to="/about/two">绩效管理</router-link></li>
-                        <li class="list-item"><router-link to="/about/three">招聘管理</router-link></li>
-                        <li class="list-item"><router-link to="/about/four">培训管理</router-link></li>
-                        <li class="list-item"><router-link to="/about/six">员工发展</router-link></li>
+                        <li class="list-item"><router-link to="/about/two">组织人事</router-link></li>
+                        <li class="list-item"><router-link to="/about/four">薪酬考勤</router-link></li>
+                        <li class="list-item"><router-link to="/about/two">绩效招聘</router-link></li>
+                        <li class="list-item"><router-link to="/about/four">培训自助</router-link></li>
                     </ul>
                 </div>
             </div>
@@ -63,12 +59,12 @@
                         </div>
                         <p>官方微信二维码</p>
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <div class="img">
                             <img src="../../static/img/weixinImg.jpg">
                         </div>
                         <p>官方微博二维码</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="logo">
                     <!-- <img src="../../static/img/logo_footer.png"> -->
@@ -169,8 +165,6 @@
 
 .footer .foot_wrap .code div.logo {
     height: 3rem;
-    /*line-height: 3rem;*/
-    margin-bottom: 4rem
 }
 
 .footer .foot_wrap .code div.logo img {

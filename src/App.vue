@@ -58,6 +58,12 @@
 </script>
 
 <style>
+.fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
+.page{padding-top:5rem;}
+.part .title{text-align:center;transition:all 1s;}
+.part .title p{color:#333;font-size:24px;line-height:4.3rem;}
+.part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
+.part .title p.desc{color:#666;font-size:16px;line-height:1rem;}
 .main-content{width: 100%;height: 100vh;}
  .swiper-button-disabled{pointer-events:auto;}
  .banner{position:relative;overflow:hidden;width:100%;height:46rem;background:rgba(0,0,0,.4);}
@@ -73,7 +79,7 @@
  .banner .next{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);}
  .banner .next i.iconfont{background:-moz-linear-gradient(top,#0fce98,#008cf5);background:-webkit-gradient(linear,0 0,0 bottom,from(#0fce98),to(#008cf5));background:-ms-linear-gradient(top,#0fce98,#008cf5);color:transparent;font-size:2rem;cursor:default;FILTER:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#0fce98,endColorStr=#008cf5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
  .banner .next i.nobg{background:0 0;color:#008cf5;}
- .bannerWrap{height:48rem;}
+ /*.bannerWrap{height:48rem;}*/
  .bannerLoop{position:relative;overflow:hidden;width:100%;height:100%;background-size:cover;}
  .bannerLoop .swiper-container{width:100%;height:100%!important;}
  .bannerLoop .swiper-container .swiper-wrapper{height:100%!important;}
@@ -92,6 +98,54 @@
  .bannerLoop .next{position:absolute;right:10px;bottom:3rem;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%);-ms-transform:translateX(-50%);}
  .bannerLoop .next i.iconfont{background:-moz-linear-gradient(top,#0fce98,#008cf5);background:-webkit-gradient(linear,0 0,0 bottom,from(#0fce98),to(#008cf5));background:-ms-linear-gradient(top,#0fce98,#008cf5);color:transparent;font-size:2rem;cursor:default;FILTER:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#0fce98,endColorStr=#008cf5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
  .bannerLoop .next i.nobg{background:0 0;color:#008cf5;}
+
+
+.ui.inverted.button {box-shadow: 0 0 0 2px #fff inset!important;background: transparent none;color: #fff;text-shadow: none!important;    margin-top: 18px;display: inline-block;padding: 0.5em 1em;}
+.ui.inverted.button:hover{color: #333;background: #fff;}
+.ui.slide.reveal>.visible.content{position: relative;transition-delay: 0s!important;transition: transform .5s ease .1s;top: 0;left: 0;width: 100%;height: 100%;}
+
+.ui.reveal{position:relative!important;display:inherit;font-size:0!important}
+.ui.reveal>.visible.content{position:absolute!important;top:0!important;left:0!important;z-index:3!important;transition:all .5s ease .1s}
+.ui.reveal>.hidden.content{position:relative!important;z-index:2!important}
+.ui.active.reveal.visible.content,.ui.reveal:hover.visible.content{z-index:4!important}
+.ui.slide.reveal{position:relative!important;overflow:hidden!important;white-space:nowrap}
+.ui.slide.reveal>.content{float:left;display:block;margin:0;width:100%;transition:transform .5s ease .1s}
+.ui.slide.reveal>.visible.content{position:relative!important}
+.ui.slide.reveal>.hidden.content{position:absolute!important;left:0!important;width:100%!important;transform:translateX(100%)!important}
+.ui.slide.active.reveal>.visible.content,.ui.slide.reveal:hover>.visible.content{transform:translateX(-100%)!important}
+.ui.slide.active.reveal>.hidden.content,.ui.slide.reveal:hover>.hidden.content,.ui.slide.right.reveal>.visible.content{transform:translateX(0)!important}
+.ui.slide.right.reveal>.hidden.content{transform:translateX(-100%)!important}
+.ui.slide.right.active.reveal>.visible.content,.ui.slide.right.reveal:hover>.visible.content{transform:translateX(100%)!important}
+.ui.slide.right.active.reveal>.hidden.content,.ui.slide.right.reveal:hover>.hidden.content{transform:translateX(0)!important}
+.ui.slide.up.reveal>.hidden.content{transform:translateY(100%)!important}
+.ui.slide.up.active.reveal>.visible.content,.ui.slide.up.reveal:hover>.visible.content{transform:translateY(-100%)!important}
+.ui.slide.up.active.reveal>.hidden.content,.ui.slide.up.reveal:hover>.hidden.content{transform:translateY(0)!important}
+.ui.slide.down.reveal>.hidden.content{transform:translateY(-100%)!important}
+.ui.slide.down.active.reveal>.visible.content,.ui.slide.down.reveal:hover>.visible.content{transform:translateY(100%)!important}
+.ui.slide.down.active.reveal>.hidden.content,.ui.slide.down.reveal:hover>.hidden.content{transform:translateY(0)!important}
+.ui.fade.reveal>.visible.content{opacity:1}
+.ui.fade.active.reveal>.visible.content,.ui.fade.reveal:hover>.visible.content{opacity:0}
+.ui.move.reveal{position:relative!important;overflow:hidden!important;white-space:nowrap}
+.ui.move.reveal>.content{float:left;display:block;margin:0;transition:transform .5s cubic-bezier(.175,.885,.32,1) .1s}
+.ui.move.reveal>.visible.content{position:relative!important}
+.ui.move.reveal>.hidden.content{position:absolute!important;left:0!important;width:100%!important}
+.ui.move.active.reveal>.visible.content,.ui.move.reveal:hover>.visible.content{transform:translateX(-100%)!important}
+.ui.move.right.active.reveal>.visible.content,.ui.move.right.reveal:hover>.visible.content{transform:translateX(100%)!important}
+.ui.move.up.active.reveal>.visible.content,.ui.move.up.reveal:hover>.visible.content{transform:translateY(-100%)!important}
+.ui.move.down.active.reveal>.visible.content,.ui.move.down.reveal:hover>.visible.content{transform:translateY(100%)!important}
+.ui.rotate.reveal>.visible.content{transition-duration:.5s;transform:rotate(0)}
+.ui.rotate.reveal>.visible.content,.ui.rotate.right.reveal>.visible.content{transform-origin:bottom right}
+.ui.rotate.active.reveal>.visible.content,.ui.rotate.reveal:hover>.visible.content,.ui.rotate.right.active.reveal>.visible.content,.ui.rotate.right.reveal:hover>.visible.content{transform:rotate(110deg)}
+.ui.rotate.left.reveal>.visible.content{transform-origin:bottom left}
+.ui.rotate.left.active.reveal>.visible.content,.ui.rotate.left.reveal:hover>.visible.content{transform:rotate(-110deg)}
+.ui.disabled.reveal:hover>.visible.visible.content{position:static!important;top:0!important;right:auto!important;bottom:auto!important;left:0!important;display:block!important;opacity:1!important;-webkit-transform:none!important;transform:none!important}
+.ui.disabled.reveal:hover>.hidden.hidden.content{display:none!important}
+.ui.visible.reveal{overflow:visible}
+.ui.instant.reveal>.content{transition-delay:0s!important}
+.ui.reveal>.content{font-size:1rem!important}
+
+
+
 @media screen and (max-width:1400px){
 
 }
