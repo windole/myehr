@@ -463,6 +463,22 @@
 .index .part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
 .index .part .title p.desc{margin-top:1.6rem;color:#666;font-size:16px;line-height:1rem;}
 .index .product.part .title p{color:rgb(105,105,105);}
+<<<<<<< HEAD
+=======
+.index .product.part .title span.line{background:#fff;}
+.iconwarp{margin:0 auto;padding-top:120px;padding-bottom:60px;width:905px;}
+.iconitem{position:relative;top:0;float:left;margin:13px;width:200px;height:200px;border-radius:50%;text-align:center;opacity:1!important;transition:all 1s;}
+.iconitem:nth-child(1){background: rgb(79,129,189);}
+.iconitem:nth-child(2){background: rgb(192,80,77);}
+.iconitem:nth-child(3){background: rgb(155,187,89);}
+.iconitem:nth-child(4){background: rgb(128,100,162);}
+.iconitem h2{margin:20px 0;color:#fff;font-size: 0.9em;font-weight: 100;}
+.iconitem:hover{background: rgba(0,0,0,.75);}
+.iconitem:hover h2,.iconitem:hover img{display: none;}
+.iconitem:hover p{display: block;}
+.iconitem p{padding:0 27px;color:#fff;font-size:12px;display: none;position: absolute;top: 45%;}
+.iconitem img{margin-top:38px;}
+>>>>>>> c404c0c65e555f6fdd309f17e6b85b761c46c543
 
 
 /*解决方案*/
@@ -479,13 +495,13 @@
 .index .solution.part .cont .swiper-container .swiper-wrapper .item a .img span.arrow{position:absolute;bottom:0;left:50%;display:block;width:20px;height:15px;background:url(../../../static/img/arrow_top.png) no-repeat center center;background-size:cover;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%);-ms-transform:translateX(-50%);}
 .index .solution.part .cont .swiper-container .swiper-wrapper .item a .img .shadow{position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:rgba(0,0,0,.4);opacity:0;-webkit-transition:all .6s;-moz-transition:all .6s;-o-transition:all .6s;transition:all .6s;-ms-transition:all .6s;filter:alpha(opacity=0);}
 .index .solution.part .cont .swiper-container .swiper-wrapper .item a .img .shadow span.icon{position:absolute;top:50%;left:50%;display:block;width:5rem;height:5rem;background:url(../../../static/img/moreIcon.png) no-repeat center center;background-size:contain;-webkit-transition:all .6s;-moz-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translate(-50%,-50%) scale(.2);-moz-transform:translate(-50%,-50%) scale(.2);-o-transform:translate(-50%,-50%) scale(.2);transform:translate(-50%,-50%) scale(.2);-ms-transform:translate(-50%,-50%) scale(.2);-ms-transition:all .6s;}
-.index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt{padding:1.5rem 2rem 0 2rem;width:100%;height:50%;color:#fff;text-align:center;font-size:1.3em;line-height:1.5em;}
+.index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt{padding:.5rem 2rem 0 2rem;width:100%;height:50%;color:#fff;text-align:center;font-size:0.9em;line-height:1.5em;}
 .item:nth-child(1) a .txt{background:#2ea7bd;}
 .item:nth-child(2) a .txt{background:#2280c3;}
 .item:nth-child(3) a .txt{background:#5858ac;}
 .item:nth-child(4) a .txt{background:#873dab;}
 .index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt i.iconfont{color:#037af2;font-size:2.4rem;}
-.index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt p.tit{margin-top:1.5rem;margin-bottom:1.3rem;color:#fff;text-align:center;font-size:1.5rem;line-height:1;}
+.index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt p.tit{margin-top:1.5rem;margin-bottom:1.3rem;color:#fff;text-align:center;font-size:1.1rem;line-height:1;}
 .index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt p{color:#666;text-align:justify;font-size:.9rem;line-height:1.8rem;}
 .index .solution.part .cont .swiper-container .swiper-wrapper .item a:hover .img a,.index .solution.part .cont .swiper-container .swiper-wrapper .item a:hover .img img{-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);-ms-transform:scale(1.1);}
 .index .solution.part .cont .swiper-container .swiper-wrapper .item a:hover .img .shadow{opacity:1;filter:alpha(opacity=100);}
@@ -635,6 +651,8 @@
     .index .part.client .ad .msg span{width:3rem;height:3rem;}
     .index .part.client .ad .msg p{font-size:18px;}
     .index .part.client .ad .msg p:first-line{font-size:26px;}
+    .index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt{padding-top: 1.5rem;font-size: 1.4em;}
+    .iconitem h2{margin:20px 0;font-size: 1.3em;}
 }
 
 

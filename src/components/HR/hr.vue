@@ -612,7 +612,7 @@
 .part.jixiao .cont .contentwrap>div{width: 48%;display: inline-block;margin:0 1% 1% 0;}
 .part.jixiao .cont .pic{width: 120px;height: 120px;border:1px solid #fff;text-align: center;}
 .part.jixiao .cont .pic img{width: 35px;margin: 1em;}
-.part.jixiao .cont p.tit{max-width: calc(100% - 125px);display: inline-block;padding-top: 3rem;}
+.part.jixiao .cont p.tit{max-width: calc(100% - 130px);display: inline-block;padding-top: 3rem;}
 .part.jixiao .cont .contentitem1 .pic{float: right;border-top-left-radius: 50%;border-bottom-left-radius: 50%;border-top-right-radius: 50%;}
 .part.jixiao .cont .contentitem2 .pic{float: left;border-top-left-radius: 50%;border-bottom-right-radius: 50%;border-top-right-radius: 50%;margin-right: 1%;}
 .part.jixiao .cont .contentitem3 .pic{float: right;border-top-left-radius: 50%;border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;}
