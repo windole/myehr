@@ -70,8 +70,8 @@
             <!-- 数据建模 -->
             <div class="part modal clear page-3 page">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p class="desc">MyeHR统一技术平台</p>
                     <p>多平台数据建模</p>
+                    <p class="desc">MyeHR统一技术平台</p>
                     <span class="line"></span>
                 </div>
                 <div class="cont">
@@ -81,8 +81,8 @@
             <!-- 架构 -->
             <div class="part architecture clear page-4 page">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p class="desc">MyeHR产品设计理念</p>
                     <p>技术平台总体架构</p>
+                    <p class="desc">MyeHR产品设计理念</p>
                     <span class="line"></span>
                 </div>
                 <div class="cont">

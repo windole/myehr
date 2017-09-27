@@ -29,6 +29,7 @@
             <div class="part solution clearfix page-2 page">
                 <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR服务模式</p>
+                    <p class="desc">咨询+平台+应用+项目二次开发，基于员工服务的深度应用平台提供</p>
                     <span class="line"></span>
                 </div>
                 <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="slideBox">
@@ -78,6 +79,7 @@
             <div class="part project page-3 page">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR解决方案</p>
+                    <p class="desc">全面化的员工管理及服务支撑平台，实现企业战略目标有效落地</p>
                     <span class="line"></span>
                 </div>
                 <div class="cont" ref="project">
@@ -192,12 +194,12 @@
             <div class="part company clear page-7 page">
                 <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR战略伙伴联盟</p>
-                    <span class="line"></span>
                     <p class="desc">携手多家合作伙伴，共同打造人力资源生态联盟</p>
+                    <span class="line"></span>
                 </div>
                 <div class="cont">
-                    <!-- <div class="company-left"></div>
-                    <div class="company-right"></div> -->
+                    <div class="company-left"></div>
+                    <div class="company-right"></div>
                 </div>
             </div>
 
@@ -457,33 +459,12 @@
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
 .index{width:100%;color: rgb(105,105,105);}
 .index .swiper-button-disabled{pointer-events:auto;}
-
-.index .part .title{padding-bottom:.5rem;text-align:center;}
-.index .part .title p{color:#333;font-size:24px;line-height:4.3rem;}
-.index .part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
-.index .part .title p.desc{margin-top:1.6rem;color:#666;font-size:16px;line-height:1rem;}
 .index .product.part .title p{color:rgb(105,105,105);}
-<<<<<<< HEAD
-=======
-.index .product.part .title span.line{background:#fff;}
-.iconwarp{margin:0 auto;padding-top:120px;padding-bottom:60px;width:905px;}
-.iconitem{position:relative;top:0;float:left;margin:13px;width:200px;height:200px;border-radius:50%;text-align:center;opacity:1!important;transition:all 1s;}
-.iconitem:nth-child(1){background: rgb(79,129,189);}
-.iconitem:nth-child(2){background: rgb(192,80,77);}
-.iconitem:nth-child(3){background: rgb(155,187,89);}
-.iconitem:nth-child(4){background: rgb(128,100,162);}
-.iconitem h2{margin:20px 0;color:#fff;font-size: 0.9em;font-weight: 100;}
-.iconitem:hover{background: rgba(0,0,0,.75);}
-.iconitem:hover h2,.iconitem:hover img{display: none;}
-.iconitem:hover p{display: block;}
-.iconitem p{padding:0 27px;color:#fff;font-size:12px;display: none;position: absolute;top: 45%;}
-.iconitem img{margin-top:38px;}
->>>>>>> c404c0c65e555f6fdd309f17e6b85b761c46c543
 
 
 /*解决方案*/
 .index .part .title.active{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0);-ms-transform:translateY(0);}
-.index .solution.part .cont{margin:0 auto;width:100%;max-width:1100px;-webkit-transition:all 1s .2s;-moz-transition:all 1s .2s;-o-transition:all 1s .2s;transition:all 1s .2s;-webkit-transform:translateY(3%);-moz-transform:translateY(3%);-o-transform:translateY(3%);transform:translateY(3%);-ms-transform:translateY(3%);-ms-transition:all 1s .2s;}
+.index .solution.part .cont{margin:0 auto;width:100%;max-width:1200px;transition:all 1s .2s;transform:translateY(12%);}
 .index .solution.part .cont .swiper-container{position:relative;height:42rem;}
 .index .solution.part .cont .swiper-container .swiper-wrapper{height:100%!important;}
 .index .solution.part .cont .swiper-container .swiper-wrapper .item{float:left;overflow:hidden;width:25vw;height:100%;}
@@ -522,7 +503,7 @@
 .index .solution.part .cont.active{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0);-ms-transform:translateY(0);}
 .index .solution.part .cont.active .swiper-container .swiper-wrapper .item a .img{-webkit-transform:rotateY(0);-moz-transform:rotateY(0);-o-transform:rotateY(0);transform:rotateY(0);-ms-transform:rotateY(0);}
 
-.index .project .cont{width: 70%;margin-left: 15%;}
+.index .project .cont{width: 70%;margin-left: 15%;transform: translateY(8%);transition: all 1s .2s;}
 .index .project .cont .contentwrap{width: 100%;display: flex; flex-wrap: wrap;}
 .index .project .cont .contentwrap .contentitem{display: inline-block;width: 33.3%;padding-top: 2rem;text-align: center;opacity: 1!important;-webkit-animation-name: bounceInUp;animation-name: bounceInUp;-webkit-transform-origin: center bottom;transform-origin: center bottom;}
 .index .project .cont .contentwrap .contentitem .left-img{width: 65px;height: 65px;border-radius: 10px;margin:0 auto 10px;background-position: center;background-repeat: no-repeat;}
@@ -550,14 +531,13 @@
 .index .part.compare .compare-left .content li:nth-child(4) .img{background: rgb(142,92,212) url(../../../static/img/compare4.png)no-repeat center;background-size: 55%;}
 .index .part.compare .compare-right .content{margin-top:5rem;text-align: center;}
 .index .part.compare .compare-right .content img{width: 260px;}*/
-
-.index .part.company .cont{height: calc(100% - 123px);background:#086DE1 url(../../../static/img/allcompany1.png) no-repeat center;background-size: 85%;}
+.index .part.company{background:url(../../../static/img/banner/5.jpg) no-repeat;background-size: cover;}
+.index .part.company .cont{height: calc(100% - 123px);/*background:url(../../../static/img/allcompany2.png) no-repeat center;background-size: 85%;*/}
 .index .part.company .cont>div{width: 49%;display: inline-block;vertical-align: top;height: 100%;}
 
 .index .part.company .cont img{width: 60%;}
-.index .part.company .cont .company-left{margin-left: 1.66%;background: url(../../../static/img/company1.png) no-repeat 60% center;background-size: 65%;}
+.index .part.company .cont .company-left{margin-left: 1.66%;background: url(../../../static/img/company1.png) no-repeat 60% center;background-size: 60%;}
 .index .part.company .cont .company-right{background: url(../../../static/img/company2.png) no-repeat 40%;background-size: 65%;}
-/*.index .part.company .cont .company-right img{float: right;}*/
 
 
 
@@ -567,11 +547,13 @@
 
 
 .index .part.product .cont{width: 80%;margin-left: 10%;margin-top: 5rem;}
-.index .part.product .cont .row .ui.item{width: 24%;height: 0;padding-bottom: 22%;margin-right: 1%;box-sizing: border-box;}
-.index .part.product .cont .row .ui .content{width: 100%;height: 0;padding-bottom: 100%;}
-.index .part.product .cont .row .ui .cell {display: table-cell;width: 260px;height: 220px;vertical-align: middle;text-align: center;}
-.index .part.product .cont .row .hidden .text {height: 100%;background-color: #0cf;}
+.index .part.product .cont .row .ui.item{width: 24%;height: 0;padding-bottom: 24%;margin-right: 1%;box-sizing: border-box;}
+.index .part.product .cont .row .ui .content{width: 100%;height: 0;padding-bottom: 100%;background-size: cover;background-repeat: no-repeat;}
+.index .part.product .cont .row .ui .cell{text-align: center;}
+.index .part.product .cont .row .ui .visible .cell {display: flex;justify-content: center;align-items: center;height: 240px;}
+.index .part.product .cont .row .hidden .text {height: 100%;background-color: #0cf;margin-top: -12px;}
 .index .part.product .cont .row .ui  .cell p {color: #fff;font-size: 16px;margin-top: 12px;}
+.index .part.product .cont .row .hidden p{padding-top: 30%;width: 80%;margin: 0 auto;word-wrap: break-word;text-align: center;}
 
 
 
@@ -605,7 +587,7 @@
 .index .part.product .cont .btm .item:last-child a i.iconfont{float:none;margin-bottom:1.5rem;}
 .index .part.product .cont .btm .item:last-child a .txt{float:none;}
 .index .part.product .cont .btm .item:last-child a .txt p{font-size:18px;line-height:1;}*/
-.index .part.client{width:100%;background: rgb(7, 108, 224);}
+.index .part.client{width:100%;}
 .index .part.client .ad{width:100%;height:33rem;background-size:cover;-webkit-transition:all .6s;-moz-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(20%);-moz-transform:translateY(20%);-o-transform:translateY(20%);transform:translateY(20%);-ms-transform:translateY(20%);-ms-transition:all .6s;}
 .index .part.client .ad.active{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0);-ms-transform:translateY(0);}
 .index .part.client .ad .msg{padding-top:7.5rem;color:#fff;text-align:center;}
@@ -614,9 +596,8 @@
 .index .part.client .ad .msg p:first-line{font-size:1.8rem;line-height:5.5rem;}
 
 
-.client.case .title p{color: #fff;}
 .case .case_list{margin:0 auto;width:67.5rem;}
-.case .case_list .title{margin-bottom: 4rem;padding-bottom: 0;border-bottom: 2px solid #fff;}
+.case .case_list .title{margin-bottom: 4rem;padding-bottom: 0;border-bottom: 2px solid #ccc;}
 .case .case_list .title ul li{float:left;display:inline-block;width:14%;height:2.8rem;color:#fff;text-align:center;font-size:16px;line-height:2.6rem;cursor:default;background: #adbac5;margin-right: 0.25%;}
 .case .case_list .title ul li:nth-child(1),.case .case_list .title ul li:nth-child(7){background-color:;}{background-color:#5082BD;}
 .case .case_list .title ul li:nth-child(2){background-color:#C0514E;}
@@ -653,6 +634,7 @@
     .index .part.client .ad .msg p:first-line{font-size:26px;}
     .index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt{padding-top: 1.5rem;font-size: 1.4em;}
     .iconitem h2{margin:20px 0;font-size: 1.3em;}
+    .index .solution.part .cont{max-width:1200px;transition:all 1s .2s;transform:translateY(6%);}
 }
 
 
@@ -687,6 +669,7 @@
     .index .part.client .ad .msg{padding-top:50px;}
     .index .part.client .ad .msg p{font-size:16px;line-height:40px;}
     .index .part.client .ad .msg p:fistt-line{font-size:24px;}
+    .index .solution.part .cont{max-width:1100px;transition:all 1s .2s;transform:translateY(3%);}
 }
 
 

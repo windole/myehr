@@ -349,36 +349,26 @@
                     <p>提升员工执行力</p>
                     <p class="desc">企业战略目标的全面有效落地及全过程管控</p>
                 </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contentwrap">
-                        <div class="contentitem1">
-                            <p class="tit">快速形成战略目标对于整体组织架构的目标拆解和跟踪；</p>
-                            <div class="pic">
-                                <img src="static/img/jixiao/1.png" alt="">
-                                <p>快速目标分解</p>
-                            </div>
-                        </div>
-                        <div class="contentitem2">
-                            <div class="pic">
-                                <img src="static/img/jixiao/2.png" alt="">
-                                <p>全过程管控</p>
-                            </div>
-                            <p class="tit">目标、计划、任务、绩效相统一，保证目标的有效执行；</p>
-                        </div>
-                        <div class="contentitem3">
-                            <p class="tit">实现在目标执行过程中的任务回馈、纠偏和风险控制；并且可以多部门协同完成；</p>
-                            <div class="pic">
-                                <img src="static/img/jixiao/3.png" alt="">
-                                <p>便捷任务反馈</p>
-                            </div>
-                        </div>
-                        <div class="contentitem4">
-                            <div class="pic">
-                                <img src="static/img/jixiao/4.png" alt="">
-                                <p>目标与工作统一</p>
-                            </div>
-                            <p class="tit">构建一个以岗位为依托的目标执行体系，并且可通过图表方便了解工作进度；</p>
-                        </div>
+                <div class="cont flexbox" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                    <div class="inner">
+                        <li class="inimg"><img src="/static/img/jixiao/1.png" alt="" /></li>
+                        <li class="inhead"><p>快速目标分解</p></li>
+                        <li class="indetail"><p>快速形成战略目标对于整体组织架构的目标拆解和跟踪；</p></li>
+                    </div>
+                    <div class="inner">
+                        <li class="inimg"><img src="/static/img/jixiao/2.png" alt="" /></li>
+                        <li class="inhead"><p>全过程管控</p></li>
+                        <li class="indetail"><p>目标、计划、任务、绩效相统一，保证目标的有效执行；</p></li>
+                    </div>
+                    <div class="inner">
+                        <li class="inimg"><img src="/static/img/jixiao/3.png" alt="" /></li>
+                        <li class="inhead"><p>便捷任务反馈</p></li>
+                        <li class="indetail"><p>实现在目标执行过程中的任务回馈、纠偏和风险控制；并且可以多部门协同完成；</p></li>
+                    </div>
+                    <div class="inner">
+                        <li class="inimg"><img src="/static/img/jixiao/4.png" alt="" /></li>
+                        <li class="inhead"><p>目标与工作统一</p></li>
+                        <li class="indetail"><p>构建一个以岗位为依托的目标执行体系，并且可通过图表方便了解工作进度；</p></li>
                     </div>
                 </div>
             </div>
@@ -502,7 +492,7 @@
 .control .cont{width: 70%;margin-left: 15%;margin-top: 3rem;}
 .control .cont .contwrap{width: 100%;display: flex; flex-wrap: wrap;}
 .part.control .cont .contwrap>div{width: 48%;display: inline-block;}
-.part.control .cont .contwrap h3{color: #000;margin-bottom: .5em;}
+.part.control .cont .contwrap h3{color: #333;margin-bottom: .5em;}
 .part.control .cont .contwrap .left-items{margin-right: 2%;}
 .part.control .cont .contwrap .right-items{margin-left: 2%;}
 .control .cont .contwrap .item{height: 80px;margin-bottom:10px;vertical-align: middle;}
@@ -524,25 +514,24 @@
 .control .cont .contwrap .right-items .item:nth-child(5) .left{background:rgb(142,92,212) url(../../../static/img/control/control10.png) no-repeat center center/50%;}
 
 /*薪酬管理*/
-.part.compensationManagement{background-color:rgb(7, 108, 224); }
-.part.compensationManagement .title  p{color: #fff;}
-.part.compensationManagement .title  p.desc{color: #fff;}
+
 .compensationManagement .cont{width: 50%;margin-left: 25%;margin-top: 3rem;}
 .three-cols {margin: -1px 0 0 0!important;border-top: 1px solid #3099c2;border-bottom: 1px solid #3099c2;
     display: flex;}
+.compensationManagement  .three-cols{border:none;}
 .three-cols .col-border {border-right: 1px solid #3099c2;}
-.three-cols .col-sm-4 {width: 33.3%;height: 0;padding-bottom: 28%;display: inline-block;color: #fff;}
-.three-cols .col-img {border-radius: 50%;display: block;font-size: 16px;width: 70px;height: 70px;line-height: 70px;margin: 10px auto 0;}
-.three-cols:nth-child(1) .col-sm-4:nth-child(1) .col-img{background: url(../../../static/img/moneycom/1.png)no-repeat center/30%;}
-.three-cols:nth-child(1) .col-sm-4:nth-child(2) .col-img{background: url(../../../static/img/moneycom/2.png)no-repeat center/30%;}
-.three-cols:nth-child(1) .col-sm-4:nth-child(3) .col-img{background: url(../../../static/img/moneycom/3.png)no-repeat center/30%;}
-.three-cols:nth-child(2) .col-sm-4:nth-child(1) .col-img{background: url(../../../static/img/moneycom/4.png)no-repeat center/30%;}
-.three-cols:nth-child(2) .col-sm-4:nth-child(2) .col-img{background: url(../../../static/img/moneycom/5.png)no-repeat center/30%;}
-.three-cols:nth-child(2) .col-sm-4:nth-child(3) .col-img{background: url(../../../static/img/moneycom/6.png)no-repeat center/30%;}
-.three-cols .col-sm-4:hover{background-color: rgb(79,129,189);}
-.three-cols .col-sm-4:hover .col-img{background-color: rgb(155,187,89)!important;}
+.compensationManagement .three-cols .col-border{border:none;}
+.three-cols .col-sm-4 {width: 33.3%;height: 0;padding-bottom: 28%;display: inline-block;}
+.compensationManagement .three-cols .col-sm-4:hover {box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);}
+.three-cols .col-img {border-radius: 50%;display: block;font-size: 16px;width: 80px;height: 80px;line-height: 80px;margin: 10px auto 0;}
+.three-cols:nth-child(1) .col-sm-4:nth-child(1) .col-img{background: url(../../../static/img/moneycom/1.png)no-repeat center/40%;}
+.three-cols:nth-child(1) .col-sm-4:nth-child(2) .col-img{background: url(../../../static/img/moneycom/2.png)no-repeat center/40%;}
+.three-cols:nth-child(1) .col-sm-4:nth-child(3) .col-img{background: url(../../../static/img/moneycom/3.png)no-repeat center/40%;}
+.three-cols:nth-child(2) .col-sm-4:nth-child(1) .col-img{background: url(../../../static/img/moneycom/4.png)no-repeat center/40%;}
+.three-cols:nth-child(2) .col-sm-4:nth-child(2) .col-img{background: url(../../../static/img/moneycom/5.png)no-repeat center/40%;}
+.three-cols:nth-child(2) .col-sm-4:nth-child(3) .col-img{background: url(../../../static/img/moneycom/6.png)no-repeat center/40%;}
 .three-cols h4{line-height: 2em;}
-.three-cols p{width: 90%;margin: 0 auto;}
+.three-cols p{width: 90%;margin: 0 auto;font-weight: 400;font-size: 14px;line-height: 1.25125rem;}
 .compensationManagement .cont .three-cols .brnone{border-right: 0;}
 
 /*人事管理*/
@@ -555,7 +544,7 @@
 .cont ul.lefttxt li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
 
 /*考勤管理*/
-.part.attenceManagement{background-color:rgb(7, 108, 224); }
+.part.attenceManagement{background:url(../../../static/img/banner/1.jpg) no-repeat;background-size:cover; }
 .part.attenceManagement .title  p{color: #fff;}
 .part.attenceManagement .title  p.desc{color: #fff;}
 .attenceManagement .cont{width: 68%;margin-left: 16%;margin-top: 3rem;}
@@ -564,16 +553,15 @@
 .four-cols .col-border {border-right: 1px solid #3099c2;}
 .four-cols .col-sm-3 {width: 25%;height: 0;padding-bottom: 21%;display: inline-block;color: #fff;}
 .four-cols .col-img {border-radius: 50%;display: block;font-size: 16px;width: 70px;height: 70px;line-height: 70px;margin: 10px auto 0;}
-.four-cols:nth-child(1) .col-sm-3:nth-child(1) .col-img{background: url(../../../static/img/attench/1.png)no-repeat center/30%;}
-.four-cols:nth-child(1) .col-sm-3:nth-child(2) .col-img{background: url(../../../static/img/attench/2.png)no-repeat center/30%;}
-.four-cols:nth-child(1) .col-sm-3:nth-child(3) .col-img{background: url(../../../static/img/attench/3.png)no-repeat center/30%;}
-.four-cols:nth-child(1) .col-sm-3:nth-child(4) .col-img{background: url(../../../static/img/attench/4.png)no-repeat center/30%;}
-.four-cols:nth-child(2) .col-sm-3:nth-child(1) .col-img{background: url(../../../static/img/attench/5.png)no-repeat center/30%;}
-.four-cols:nth-child(2) .col-sm-3:nth-child(2) .col-img{background: url(../../../static/img/attench/6.png)no-repeat center/30%;}
-.four-cols:nth-child(2) .col-sm-3:nth-child(3) .col-img{background: url(../../../static/img/attench/7.png)no-repeat center/30%;}
-.four-cols:nth-child(2) .col-sm-3:nth-child(4) .col-img{background: url(../../../static/img/attench/8.png)no-repeat center/30%;}
+.four-cols:nth-child(1) .col-sm-3:nth-child(1) .col-img{background: url(../../../static/img/attench/1.png)no-repeat center/50%;}
+.four-cols:nth-child(1) .col-sm-3:nth-child(2) .col-img{background: url(../../../static/img/attench/2.png)no-repeat center/50%;}
+.four-cols:nth-child(1) .col-sm-3:nth-child(3) .col-img{background: url(../../../static/img/attench/3.png)no-repeat center/50%;}
+.four-cols:nth-child(1) .col-sm-3:nth-child(4) .col-img{background: url(../../../static/img/attench/4.png)no-repeat center/50%;}
+.four-cols:nth-child(2) .col-sm-3:nth-child(1) .col-img{background: url(../../../static/img/attench/5.png)no-repeat center/50%;}
+.four-cols:nth-child(2) .col-sm-3:nth-child(2) .col-img{background: url(../../../static/img/attench/6.png)no-repeat center/50%;}
+.four-cols:nth-child(2) .col-sm-3:nth-child(3) .col-img{background: url(../../../static/img/attench/7.png)no-repeat center/50%;}
+.four-cols:nth-child(2) .col-sm-3:nth-child(4) .col-img{background: url(../../../static/img/attench/8.png)no-repeat center/50%;}
 .four-cols .col-sm-3:hover{background-color: rgb(79,129,189);}
-.four-cols .col-sm-3:hover .col-img{background-color: rgb(155,187,89)!important;}
 .four-cols h4{line-height: 2em;}
 .four-cols p{width: 90%;margin: 0 auto;}
 .attenceManagement .cont .four-cols .brnone{border-right: 0;}
@@ -606,18 +594,14 @@
 .part.baobiao .cont h2{font-size: 24px;line-height: 40px;}
 
 /*绩效*/
-.part.jixiao{background-color:#136DC7;color: #fff;}
-.part.jixiao .title p,.part.jixiao .title p.desc{color: #fff;}
-.part.jixiao .cont{width: 60%;margin-left: 20%;margin-top: 5rem;}
-.part.jixiao .cont .contentwrap>div{width: 48%;display: inline-block;margin:0 1% 1% 0;}
-.part.jixiao .cont .pic{width: 120px;height: 120px;border:1px solid #fff;text-align: center;}
-.part.jixiao .cont .pic img{width: 35px;margin: 1em;}
-.part.jixiao .cont p.tit{max-width: calc(100% - 130px);display: inline-block;padding-top: 3rem;}
-.part.jixiao .cont .contentitem1 .pic{float: right;border-top-left-radius: 50%;border-bottom-left-radius: 50%;border-top-right-radius: 50%;}
-.part.jixiao .cont .contentitem2 .pic{float: left;border-top-left-radius: 50%;border-bottom-right-radius: 50%;border-top-right-radius: 50%;margin-right: 1%;}
-.part.jixiao .cont .contentitem3 .pic{float: right;border-top-left-radius: 50%;border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;}
-.part.jixiao .cont .contentitem4 .pic{float: left;border-bottom-right-radius: 50%;border-bottom-left-radius: 50%;border-top-right-radius: 50%;margin-right: 1%;}
-
+.part.jixiao .flexbox{display:flex;margin-top:5rem;padding:0 2%;flex-direction:row;flex-wrap:wrap;}
+.part.jixiao .inner{position:relative;box-sizing:border-box;margin:0 2%;padding-bottom:20%;width:21%;height:0;}
+.part.jixiao .inner li{width:100%;padding-top:5%;text-align: center;}
+.part.jixiao .inner li p{font-size:14px}
+.part.jixiao .inner .inimg{padding-top:7%;text-align:center;min-height: 80px;}
+.part.jixiao .inner .inhead p{text-align:center;color: #333;font-size: 20px;}
+.part.jixiao .inner .indetail p{color:#666;padding:0 10%}
+.part.jixiao .inner img{width:20%}
 
 
 

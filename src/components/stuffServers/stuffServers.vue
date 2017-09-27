@@ -347,8 +347,8 @@
 /*服务场景*/
 .part.scenenet .cont{height: calc(100% - 144px);width: 100%;}
 .part.scenenet .cont .contentwrap{width: 80%;margin-left: 10%;height:100%;background: url(../../../static/img/scenenet.png) no-repeat center;background-size: 65%;position: relative;}
-.part.scenenet .cont .contentwrap .item{width: 65px;height: 65px;border-radius:50%;background-color: hotpink;line-height: 65px;text-align: center;color: #fff;position: absolute;}
-.part.scenenet .cont .contentwrap .item:nth-child(1){top: 23.8%;left: 27.2%;background-color: rgb(79,129,189);}
+.part.scenenet .cont .contentwrap .item{width: 90px;height: 90px;border-radius:50%;background-color: hotpink;line-height: 90px;text-align: center;color: #fff;position: absolute;}
+.part.scenenet .cont .contentwrap .item:nth-child(1){top: 27.8%;left: 27.2%;background-color: rgb(79,129,189);}
 .part.scenenet .cont .contentwrap .item:nth-child(2){top: 51%;left: 38.5%;background-color: rgb( 192,80,77);}
 .part.scenenet .cont .contentwrap .item:nth-child(3){top: 55.8%;left: 27.2%;background-color: rgb(34,128,195);}
 .part.scenenet .cont .contentwrap .item:nth-child(4){top: 29%;left: 40%;background-color: rgb(155,187,89);}
@@ -364,7 +364,7 @@
 
 .inner li{width:100%;padding-top:5%;text-align: center;}
 .inner li p{font-size:14px}
-.inner .inimg{padding-top:7%;text-align:center;height: 80px;}
+.inner .inimg{padding-top:7%;text-align:center;min-height: 80px;}
 .inner .inhead p{text-align:center;color: #333;font-size: 20px;}
 .inner .indetail p{color:#666;padding:0 10%}
 .inner img{width:30%}
@@ -375,11 +375,16 @@
 .part.scene .cont{width: 80%;margin-left: 10%;}
 .part.scene .cont .row .ui.item{width: 24%;height: 0;padding-bottom: 22%;margin-right: 1%;box-sizing: border-box;}
 .part.scene .cont .row .ui .content{width: 100%;height: 0;padding-bottom: 100%;background-color: rgba(0,0,0,.3);}
-.part.scene .cont .row .ui .cell {display: table-cell;width: 240px;height: 192px;vertical-align: middle;text-align: center;background-color: rgba(0,0,0,.3);}
+/*.part.scene .cont .row .ui .cell {display: table-cell;width: 240px;height: 192px;vertical-align: middle;text-align: center;background-color: rgba(0,0,0,.3);}
 .part.scene .cont .row .hidden .text {height: 100%;background-color: #0cf;}
 .part.scene .cont .row .ui  .cell p {color: #fff;font-size: 16px;width: 80%;margin: 0 auto;}
-.part.scene .cont .row .ui .hidden  .cell p {font-size: 12px;}
+.part.scene .cont .row .ui .hidden  .cell p {font-size: 12px;}*/
 
+.part.scene .cont .row .ui .cell{text-align: center;}
+.part.scene .cont .row .ui .visible .cell {display: flex;justify-content: center;align-items: center;height: 320px;}
+.part.scene .cont .row .hidden .text {height: 100%;background-color: #0cf;}
+.part.scene .cont .row .ui  .cell p {color: #fff;font-size: 16px;margin-top: 12px;}
+.part.scene .cont .row .hidden p{padding-top: 30%;width: 80%;margin: 0 auto;word-wrap: break-word;text-align: center;}
 
 /*考勤管理 begin*/
 .attendance{background:#076ce0;opacity: 1!important;}
@@ -405,7 +410,7 @@
 
 
 @media screen and (max-width:1400px){
-
+      .part.scenenet .cont .contentwrap .item{width: 80px;height: 80px;border-radius:50%;background-color: hotpink;line-height: 80px;text-align: center;color: #fff;position: absolute;}
 }
 
 
@@ -420,6 +425,7 @@
     .part .title p.desc{margin-top:20px;font-size:12px;line-height:1;}
     .part .cont .more{margin:30px auto;width:15.4%;height:30px;line-height:30px;}
     .part .cont .more a{font-size:14px;line-height:30px;}
+    .part.scenenet .cont .contentwrap .item{width: 65px;height: 65px;border-radius:50%;background-color: hotpink;line-height: 65px;text-align: center;color: #fff;position: absolute;}
 }
 
 

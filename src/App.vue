@@ -61,9 +61,9 @@
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
 .page{padding-top:5rem;}
 .part .title{text-align:center;transition:all 1s;}
-.part .title p{color:#333;font-size:24px;line-height:4.3rem;}
+.part .title p{line-height:5.3rem;font-size: 2.1em;font-weight: 400;color: #036;}
 .part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
-.part .title p.desc{color:#666;font-size:16px;line-height:1rem;}
+.part .title p.desc{color:#333;font-size:20px;line-height:1rem;}
 .main-content{width: 100%;height: 100vh;}
  .swiper-button-disabled{pointer-events:auto;}
  .banner{position:relative;overflow:hidden;width:100%;height:46rem;background:rgba(0,0,0,.4);}

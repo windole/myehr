@@ -8,10 +8,10 @@
                         <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner5.jpg)'}"></div>
                         <div class="txt">
                             <div class="tit clear">
-                                <h4>致力于打造人力资源全新生态圈</h4>
                                 <div class="tips" style="display:block;">
-                                    <p style="width:100%;">把握市场机遇，合作共赢发展</p>
+                                    <p style="width:100%;">致力于打造人力资源全新生态圈</p>
                                 </div>
+                                <h4>把握市场机遇，合作共赢发展</h4>
                             </div>
                             <div class="en">
                                 <p>加入我们，携手共赢</p>
@@ -55,10 +55,27 @@
         </div>
 
         <div class="step">
-            <img src="static/img/step.png" alt="">
+            <div class="img"><img src="static/img/step.png" alt=""></div> 
+            <div class="ui container">
+                <div class="ui segment paragraph">
+                    <div class="ui vertical aligned segment top">
+                        <div class="summary">
+                            <h2>合作共赢、协同发展</h2>
+                        </div>
+                        <p>我们始终保持开放的心态，真诚欢迎您的到来。</p>
+                    </div>
+                    <div class="ui vertical aligned segment">
+                        <i class="icon-about-hand"></i>
+                        <h4>商务合作请联系</h4>
+                        <p class="email">13122069450</p>
+                        <p class="email">myehr@163.com</p>                            
+                    </div>
+                </div>
+            </div>         
         </div>
         
         <v-foot></v-foot>
+        <v-top></v-top>
     </div>
 </template>
 <script type="text/javascript">
@@ -66,6 +83,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import top from './../top.vue';
     export default{
         data() {
             return {
@@ -114,7 +132,8 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'vTop': top
         },
         methods: {
             menu() {
@@ -132,23 +151,44 @@
 <style type="text/css" scoped>
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
 .ecology{width:100%;color: rgb(105,105,105);}
-
+.ecology .bannerWrap{height:100vh;}
 .part .title{/*padding-top:1.3rem;*/padding-bottom:2.5rem;text-align:center;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;-webkit-transform:translateY(30%);-moz-transform:translateY(30%);-o-transform:translateY(30%);transform:translateY(30%);-ms-transform:translateY(30%);-ms-transition:all 1s;}
 .part .title p{color:#333;font-size:24px;line-height:4.3rem;}
 .part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
 .part .title p.desc{margin-top:1.6rem;color:#666;font-size:16px;line-height:1rem;}
 
 .plan{margin: 3rem 10% 5rem;width: 80%;}
-.plan h2{text-align: center;font-size: 20px;height: 3rem;line-height: 3rem;}
-.plan p{text-indent: 2em;line-height: 1.8em;}
+.plan h2{text-align: center;line-height:5.3rem;font-size: 2.1em;font-weight: 400;color: #036;}
+.plan p{text-indent: 2em;line-height: 1.8em;color:#333;}
 
 .ecologyWrap{width:80%;margin-left:10%;display: flex;justify-content: center;margin-bottom: 5rem;}
 .ecologyWrap .ecologyItem{width: 25%;text-align: center;}
-.ecologyWrap .ecologyItem .pic{width: 80%;height: 0;padding-bottom: 80%;border-radius: 50%;border:3px solid hotpink;}
-.ecologyWrap .ecologyItem .pic img{margin: 2.2em 0 2em;}
-.ecologyWrap .ecologyItem p{width: 80%;}
-.step img{width: 100%;}
+.ecologyWrap .ecologyItem .pic{width: 68%;height: 0;padding-bottom: 68%;border-radius: 50%;margin:0 auto;}
+.ecologyWrap .ecologyItem:nth-child(1) .pic{border:3px solid rgb(46,167,189);}
+.ecologyWrap .ecologyItem:nth-child(2) .pic{border:3px solid rgb(34,128,195);}
+.ecologyWrap .ecologyItem:nth-child(3) .pic{border:3px solid rgb(88,88,172);}
+.ecologyWrap .ecologyItem .pic img{margin: 2.2em 0 .5em;max-width: 90px;}
+.ecologyWrap .ecologyItem .pic h3{color: #333;}
+.ecologyWrap .ecologyItem p{width: 65%;margin:0 auto;height: 8.5rem;display: table-cell;vertical-align: middle;    padding: 0 2em;
+    text-indent: 2em;text-align: left;}
+.step{text-align: center;margin-bottom:3em;}
+.step .img{width: 100%;margin:0 auto;padding: 0 10%;background-color:#F4F4F4;}
+.step .img img{width: 100%;}
+.step .paragraph {padding: 0 48px;position: relative;margin:1rem 0;}
+.step .ui.segment .ui.vertical.segment {height: 50%;padding-top: 50px;position: relative;}
+.step .ui.segment .ui.vertical.segment.top:before {position: absolute;content: "";width: 170px;
+    height: 2px;background-color: #0cf;bottom: -40px;left: 50%;margin-left: -85px;}
+.summary h2 {font-size: 38px;font-weight: 400;margin-bottom: 40px;color: #036;}
+.step .ui.segment .ui.vertical.segment p {color: #666;line-height: 28px;}
+.ui.vertical.segment .icon-about-hand {display: inline-block;margin: 30px 0;font-size: 80px;color: #036;}
+.step .ui.segment .ui.vertical.segment h4 {margin-bottom: 10px;}
+.ui.vertical.segment .email {font-size: 18px;color: #036;}
 
+
+
+
+
+.ecology .footer{top: 0;}
 
 @media screen and (max-width:767px){
      .part .title p{font-size:1.7rem;}
@@ -164,7 +204,7 @@
 
 
 @media screen and (max-width:1400px){
-
+    
 }
 
 
@@ -203,7 +243,10 @@
     .part .cont .more{margin-top:2.3rem;margin-bottom:3rem;width:10rem;height:2.7rem;}
     .part .cont .more a{font-size:1rem;}
 }
+@media only screen and (min-width: 1200px){
+.ui.container {width: 1200px!important;margin:0 auto;}
 
+}
 
 
 </style>
