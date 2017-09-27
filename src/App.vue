@@ -59,6 +59,7 @@
 
 <style>
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
+.op1{opacity: 1!important;}
 .page{padding-top:5rem;}
 .part .title{text-align:center;transition:all 1s;}
 .part .title p{line-height:5.3rem;font-size: 2.1em;font-weight: 400;color: #036;}

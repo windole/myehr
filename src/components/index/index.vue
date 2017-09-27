@@ -82,9 +82,9 @@
                     <p class="desc">全面化的员工管理及服务支撑平台，实现企业战略目标有效落地</p>
                     <span class="line"></span>
                 </div>
-                <div class="cont" ref="project">
+                <div class="cont" v-animate="{value: 'zoomIn',delay:600}" ref="project">
                     <div class="contentwrap">
-                        <div v-for="item in projectData" class="contentitem zoomInDown" v-animate="{value: 'zoomInDown'}">
+                        <div v-for="item in projectData" class="contentitem" v-animate="{value: 'zoomInDown'}">
                             <div class="left-img" :style="{backgroundImage:' url(\'static/'+item.ProjectIcon+'\')'}" >
                             </div>
                             <h3 class="right-con">{{item.ProjectTit}}</h3>
@@ -145,9 +145,9 @@
                     <p>为什么选择MyeHR？</p>
                     <span class="line"></span>
                 </div>
-                <div class="cont grid" ref="aboutus">
-                    <div class="row">
-                        <div class="ui item slide down instant reveal" v-for="item in product">
+                <div class="cont grid">
+                    <div class="row" >
+                        <div class="ui item slide down instant reveal op1" v-for="item in product" >
                             <div class="visible content">
                                 <div class="graphic health content" :style="{backgroundImage:'url('+ item.ProductThumb +')'}">
                                     <div class="cell">
@@ -198,7 +198,7 @@
                     <span class="line"></span>
                 </div>
                 <div class="cont">
-                    <div class="company-left"></div>
+                    <div class="company-left op1" v-animate="{value: 'rollIn'}"></div>
                     <div class="company-right"></div>
                 </div>
             </div>
@@ -634,7 +634,8 @@
     .index .part.client .ad .msg p:first-line{font-size:26px;}
     .index .solution.part .cont .swiper-container .swiper-wrapper .item a .txt{padding-top: 1.5rem;font-size: 1.4em;}
     .iconitem h2{margin:20px 0;font-size: 1.3em;}
-    .index .solution.part .cont{max-width:1200px;transition:all 1s .2s;transform:translateY(6%);}
+    .index .solution.part .cont{max-width:1100px;transition:all 1s .2s;transform:translateY(6%);}
+    .index .project .cont .contentwrap .contentitem{padding-top: 1em;}
 }
 
 
