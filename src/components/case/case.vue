@@ -1,6 +1,6 @@
  <template>
     <div class="case fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="example">
+        <div class="fullpage-wp" v-fullpage="opts" ref="case">
             <!-- banner广告 -->
             <div class="bannerWrap page-1 page" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
@@ -26,9 +26,14 @@
             </div>
             <loading v-if="!showBanner"></loading>
             <!-- 我们的客户 -->
-            <div class="part client case clear page-6 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>MyeHR典型客户</p>
+            <div class="part client case clear page-2 page">
+                <div class="title">
+                    <div class="bg-w">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="cont">
+                        <p>MyeHR典型客户</p>
+                    </div>                   
                 </div>
                 <div class="case_list" >
                     <div class="title">
@@ -47,8 +52,9 @@
                     </div>
                 </div>
             </div>
-            <v-foot class="page-9 page"></v-foot>
+            <v-foot class="page-3 page"></v-foot>
         </div>
+        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
     </div>
 </template>
 <script type="text/javascript">
@@ -57,6 +63,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import navBar from './../navBar.vue';
     export default{
         data() {
             return {
@@ -71,6 +78,8 @@
                 allCaseLogo: [],
                 projectData: [],
                 currentType: 1,
+                pageNum: 3,
+                currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
                     autoplay: false,
@@ -108,14 +117,19 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveNext() {
-                this.$refs.example.$fullpage.moveNext(); // Move to the next page
+            moveTo(index) {
+                this.$refs.case.$fullpage.moveTo(index, true); // Move to the next page
+            },
+            checkNavIndex() {
+                let index = this.$refs.case.$fullpage.curIndex;
+                this.currentNavIndex = index;
             },
             getDate() {
                 let that = this;
@@ -173,6 +187,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
+            window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();
@@ -184,13 +199,11 @@
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
 .case{width:100%;color: rgb(105,105,105);}
 
-.part .title{/*padding-top:1.3rem;*/padding-bottom:2.5rem;text-align:center;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;transition:all 1s;-webkit-transform:translateY(30%);-moz-transform:translateY(30%);-o-transform:translateY(30%);transform:translateY(30%);-ms-transform:translateY(30%);-ms-transition:all 1s;}
-.part .title p{color:#333;font-size:24px;line-height:4.3rem;}
-.part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
-.part .title p.desc{margin-top:1.6rem;color:#666;font-size:16px;line-height:1rem;}
-
-
-.client.case .title p{color: #fff;}
+.case .title{position: relative;margin:0 auto 1em;color: #fff;}
+.bg-w {position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: 1;overflow: hidden;}
+.bg-w .bg {position: absolute;bottom: 0;left: 50%;width: 150%;height: 3000px;
+    border-radius: 0 0 50% 50%;border: 1px solid #7491ff;background-color: #7491ff;transform-origin: center bottom;transform: translate(-50%, 0) scaleY(.08);}
+.title .cont p{position: relative;z-index: 2;padding: 15px 0;text-align: center;color: #fff;line-height: 1em;}
 .case .case_list{margin:0 auto;width:67.5rem;}
 .case .case_list .title{margin-bottom: 4rem;padding-bottom: 0;border-bottom: 2px solid #fff;}
 .case .case_list .title ul li{float:left;display:inline-block;width:14%;height:2.8rem;color:#fff;text-align:center;font-size:16px;line-height:2.6rem;cursor:default;background: #adbac5;margin-right: 0.25%;}

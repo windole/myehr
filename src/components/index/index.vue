@@ -197,14 +197,13 @@
                     <p class="desc">携手多家合作伙伴，共同打造人力资源生态联盟</p>
                     <span class="line"></span>
                 </div>
-                <div class="cont">
-                    <div class="company-left op1" v-animate="{value: 'rollIn'}"></div>
-                    <div class="company-right"></div>
-                </div>
+                <div class="company-left item" v-animate="{value: 'rollIn'}"></div>
+                <div class="company-right item" v-animate="{value: 'bounceInRight', delay:600}"></div>
             </div>
 
             <v-foot class="page-8 page"></v-foot>
         </div>
+        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
     </div>
 </template>
 <script type="text/javascript">
@@ -214,6 +213,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import navBar from './../navBar.vue';
     const baseUrl = '';
     export default{
         data() {
@@ -243,6 +243,8 @@
                 allCaseLogo: [],
                 projectData: [],
                 currentType: 1,
+                pageNum: 8,
+                currentNavIndex: 0,
                 solutionOption: {
                     //  所有配置均为可选（同Swiper配置）
                     autoplay: false,
@@ -309,14 +311,19 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveNext() {
-                this.$refs.example.$fullpage.moveNext(); // Move to the next page
+            moveTo(index) {
+                this.$refs.example.$fullpage.moveTo(index, true); // Move to the next page
+            },
+            checkNavIndex() {
+                let index = this.$refs.example.$fullpage.curIndex;
+                this.currentNavIndex = index;
             },
             nextSolution() {
                 let len = $(this.$refs.solutionSwiper).find('.item').length - 5;
@@ -447,6 +454,7 @@
         mounted() {
             window.addEventListener('scroll', this.menu);
             window.addEventListener('resize', this.rerender);
+            window.addEventListener('mousewheel', this.checkNavIndex);
             this.initial();
         },
         created() {
@@ -531,13 +539,12 @@
 .index .part.compare .compare-left .content li:nth-child(4) .img{background: rgb(142,92,212) url(../../../static/img/compare4.png)no-repeat center;background-size: 55%;}
 .index .part.compare .compare-right .content{margin-top:5rem;text-align: center;}
 .index .part.compare .compare-right .content img{width: 260px;}*/
-.index .part.company{background:url(../../../static/img/banner/5.jpg) no-repeat;background-size: cover;}
-.index .part.company .cont{height: calc(100% - 123px);/*background:url(../../../static/img/allcompany2.png) no-repeat center;background-size: 85%;*/}
-.index .part.company .cont>div{width: 49%;display: inline-block;vertical-align: top;height: 100%;}
+.index .part.company{background:url(../../../static/img/banner/9.jpg) no-repeat;background-size: cover;}
+.index .part.company .cont{height: calc(100% - 123px);}
+.index .part.company .item{width: 49%;display: inline-block;vertical-align: top;height:calc(100% - 7.8rem);}
 
-.index .part.company .cont img{width: 60%;}
-.index .part.company .cont .company-left{margin-left: 1.66%;background: url(../../../static/img/company1.png) no-repeat 60% center;background-size: 60%;}
-.index .part.company .cont .company-right{background: url(../../../static/img/company2.png) no-repeat 40%;background-size: 65%;}
+.index .part.company .company-left{margin-left: 1.66%;background: url(../../../static/img/company1.png) no-repeat 60% center;background-size: 60%;}
+.index .part.company .company-right{background: url(../../../static/img/company2.png) no-repeat 40%;background-size: 65%;}
 
 
 

@@ -146,7 +146,6 @@
 .ui.reveal>.content{font-size:1rem!important}
 
 
-
 @media screen and (max-width:1400px){
 
 }

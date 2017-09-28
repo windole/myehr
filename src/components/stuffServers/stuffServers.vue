@@ -1,6 +1,6 @@
  <template>
     <div class="stuffServers fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="example">
+        <div class="fullpage-wp" v-fullpage="opts" ref="stuffServers">
             <!-- banner广告 -->
             <div class="bannerWrap page-1 page" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
@@ -40,7 +40,7 @@
             </div>
             <loading v-if="!showBanner"></loading>
             <!-- 解决方案 -->
-            <div class="part scenenet page-3 page">
+            <div class="part scenenet page-2 page">
                 <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>员工服务新模式</p>
                     <p class="desc">社交化、游戏化，充分发挥主观能动性，实现组织目标</p>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <!-- 挑战 -->
-            <div class="part challenge page">
+            <div class="part challenge page-3 page">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>新挑战下，管理如何开展 ？</p>
                     <p class="desc">通过员工贴心服务及员工个人发展计划，帮助激发员工活力</p>
@@ -95,7 +95,7 @@
                   </div>
                 </div>
             </div>
-            <div class="part scene page-3 page">
+            <div class="part scene page-4 page">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>员工服务应用场景</p>
                     <p class="desc">通过多场景员工自助服务，有效帮助员工快速融入组织</p>
@@ -144,7 +144,7 @@
             </div>
 
             <!-- scene1 -->
-            <div class="part attendance scene1 page">
+            <div class="part attendance scene1 page-5 page">
               <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之考勤管理</h3>
@@ -157,7 +157,7 @@
               </div>
             </div>
             <!-- scene2 -->
-            <div class="part attendance scene2 page">
+            <div class="part attendance scene2 page-6 page">
               <div class="AtteL">
                 <img class="AtteRimg" src="/static/img/attendance/page69.png" alt="" />
               </div>
@@ -170,7 +170,7 @@
               </div>
             </div>
             <!-- scene3 -->
-            <div class="part attendance scene3 page">
+            <div class="part attendance scene3 page-7 page">
               <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之任务管理</h3>
@@ -183,7 +183,7 @@
               </div>
             </div>
             <!-- scene4 -->
-            <div class="part attendance scene4 page">
+            <div class="part attendance scene4 page-8 page">
               <div class="AtteL">
                 <img class="AtteRimg" src="/static/img/attendance/page71.png" alt="" />
               </div>
@@ -198,7 +198,7 @@
               </div>
             </div>
             <!-- scene5 -->
-            <div class="part attendance scene5 page">
+            <div class="part attendance scene5 page-9 page">
               <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之工资查询</h3>
@@ -211,7 +211,7 @@
               </div>
             </div>
             <!-- scene6 -->
-            <div class="part attendance scene6 page">
+            <div class="part attendance scene6 page-10 page">
               <div class="AtteL">
                 <img class="AtteRimg" src="/static/img/attendance/page73.png" alt="" />
               </div>
@@ -224,7 +224,7 @@
               </div>
             </div>
             <!-- scene7 -->
-            <div class="part attendance scene7 page">
+            <div class="part attendance scene7 page-11 page">
               <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
                 <div class="AtteLtext">
                   <h3>MyeHR员工自助之感恩的心</h3>
@@ -237,8 +237,9 @@
                 <img class="AtteRimg" src="/static/img/attendance/page74.png" alt="" />
               </div>
             </div>
-            <v-foot class="page-9 page"></v-foot>
+            <v-foot class="page-12 page"></v-foot>
         </div>
+        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
     </div>
 </template>
 <script type="text/javascript">
@@ -247,6 +248,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import navBar from './../navBar.vue';
     export default{
         data() {
             return {
@@ -259,6 +261,8 @@
                 projectData: [],
                 scene: {},
                 currentType: 1,
+                pageNum: 12,
+                currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
                     autoplay: false,
@@ -296,14 +300,19 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveNext() {
-                this.$refs.example.$fullpage.moveNext(); // Move to the next page
+            moveTo(index) {
+                this.$refs.stuffServers.$fullpage.moveTo(index, true); // Move to the next page
+            },
+            checkNavIndex() {
+                let index = this.$refs.stuffServers.$fullpage.curIndex;
+                this.currentNavIndex = index;
             },
             getDate() {
                 let that = this;
@@ -327,6 +336,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
+            window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();
@@ -358,6 +368,8 @@
 .part.scenenet .cont .contentwrap .item:nth-child(8){top: 44%;left: 49%;background-color: rgb(135,61,171);}
 .part.scenenet .cont .contentwrap .item:nth-child(9){top: 56%;left: 62%;background-color: rgb( 247,150,70);}
 
+/*.part.challenge{background:url(../../../static/img/banner/5.jpg) no-repeat;background-size: cover;}*/
+.part.challenge .cont{padding-top: 3rem;}
 /*管理开展  begin*/
 .flexbox{display:flex;margin-top:5rem;padding:0 2%;flex-direction:row;flex-wrap:wrap;}
 .inner{position:relative;box-sizing:border-box;margin:0 2%;padding-bottom:16%;width:16%;height:0;}
@@ -382,7 +394,7 @@
 
 .part.scene .cont .row .ui .cell{text-align: center;}
 .part.scene .cont .row .ui .visible .cell {display: flex;justify-content: center;align-items: center;height: 320px;}
-.part.scene .cont .row .hidden .text {height: 100%;background-color: #0cf;}
+.part.scene .cont .row .hidden .text {height: 100%;background-color: #0cf;margin-top: -12px;}
 .part.scene .cont .row .ui  .cell p {color: #fff;font-size: 16px;margin-top: 12px;}
 .part.scene .cont .row .hidden p{padding-top: 30%;width: 80%;margin: 0 auto;word-wrap: break-word;text-align: center;}
 

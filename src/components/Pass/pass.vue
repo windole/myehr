@@ -1,6 +1,6 @@
  <template>
     <div class="pass fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="example">
+        <div class="fullpage-wp" v-fullpage="opts" ref="pass">
             <!-- banner广告 -->
             <div class="bannerWrap page-1 page" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
@@ -89,8 +89,9 @@
                     
                 </div>
             </div>
-            <v-foot class="page-9 page"></v-foot>
+            <v-foot class="page-5 page"></v-foot>
         </div>
+        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
     </div>
 </template>
 <script type="text/javascript">
@@ -99,6 +100,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import navBar from './../navBar.vue';
     export default{
         data() {
             return {
@@ -110,6 +112,8 @@
                 plus: [],
                 projectData: [],
                 currentType: 1,
+                pageNum: 5,
+                currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
                     autoplay: false,
@@ -127,7 +131,13 @@
                 opts: {
                     start: 0,
                     dir: 'v',
-                    duration: 500
+                    duration: 500,
+                    beforeChange: function (prev, next) {
+                        // console.log(next);
+                    },
+                    afterChange: function (prev, next) {
+                        // console.log(this);
+                    }
                 }
             };
         },
@@ -147,16 +157,23 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveNext() {
-                this.$refs.example.$fullpage.moveNext(); // Move to the next page
+            moveTo(index) {
+                this.$refs.pass.$fullpage.moveTo(index, true); // Move to the next page
+                this.currentNavIndex = index;
+            },
+            checkNavIndex() {
+                let index = this.$refs.pass.$fullpage.curIndex;
+                this.currentNavIndex = index;
             },
             getDate() {
+                console.log(this);
                 let that = this;
                 // 获取banner数据设置
                 this.showBanner = false;
@@ -178,6 +195,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
+            window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();

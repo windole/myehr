@@ -1,6 +1,6 @@
  <template>
     <div class="hr fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="example">
+        <div class="fullpage-wp" v-fullpage="opts" ref="hr">
             <!-- banner广告 -->
             <div class="bannerWrap page-1 page" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
@@ -45,7 +45,7 @@
                     <p>MyeHR解决方案</p>
                     <span class="line"></span>
                 </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="cont" v-animate="{value: 'zoomIn',delay:600}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
                     <div class="contentwrap">
                         <div v-for="item in projectData" class="contentitem">
                             <div class="left-img" :style="{backgroundImage:' url(\'static/'+item.ProjectIcon+'\')'}" >
@@ -382,8 +382,9 @@
                 </div>
             </div>
 
-            <v-foot class="page-9 page"></v-foot>
+            <v-foot class="page-12 page"></v-foot>
         </div>
+        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
     </div>
 </template>
 <script type="text/javascript">
@@ -392,6 +393,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import navBar from './../navBar.vue';
     export default{
         data() {
             return {
@@ -403,6 +405,8 @@
                 plus: [],
                 projectData: [],
                 currentType: 1,
+                pageNum: 12,
+                currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
                     autoplay: false,
@@ -440,14 +444,19 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveNext() {
-                this.$refs.example.$fullpage.moveNext(); // Move to the next page
+            moveTo(index) {
+                this.$refs.hr.$fullpage.moveTo(index, true); // Move to the next page
+            },
+            checkNavIndex() {
+                let index = this.$refs.hr.$fullpage.curIndex;
+                this.currentNavIndex = index;
             },
             getDate() {
                 let that = this;
@@ -471,6 +480,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
+            window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();

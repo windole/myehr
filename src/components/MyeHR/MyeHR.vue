@@ -1,6 +1,6 @@
  <template>
     <div class="MyeHR fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="example">
+        <div class="fullpage-wp" v-fullpage="opts" ref="myehr">
             <!-- banner广告 -->
             <div class="bannerWrap page-1 page" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
@@ -28,7 +28,7 @@
             
             <!-- 产品与服务 -->
 
-            <div class="part product page-5 page">
+            <div class="part product page-2 page">
                 <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
                     <p>为什么选择MyeHR？</p>
                     <span class="line"></span>
@@ -56,7 +56,7 @@
                 </div>
             </div>
             
-            <div class="card page">
+            <div class="card page-3 page">
                 <div class="cell card-center match-height" matchheight="" style="cursor: pointer; height: 357px;">
                     <article class="icon-content">
                         <header>
@@ -100,7 +100,7 @@
             </div>
 
             <!-- 三大住模块 -->
-            <div class="part page mainmodal">
+            <div class="part page-4 page mainmodal">
                 <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR三大层级主模块</p>
                     <p class="desc">通过模块的组合运作满足企业eHR系统建设需求</p>
@@ -163,8 +163,9 @@
                     </div>
                 </div>
             </div>
-            <v-foot class="page-9 page"></v-foot>
+            <v-foot class="page-5 page"></v-foot>
         </div>
+        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
     </div>
 </template>
 <script type="text/javascript">
@@ -185,6 +186,8 @@
                 product: {},
                 projectData: [],
                 currentType: 1,
+                pageNum: 5,
+                currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
                     autoplay: false,
@@ -202,7 +205,11 @@
                 opts: {
                     start: 0,
                     dir: 'v',
-                    duration: 500
+                    duration: 500,
+                    beforeChange: function (prev, next) {
+                        console.log(next);
+                        this.currentNavIndex = next;
+                    }
                 }
             };
         },
@@ -228,8 +235,13 @@
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveNext() {
-                this.$refs.example.$fullpage.moveNext(); // Move to the next page
+            moveTo(index) {
+                this.$refs.myehr.$fullpage.moveTo(index, true); // Move to the next page
+                this.currentNavIndex = index;
+            },
+            checkNavIndex() {
+                let index = this.$refs.myehr.$fullpage.curIndex;
+                this.currentNavIndex = index;
             },
             getDate() {
                 let that = this;
@@ -255,6 +267,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
+            window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();
