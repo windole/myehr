@@ -1,171 +1,168 @@
  <template>
-    <div class="MyeHR fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="myehr">
-            <!-- banner广告 -->
-            <div class="bannerWrap page-1 page" v-if='showBanner'>
-                <div class="bannerLoop" ref="bannerLoop">
-                    <swiper :options="bannerOption" ref="bannerOption" class="clear">
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner2.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <div class="tips" style="display:block;">
-                                        <p style="width:100%;">MyeHR 社交化 实时互动</p>
-                                    </div>
-                                    <h4>18年创新之路 专注eHR深度应用</h4>
+    <div class="MyeHR">
+        <!-- banner广告 -->
+        <div class="bannerWrap" v-if='showBanner'>
+            <div class="bannerLoop" ref="bannerLoop">
+                <swiper :options="bannerOption" ref="bannerOption" class="clear">
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner2.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <div class="tips" style="display:block;">
+                                    <p style="width:100%;">MyeHR 社交化 实时互动</p>
                                 </div>
-                                <div class="en">
-                                    <p>合作共赢   协同发展</p>
-                                </div>
+                                <h4>18年创新之路 专注eHR深度应用</h4>
                             </div>
-                        </swiper-slide>
-                        <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                <div class="swiper-button-next btn next" slot="button-next"></div>
-                    </swiper>
-                </div>
-            </div>
-            <loading v-if="!showBanner"></loading>
-            
-            <!-- 产品与服务 -->
-
-            <div class="part product page-2 page">
-                <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
-                    <p>为什么选择MyeHR？</p>
-                    <span class="line"></span>
-                </div>
-                <div class="cont grid" ref="aboutus">
-                    <div class="row">
-                        <div class="ui item slide down instant reveal" v-for="item in product">
-                            <div class="visible content">
-                                <div class="graphic health content" :style="{backgroundImage:'url('+ item.ProductThumb +')'}">
-                                    <div class="cell">
-                                        <p v-html="item.ProductTitle"></p>
-                                    </div>
-                                </div>
+                            <div class="en">
+                                <p>合作共赢   协同发展</p>
                             </div>
-                            <div class="hidden content">
-                                <div class="text dark content">
-                                    <div class="cell">
-                                        <p v-html="item.ProductTitlePlus"></p>
-                                        <a class="ui inverted button">查看详情</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-button-prev btn prev" slot="button-prev"></div>
+            <div class="swiper-button-next btn next" slot="button-next"></div>
+                </swiper>
             </div>
-            
-            <div class="card page-3 page">
-                <div class="cell card-center match-height" matchheight="" style="cursor: pointer; height: 357px;">
-                    <article class="icon-content">
-                        <header>
-                            <div class="icon-container ">
-                                <img src="static/img/myehr1.png" alt="">
-                            </div>                                
-                            <h6 class="heading">
-                                公司使命
-                            </h6>
-                        </header>
-                        <section class="content">
-                            <p class="size-down">
-                                MyeHR旨在为企业用户构建专业化、智能化、移动化、社交化的人才资源管理综合解决方案。以“人力资源核心算法+ 云计算应用+大数据分析+社会化运营”等核心竞争力为依托,为企业用户的人才分析决策提供数据支持。
-                            </p>
-                        </section>
-                        <footer>
-                                <a href="">免费体验></a>   
-                        </footer>
-                    </article>
-                </div>
-                <div class="cell card-center match-height" matchheight="" style="cursor: pointer; height: 357px;">
-                    <article class="icon-content">
-                        <header>
-                            <div class="icon-container">
-                                <img src="static/img/myehr2.png" alt="">
-                            </div>                                
-                            <h6 class="heading">
-                                企业愿景
-                            </h6>
-                        </header>
-                        <section class="content">
-                            <p class="size-down">
-                                MyeHR正在打造聚合不同行业、不同领域的员工管理生态模型；并在此基础上，通过EAP员工关怀、员工自助、HR服务等功能，提供多样的、人性化的服务，给国内HR软件市场带来重大变革，给企业效能的提升提供更强的推动力！
-                            </p>
-                        </section>
-                        <footer>
-                                <a href="">免费体验></a>   
-                        </footer>
-                    </article>
-                </div>
-            </div>
-
-            <!-- 三大住模块 -->
-            <div class="part page-4 page mainmodal">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>MyeHR三大层级主模块</p>
-                    <p class="desc">通过模块的组合运作满足企业eHR系统建设需求</p>
-                    <span class="line"></span>
-                </div>
-                <div class="cont grid">
-                    <div class="row">
-                        <div class="ui item slide down instant reveal">
-                          <div class="visible content">
-                              <div class="graphic health content" style="background-image:url(static/img/style1.jpg);">
-                                  <div class="cell">
-                                      <p>开发平台</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="hidden content">
-                              <div class="text dark content">
-                                  <div class="cell">
-                                        <p>统一建模/统一门户<br/>
-                                        统一流程/统一身份</p>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>    
-                        <div class="ui item slide down instant reveal">
-                          <div class="visible content">
-                              <div class="graphic health content" style="background-image:url(static/img/style2.jpg);">
-                                  <div class="cell">
-                                      <p>HR应用</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="hidden content">
-                              <div class="text dark content">
-                                  <div class="cell">
-                                      <p>组织管理/人事管理/培训管理<br/>
-                                      薪酬福利/考勤管理/绩效管理<br/>
-                                      招聘管理/员工发展</p>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>    
-                        <div class="ui item slide down instant reveal">
-                          <div class="visible content">
-                              <div class="graphic health content" style="background-image:url(static/img/style3.jpg);">
-                                  <div class="cell">
-                                      <p>员工服务</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="hidden content">
-                              <div class="text dark content">
-                                  <div class="cell">
-                                        <p>移动办公、员工关怀、积分激励<br/>
-                                        学习生成、共享服务中心</p>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>    
-                    </div>
-                </div>
-            </div>
-            <v-foot class="page-5 page"></v-foot>
         </div>
-        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
+        <loading v-if="!showBanner"></loading>
+        
+        <!-- 产品与服务 -->
+
+        <div class="part product">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
+                <p>为什么选择MyeHR？</p>
+            </div>
+            <div class="cont grid" ref="aboutus">
+                <div class="row">
+                    <div class="ui item slide down instant reveal" v-for="item in product">
+                        <div class="visible content">
+                            <div class="graphic health content" :style="{backgroundImage:'url('+ item.ProductThumb +')'}">
+                                <div class="cell">
+                                    <p v-html="item.ProductTitle"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden content">
+                            <div class="text dark content">
+                                <div class="cell">
+                                    <p v-html="item.ProductTitlePlus"></p>
+                                    <a class="ui inverted button">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="cell card-center match-height" matchheight="" style="cursor: pointer; height: 357px;">
+                <article class="icon-content">
+                    <header>
+                        <div class="icon-container ">
+                            <img src="static/img/myehr1.png" alt="">
+                        </div>                                
+                        <h6 class="heading">
+                            公司使命
+                        </h6>
+                    </header>
+                    <section class="content">
+                        <p class="size-down">
+                            MyeHR旨在为企业用户构建专业化、智能化、移动化、社交化的人才资源管理综合解决方案。以“人力资源核心算法+ 云计算应用+大数据分析+社会化运营”等核心竞争力为依托,为企业用户的人才分析决策提供数据支持。
+                        </p>
+                    </section>
+                    <footer>
+                            <a href="">免费体验></a>   
+                    </footer>
+                </article>
+            </div>
+            <div class="cell card-center match-height" matchheight="" style="cursor: pointer; height: 357px;">
+                <article class="icon-content">
+                    <header>
+                        <div class="icon-container">
+                            <img src="static/img/myehr2.png" alt="">
+                        </div>                                
+                        <h6 class="heading">
+                            企业愿景
+                        </h6>
+                    </header>
+                    <section class="content">
+                        <p class="size-down">
+                            MyeHR正在打造聚合不同行业、不同领域的员工管理生态模型；并在此基础上，通过EAP员工关怀、员工自助、HR服务等功能，提供多样的、人性化的服务，给国内HR软件市场带来重大变革，给企业效能的提升提供更强的推动力！
+                        </p>
+                    </section>
+                    <footer>
+                            <a href="">免费体验></a>   
+                    </footer>
+                </article>
+            </div>
+        </div>
+
+        <!-- 三大住模块 -->
+        <div class="part mainmodal">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>MyeHR三大层级主模块</p>
+                <p class="desc">通过模块的组合运作满足企业eHR系统建设需求</p>
+            </div>
+            <div class="cont grid">
+                <div class="row">
+                    <div class="ui item slide down instant reveal">
+                      <div class="visible content">
+                          <div class="graphic health content" style="background-image:url(static/img/style1.jpg);">
+                              <div class="cell">
+                                  <p>开发平台</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="hidden content">
+                          <div class="text dark content">
+                              <div class="cell">
+                                    <p>统一建模/统一门户<br/>
+                                    统一流程/统一身份</p>
+                              </div>
+                          </div>
+                      </div>
+                    </div>    
+                    <div class="ui item slide down instant reveal">
+                      <div class="visible content">
+                          <div class="graphic health content" style="background-image:url(static/img/style2.jpg);">
+                              <div class="cell">
+                                  <p>HR应用</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="hidden content">
+                          <div class="text dark content">
+                              <div class="cell">
+                                  <p>组织管理/人事管理/培训管理<br/>
+                                  薪酬福利/考勤管理/绩效管理<br/>
+                                  招聘管理/员工发展</p>
+                              </div>
+                          </div>
+                      </div>
+                    </div>    
+                    <div class="ui item slide down instant reveal">
+                      <div class="visible content">
+                          <div class="graphic health content" style="background-image:url(static/img/style3.jpg);">
+                              <div class="cell">
+                                  <p>员工服务</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="hidden content">
+                          <div class="text dark content">
+                              <div class="cell">
+                                    <p>移动办公、员工关怀、积分激励<br/>
+                                    学习生成、共享服务中心</p>
+                              </div>
+                          </div>
+                      </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <v-foot></v-foot>
+        <v-top></v-top>
+    </div>
     </div>
 </template>
 <script type="text/javascript">
@@ -174,6 +171,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import top from './../top.vue';
     export default{
         data() {
             return {
@@ -229,19 +227,12 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'vTop': top
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
-            },
-            moveTo(index) {
-                this.$refs.myehr.$fullpage.moveTo(index, true); // Move to the next page
-                this.currentNavIndex = index;
-            },
-            checkNavIndex() {
-                let index = this.$refs.myehr.$fullpage.curIndex;
-                this.currentNavIndex = index;
             },
             getDate() {
                 let that = this;
@@ -267,7 +258,6 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
-            window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();
@@ -312,7 +302,7 @@
 .iconitem img{margin-top:38px;}
 
 /*卡片*/
-.card{width: 60%;margin-left:20%;margin:3em 0 0;display: flex;justify-content: center;}
+.card{width: 60%;margin:3em auto 0;display: flex;justify-content: center;}
 .card .cell{padding: 1em;
     position: relative;
     width: 80%;

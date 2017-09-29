@@ -198,6 +198,7 @@
             </div>
 
             <v-foot class="page-8 page"></v-foot>
+            <v-top></v-top>
         </div>
 </template>
 <script type="text/javascript">
@@ -207,6 +208,7 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
+    import top from './../top.vue';
     const baseUrl = '';
     export default{
         data() {
@@ -273,7 +275,7 @@
                     slidesPerView: 1,
                     nextButton: '.bannerLoop .swiper-button-next',
                     prevButton: '.bannerLoop .swiper-button-prev',
-                    speed: 1000
+                    speed: 3000
                 },
                 opts: {
                     start: 0,
@@ -304,7 +306,8 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide
+            'swiperSlide': swiperSlide,
+            'vTop': top
         },
         methods: {
             menu() {
@@ -518,7 +521,7 @@
 .index .part.compare .compare-left .content li:nth-child(4) .img{background: rgb(142,92,212) url(../../../static/img/compare4.png)no-repeat center;background-size: 55%;}
 .index .part.compare .compare-right .content{margin-top:5rem;text-align: center;}
 .index .part.compare .compare-right .content img{width: 260px;}*/
-.index .part.company{height: 82vh;background:url(../../../static/img/banner/9.jpg) no-repeat;background-size: cover;    padding: 20px 0 0;}
+.index .part.company{height: 100vh;background:url(../../../static/img/banner/9.jpg) no-repeat;background-size: cover;    padding: 20px 0 0;}
 .index .part.company .title p{color: #fff;}
 .index .part.company .cont{height: calc(100% - 123px);}
 .index .part.company .item{width: 49%;display: inline-block;vertical-align: top;height:calc(100% - 7.8rem);}
@@ -526,9 +529,9 @@
 .index .part.company .company-left{margin-left: 1.66%;background: url(../../../static/img/company1.png) no-repeat 60% center;background-size: 60%;}
 .index .part.company .company-right{background: url(../../../static/img/company2.png) no-repeat 40%;background-size: 65%;}
 
-
+.index .part.advantage{height: 80vh;}
 .index .part.advantage ul{padding: 10% 0 0 15%;color: #333;text-align: left;min-height: 500px;}
-.index .part.advantage ul h2{font-size: 28px;font-weight: 100;margin-bottom: 10px;margin-left: -42px;-height: 3em;}
+.index .part.advantage ul h2{font-size: 28px;font-weight: 100;margin-bottom: 10px;margin-left: -42px;line-height: 3em;}
 .index .part.advantage ul li{line-height: 35px;list-style: disc;font-size: 18px;color: #666;}
 
 

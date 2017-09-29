@@ -110,6 +110,7 @@
 <style>
 
 .footer {
+    margin-top: 5rem;
     top: 5rem;
     background: #1f2f4f;
     color: #ccc;

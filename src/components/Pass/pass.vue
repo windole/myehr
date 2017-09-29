@@ -72,7 +72,6 @@
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>多平台数据建模</p>
                     <p class="desc">MyeHR统一技术平台</p>
-                    <span class="line"></span>
                 </div>
                 <div class="cont">
                     
@@ -83,7 +82,6 @@
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>技术平台总体架构</p>
                     <p class="desc">MyeHR产品设计理念</p>
-                    <span class="line"></span>
                 </div>
                 <div class="cont">
                     
@@ -213,7 +211,7 @@
 .part.modal .cont{height: calc(100% - 115px);background: url(../../../static/img/pass-modal.png) no-repeat center;background-size: 78%;}
 
 /*架构*/
-.architecture .cont{height: calc(100% - 115px);background: url(../../../static/img/architecture.png) no-repeat center;background-size: 52%;}
+.architecture .cont{height: calc(100% - 115px);background: url(../../../static/img/architecture.jpg) no-repeat center;background-size: 52%;}
 
 
 @media screen and (max-width:767px){

@@ -1,371 +1,430 @@
  <template>
     <div class="hr">
-            <!-- banner广告 -->
-            <div class="bannerWrap" v-if='showBanner'>
-                <div class="bannerLoop" ref="bannerLoop">
-                    <swiper :options="bannerOption" ref="bannerOption" class="clear">
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner9.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <h4>标准化流程实现快速交付</h4>
-                                    <div class="tips" style="display:block;">
-                                        <!-- <p style="width:100%;">MyeHR 社交化 实时互动</p> -->
-                                    </div>
-                                </div>
-                                <div class="en">
-                                    <p>个性化配置满足深度应用</p>
+        <!-- banner广告 -->
+        <div class="bannerWrap" v-if='showBanner'>
+            <div class="bannerLoop" ref="bannerLoop">
+                <swiper :options="bannerOption" ref="bannerOption" class="clear">
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner9.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <h4>标准化流程实现快速交付</h4>
+                                <div class="tips" style="display:block;">
+                                    <!-- <p style="width:100%;">MyeHR 社交化 实时互动</p> -->
                                 </div>
                             </div>
-                        </swiper-slide>
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner10.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <h4>全面一站式人才管理解决方案</h4>
-                                    <div class="tips" style="display:block;">
-                                        <!-- <p style="width:100%;">MyeHR 社交化 实时互动</p> -->
-                                    </div>
-                                </div>
-                                <div class="en">
-                                    <p>优化企业信息化管理模式应用</p>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                        <div class="swiper-button-next btn next" slot="button-next"></div>
-                    </swiper>
-                </div>
-            </div>
-            <loading v-if="!showBanner"></loading>
-            <!-- 组织管理 -->
-            <div class="part control" id="organzeManagement">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>全面集团化管控</p>
-                    <p class="desc">通过岗位职责、招聘、考核及标准组织管理模型的标准化管理，实现集团化管控；</p>
-                    <span class="line"></span>
-                </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contwrap">
-                        <div class="left-items">
-                            <div class="item">
-                                <div class="right"></div>
-                                <div class="left">
-                                    <h3>多维度组织管理</h3>
-                                    <p>建立多纬度的组织管理</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="right"></div>
-                                <div class="left">
-                                    <h3>虚拟机构管理</h3>
-                                    <p>能够记录临时性的虚拟组织信息</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="right"></div>
-                                <div class="left">
-                                    <h3>岗位管理</h3>
-                                    <p>建立部门与岗位的隶属关系</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="right"></div>
-                                <div class="left">
-                                    <h3>历史机构变革</h3>
-                                    <p>能够快速查询到组织机构的整体情况</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="right"></div>
-                                <div class="left">
-                                    <h3>组织机构图</h3>
-                                    <p>组织机构图可从集团到员工逐层打开</p>
-                                </div>
+                            <div class="en">
+                                <p>个性化配置满足深度应用</p>
                             </div>
                         </div>
-                        <div class="right-items">
-                            <div class="item">
-                                <div class="left"></div>
-                                <div class="right">
-                                    <h3>组织机构管理</h3>
-                                    <p>根据企业战略发展的需要</p>
+                    </swiper-slide>
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner10.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <h4>全面一站式人才管理解决方案</h4>
+                                <div class="tips" style="display:block;">
+                                    <!-- <p style="width:100%;">MyeHR 社交化 实时互动</p> -->
                                 </div>
                             </div>
-                             <div class="item">
-                                <div class="left"></div>
-                                <div class="right">
-                                    <h3>编制管理</h3>
-                                    <p>实现对部门、岗位和条线的编制管理</p>
-                                </div>
+                            <div class="en">
+                                <p>优化企业信息化管理模式应用</p>
                             </div>
-                            <div class="item">
-                                <div class="left"></div>
-                                <div class="right">
-                                    <h3>组织模板</h3>
-                                    <p>建立部门模板和岗位模板，<br/>形成标准组织模型</p>
-                                </div>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-button-prev btn prev" slot="button-prev"></div>
+                    <div class="swiper-button-next btn next" slot="button-next"></div>
+                </swiper>
+            </div>
+        </div>
+        <loading v-if="!showBanner"></loading>
+        <!-- 组织管理 -->
+        <div class="part control" id="organzeManagement">
+            <div class="title"  :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>全面集团化管控</p>
+                <p class="desc">通过岗位职责、招聘、考核及标准组织管理模型的标准化管理，实现集团化管控；</p>
+            </div>
+            <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="contwrap">
+                    <div class="left-items">
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>多维度组织管理</h3>
+                                <p>建立多纬度的组织管理</p>
                             </div>
-                            <div class="item">
-                                <div class="left"></div>
-                                <div class="right">
-                                    <h3>组织规划</h3>
-                                    <p>包含能力素质模型定义及<br/>职务发展通道定义</p>
-                                </div>
+                        </div>
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>虚拟机构管理</h3>
+                                <p>能够记录临时性的虚拟组织信息</p>
                             </div>
-                            <div class="item">
-                                <div class="left"></div>
-                                <div class="right">
-                                    <h3>信息查询</h3>
-                                    <p>查询公司、部门、岗位及历史变动信息</p>
-                                </div>
+                        </div>
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>岗位管理</h3>
+                                <p>建立部门与岗位的隶属关系</p>
                             </div>
-                        </div>     
+                        </div>
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>历史机构变革</h3>
+                                <p>能够快速查询到组织机构的整体情况</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>组织机构图</h3>
+                                <p>组织机构图可从集团到员工逐层打开</p>
+                            </div>
+                        </div>
                     </div>
+                    <div class="right-items">
+                        <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>组织机构管理</h3>
+                                <p>根据企业战略发展的需要</p>
+                            </div>
+                        </div>
+                         <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>编制管理</h3>
+                                <p>实现对部门、岗位和条线的编制管理</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>组织模板</h3>
+                                <p>建立部门模板和岗位模板，<br/>形成标准组织模型</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>组织规划</h3>
+                                <p>包含能力素质模型定义及<br/>职务发展通道定义</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>信息查询</h3>
+                                <p>查询公司、部门、岗位及历史变动信息</p>
+                            </div>
+                        </div>
+                    </div>     
                 </div>
             </div>
+        </div>
 
-            <!-- 薪酬管理 -->
-            <div class="part compensationManagement" id="compensationManagement">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>精准高效薪酬管控</p>
-                    <p class="desc">预算与薪酬额度管控，确保企业人工成本的可控性；</p>
-                </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contwrap">
-                        <div class="row three-cols">
-                            <div class="col-sm-4 text-center col-board col-border">
-                                <div class="col-img icon1"></div>
-                                <h4>预算与额度管理</h4>
-                                <p>年度机构与人力规划/年度单位总额控制/人工成本配比规划/基本工资与奖金分配规划</p>
-                            </div>
-                            <div class="col-sm-4 text-center col-board col-border">
-                                <div class="col-img icon2"></div>
-                                <h4>部门奖金分配</h4>
-                                <p>部门资金标准管理/部门绩效强制分布/部门绩效系数计算</p>
-                            </div>
-                            <div class="col-sm-4 text-center col-board col-border brnone">
-                                <div class="col-img icon3"></div>
-                                <h4>薪酬信息管理</h4>
-                                <p>分析岗位平均年薪/单位岗位配比分析/行业岗位预算上下限/岗位年薪增长预测</p>
-                            </div>   
+        <!-- 薪酬管理 -->
+        <div class="part compensationManagement" id="compensationManagement">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>精准高效薪酬管控</p>
+                <p class="desc">预算与薪酬额度管控，确保企业人工成本的可控性；</p>
+            </div>
+            <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="contwrap">
+                    <div class="row three-cols">
+                        <div class="col-sm-4 text-center col-board col-border">
+                            <div class="col-img icon1"></div>
+                            <h4>预算与额度管理</h4>
+                            <p>年度机构与人力规划/年度单位总额控制/人工成本配比规划/基本工资与奖金分配规划</p>
                         </div>
-                        <div class="row three-cols">
-                            <div class="col-sm-4 text-center col-board col-border">
-                                <div class="col-img icon1"></div>
-                                <h4>预算与额度管理</h4>
-                                <p>年度机构与人力规划/年度单位总额控制/人工成本配比规划/基本工资与奖金分配规划</p>
-                            </div>
-                            <div class="col-sm-4 text-center col-board col-border">
-                                <div class="col-img icon2"></div>
-                                <h4>部门奖金分配</h4>
-                                <p>部门资金标准管理/部门绩效强制分布/部门绩效系数计算</p>
-                            </div>
-                            <div class="col-sm-4 text-center col-board col-border brnone">
-                                <div class="col-img icon3"></div>
-                                <h4>薪酬信息管理</h4>
-                                <p>分析岗位平均年薪/单位岗位配比分析/行业岗位预算上下限/岗位年薪增长预测</p>
-                            </div>   
+                        <div class="col-sm-4 text-center col-board col-border">
+                            <div class="col-img icon2"></div>
+                            <h4>部门奖金分配</h4>
+                            <p>部门资金标准管理/部门绩效强制分布/部门绩效系数计算</p>
                         </div>
+                        <div class="col-sm-4 text-center col-board col-border brnone">
+                            <div class="col-img icon3"></div>
+                            <h4>薪酬信息管理</h4>
+                            <p>分析岗位平均年薪/单位岗位配比分析/行业岗位预算上下限/岗位年薪增长预测</p>
+                        </div>   
+                    </div>
+                    <div class="row three-cols">
+                        <div class="col-sm-4 text-center col-board col-border">
+                            <div class="col-img icon1"></div>
+                            <h4>预算与额度管理</h4>
+                            <p>年度机构与人力规划/年度单位总额控制/人工成本配比规划/基本工资与奖金分配规划</p>
+                        </div>
+                        <div class="col-sm-4 text-center col-board col-border">
+                            <div class="col-img icon2"></div>
+                            <h4>部门奖金分配</h4>
+                            <p>部门资金标准管理/部门绩效强制分布/部门绩效系数计算</p>
+                        </div>
+                        <div class="col-sm-4 text-center col-board col-border brnone">
+                            <div class="col-img icon3"></div>
+                            <h4>薪酬信息管理</h4>
+                            <p>分析岗位平均年薪/单位岗位配比分析/行业岗位预算上下限/岗位年薪增长预测</p>
+                        </div>   
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 人事管理 -->
-            <div class="part peopleManagement" id="peopleManagement">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>人员事务管理</p>
-                    <p class="desc">丰富人事管理业务，人员职场全周期管控；</p>
-                    <span class="line"></span>
-                </div>
-                <div class="cont">
-                </div>
+        <!-- 人事管理 -->
+        <div class="part peopleManagement" id="peopleManagement">
+            <div class="title"  :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>人员事务管理</p>
+                <p class="desc">丰富人事管理业务，人员职场全周期管控；</p>
             </div>
-
-            <!-- 培训管理 -->
-            <div class="part training" id="training">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>员工学习成长</p>
-                    <p class="desc">清晰明确的员工成长路径，全面提升企业人才价值；</p>
-                    <span class="line"></span>
-                </div>
-                <div class="cont" v-animate="{value: 'bounceInLeft', delay: 0}">
-                    <ul class="lefttxt">
-                        <h2>MyeHR培训管理解决方案</h2>
-                        <li>培训资源/培训讲师/培训场地管理</li>
-                        <li>培训需求汇总</li>
-                        <li>培训计划制定及汇报审批管理</li>
-                        <li>培训成果、费用管控及培训分析优化</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 考勤管理 -->
-            <div class="part attenceManagement" id="attenceManagement">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>生产效能提升</p>
-                    <p class="desc">提高生产效率，生产力与任务的高度匹配</p>
-                </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contwrap">
-                        <div class="row four-cols">
-                            <div class="col-sm-3 text-center col-board col-border">
-                                <div class="col-img icon1"></div>
-                                <h4>考勤机刷卡</h4>
-                                <p>考勤机管理/职场管理/移动考勤/刷卡管理</p>
+            <div class="cont">
+                <div class="contwrap" style="display:none;">
+                    <div class="left-items">
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>事务管理</h3>
+                                <p>员工的晋升、借调、停薪留职等变动管理</p>
                             </div>
-                            <div class="col-sm-3 text-center col-board col-border">
-                                <div class="col-img icon2"></div>
-                                <h4>出勤管理</h4>
-                                <p>班组轮班/批量排班/日历排班/自由排班/共享排班</p>
-                            </div>
-                            <div class="col-sm-3 text-center col-board col-border">
-                                <div class="col-img icon3"></div>
-                                <h4>假期管理</h4>
-                                <p>年休假管理/福利假管理/请假申请</p>
-                            </div>  
-                            <div class="col-sm-3 text-center col-board col-border brnone">
-                                <div class="col-img icon3"></div>
-                                <h4>加班管理</h4>
-                                <p>加班规则/加班申请/加班管理流程</p>
-                            </div>   
                         </div>
-                        <div class="row four-cols">
-                            <div class="col-sm-3 text-center col-board col-border">
-                                <div class="col-img icon1"></div>
-                                <h4>异常数据</h4>
-                                <p>迟到/早退/缺勤加班数据异常/基础数据校对/合规风控</p>
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>职员信息</h3>
+                                <p>试用、转正、在职、退休等员工全周期管理</p>
                             </div>
-                            <div class="col-sm-3 text-center col-board col-border">
-                                <div class="col-img icon2"></div>
-                                <h4>生产力管理</h4>
-                                <p>生产工时管理/生产工时优化/工时数据分析</p>
+                        </div>
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>人事报表</h3>
+                                <p>入职人员、人员结构、离职原因的分析报表</p>
                             </div>
-                            <div class="col-sm-3 text-center col-board col-border">
-                                <div class="col-img icon2"></div>
-                                <h4>统计报表</h4>
-                                <p>出勤报表/加班报表/休假报表/月度汇总表</p>
+                        </div>
+                        <div class="item">
+                            <div class="right"></div>
+                            <div class="left">
+                                <h3>扩展应用</h3>
+                                <p>流程管理、预警合规、干部管理等扩展应用</p>
                             </div>
-                            <div class="col-sm-3 text-center col-board col-border brnone">
-                                <div class="col-img icon3"></div>
-                                <h4>员工自助</h4>
-                                <p>排班查询/手机考勤/我的日程/假期额度/下属考勤追踪</p>
-                            </div>   
                         </div>
                     </div>
+                    <div class="right-items">
+                        <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>警戒提醒</h3>
+                                <p>试用到期、合同到期等人事信息预警管控</p>
+                            </div>
+                        </div>
+                         <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>合同协议</h3>
+                                <p>劳务、竞业、培训等协议的新签变更查询</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>证照管理</h3>
+                                <p>出境照、工作照、档案等证照信息的管理</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="left"></div>
+                            <div class="right">
+                                <h3>职员背景</h3>
+                                <p>教育、任职、培训、工作经历等背景管理</p>
+                            </div>
+                        </div>
+                    </div>     
                 </div>
             </div>
+        </div>
 
-            <!-- 招聘管理 -->
-            <div class="part recruitManagement" id="recruitManagement">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>人岗精准匹配</p>
-                    <p class="desc">岗位胜任要求管理，全面提升招聘效率</p>
-                </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contentwrap">
-                        <div class="contentItem">
-                            <img src="static/img/recruit/1.png">
-                            <h3 class="tit">个性化搜索推荐</h3>
-                            <p>基于企业用人偏好，高效筛选候选人</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/2.png">
-                            <h3 class="tit">云人才库</h3>
-                            <p>企业自有简历实时更新，智能推荐候选人</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/3.png">
-                            <h3 class="tit">人脉内推</h3>
-                            <p>基于员工人脉大数据，定向聚焦候选人</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/4.png">
-                            <h3 class="tit">ATS</h3>
-                            <p>多平台信息同步，工作流程数据智能处理</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/5.png">
-                            <h3 class="tit">职位BI</h3>
-                            <p>职位特征一览无余，智能分析用人偏好</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/6.png">
-                            <h3 class="tit">员工保留</h3>
-                            <p>大数据预测员工离职意向及原因</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/7.png">
-                            <h3 class="tit">人才地图</h3>
-                            <p>追踪同行人才状况及优秀候选人</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/8.png">
-                            <h3 class="tit">一键约ta</h3>
-                            <p>免费意向确认，无意向沟通低至零</p>
-                        </div>
-                        <div class="contentItem">
-                            <img src="static/img/recruit/9.png">
-                            <h3 class="tit">企业画像</h3>
-                            <p>数据化企业优势，精准触达候选人</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- 培训管理 -->
+        <div class="part training" id="training">
+            <div class="title"  :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>员工学习成长</p>
+                <p class="desc">清晰明确的员工成长路径，全面提升企业人才价值；</p>
             </div>
-            
-            <!-- 报表管理 -->
-            <div class="part baobiao" id="baobiao">
-                <div class="cont">
-                    <ul class="lefttxt">
-                        <h2>MyeHR报表管理</h2>
-                        <li>为领导决策提供数据支持</li>
-                        <li>优化企业人员管理流程</li>
-                        <li>提升企业效能</li>
-                    </ul>
-                </div>
+            <div class="cont">
+                <ul class="lefttxt">
+                    <h2>MyeHR培训管理解决方案</h2>
+                    <li>培训资源/培训讲师/培训场地管理</li>
+                    <li>培训需求汇总</li>
+                    <li>培训计划制定及汇报审批管理</li>
+                    <li>培训成果、费用管控及培训分析优化</li>
+                </ul>
             </div>
-            
-            <!-- 绩效管理 -->
-            <div class="part jixiao" id="jixiaoManagement">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>提升员工执行力</p>
-                    <p class="desc">企业战略目标的全面有效落地及全过程管控</p>
-                </div>
-                <div class="cont flexbox" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="inner">
-                        <li class="inimg"><img src="/static/img/jixiao/1.png" alt="" /></li>
-                        <li class="inhead"><p>快速目标分解</p></li>
-                        <li class="indetail"><p>快速形成战略目标对于整体组织架构的目标拆解和跟踪；</p></li>
-                    </div>
-                    <div class="inner">
-                        <li class="inimg"><img src="/static/img/jixiao/2.png" alt="" /></li>
-                        <li class="inhead"><p>全过程管控</p></li>
-                        <li class="indetail"><p>目标、计划、任务、绩效相统一，保证目标的有效执行；</p></li>
-                    </div>
-                    <div class="inner">
-                        <li class="inimg"><img src="/static/img/jixiao/3.png" alt="" /></li>
-                        <li class="inhead"><p>便捷任务反馈</p></li>
-                        <li class="indetail"><p>实现在目标执行过程中的任务回馈、纠偏和风险控制；并且可以多部门协同完成；</p></li>
-                    </div>
-                    <div class="inner">
-                        <li class="inimg"><img src="/static/img/jixiao/4.png" alt="" /></li>
-                        <li class="inhead"><p>目标与工作统一</p></li>
-                        <li class="indetail"><p>构建一个以岗位为依托的目标执行体系，并且可通过图表方便了解工作进度；</p></li>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <!-- 解决方案管理 -->
-            <div class="part solve" id="solve">
-                <div class="cont">
-                    <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                        <p>提升员工执行力</p>
+        <!-- 考勤管理 -->
+        <div class="part attenceManagement" id="attenceManagement">
+            <div class="title"  :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>生产效能提升</p>
+                <p class="desc">提高生产效率，生产力与任务的高度匹配</p>
+            </div>
+            <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="contwrap">
+                    <div class="row four-cols">
+                        <div class="col-sm-3 text-center col-board col-border">
+                            <div class="col-img icon1"></div>
+                            <h4>考勤机刷卡</h4>
+                            <p>考勤机管理/职场管理/移动考勤/刷卡管理</p>
+                        </div>
+                        <div class="col-sm-3 text-center col-board col-border">
+                            <div class="col-img icon2"></div>
+                            <h4>出勤管理</h4>
+                            <p>班组轮班/批量排班/日历排班/自由排班/共享排班</p>
+                        </div>
+                        <div class="col-sm-3 text-center col-board col-border">
+                            <div class="col-img icon3"></div>
+                            <h4>假期管理</h4>
+                            <p>年休假管理/福利假管理/请假申请</p>
+                        </div>  
+                        <div class="col-sm-3 text-center col-board col-border brnone">
+                            <div class="col-img icon3"></div>
+                            <h4>加班管理</h4>
+                            <p>加班规则/加班申请/加班管理流程</p>
+                        </div>   
+                    </div>
+                    <div class="row four-cols">
+                        <div class="col-sm-3 text-center col-board col-border">
+                            <div class="col-img icon1"></div>
+                            <h4>异常数据</h4>
+                            <p>迟到/早退/缺勤加班数据异常/基础数据校对/合规风控</p>
+                        </div>
+                        <div class="col-sm-3 text-center col-board col-border">
+                            <div class="col-img icon2"></div>
+                            <h4>生产力管理</h4>
+                            <p>生产工时管理/生产工时优化/工时数据分析</p>
+                        </div>
+                        <div class="col-sm-3 text-center col-board col-border">
+                            <div class="col-img icon2"></div>
+                            <h4>统计报表</h4>
+                            <p>出勤报表/加班报表/休假报表/月度汇总表</p>
+                        </div>
+                        <div class="col-sm-3 text-center col-board col-border brnone">
+                            <div class="col-img icon3"></div>
+                            <h4>员工自助</h4>
+                            <p>排班查询/手机考勤/我的日程/假期额度/下属考勤追踪</p>
+                        </div>   
                     </div>
                 </div>
             </div>
+        </div>
 
-            <v-foot class="page-12 page"></v-foot>
-            <v-top></v-top>
+        <!-- 招聘管理 -->
+        <div class="part recruitManagement" id="recruitManagement">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>人岗精准匹配</p>
+                <p class="desc">岗位胜任要求管理，全面提升招聘效率</p>
+            </div>
+            <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="contentwrap">
+                    <div class="contentItem">
+                        <img src="static/img/recruit/1.png">
+                        <h3 class="tit">个性化搜索推荐</h3>
+                        <p>基于企业用人偏好，高效筛选候选人</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/2.png">
+                        <h3 class="tit">云人才库</h3>
+                        <p>企业自有简历实时更新，智能推荐候选人</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/3.png">
+                        <h3 class="tit">人脉内推</h3>
+                        <p>基于员工人脉大数据，定向聚焦候选人</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/4.png">
+                        <h3 class="tit">ATS</h3>
+                        <p>多平台信息同步，工作流程数据智能处理</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/5.png">
+                        <h3 class="tit">职位BI</h3>
+                        <p>职位特征一览无余，智能分析用人偏好</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/6.png">
+                        <h3 class="tit">员工保留</h3>
+                        <p>大数据预测员工离职意向及原因</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/7.png">
+                        <h3 class="tit">人才地图</h3>
+                        <p>追踪同行人才状况及优秀候选人</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/8.png">
+                        <h3 class="tit">一键约ta</h3>
+                        <p>免费意向确认，无意向沟通低至零</p>
+                    </div>
+                    <div class="contentItem">
+                        <img src="static/img/recruit/9.png">
+                        <h3 class="tit">企业画像</h3>
+                        <p>数据化企业优势，精准触达候选人</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 报表管理 -->
+        <div class="part baobiao" id="baobiao">
+            <div class="cont">
+                <ul class="lefttxt">
+                    <h2>MyeHR报表管理</h2>
+                    <li>为领导决策提供数据支持</li>
+                    <li>优化企业人员管理流程</li>
+                    <li>提升企业效能</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 绩效管理 -->
+        <div class="part jixiao" id="jixiaoManagement">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>提升员工执行力</p>
+                <p class="desc">企业战略目标的全面有效落地及全过程管控</p>
+            </div>
+            <div class="cont flexbox" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="inner">
+                    <li class="inimg"><img src="/static/img/jixiao/1.png" alt="" /></li>
+                    <li class="inhead"><p>快速目标分解</p></li>
+                    <li class="indetail"><p>快速形成战略目标对于整体组织架构的目标拆解和跟踪；</p></li>
+                </div>
+                <div class="inner">
+                    <li class="inimg"><img src="/static/img/jixiao/2.png" alt="" /></li>
+                    <li class="inhead"><p>全过程管控</p></li>
+                    <li class="indetail"><p>目标、计划、任务、绩效相统一，保证目标的有效执行；</p></li>
+                </div>
+                <div class="inner">
+                    <li class="inimg"><img src="/static/img/jixiao/3.png" alt="" /></li>
+                    <li class="inhead"><p>便捷任务反馈</p></li>
+                    <li class="indetail"><p>实现在目标执行过程中的任务回馈、纠偏和风险控制；并且可以多部门协同完成；</p></li>
+                </div>
+                <div class="inner">
+                    <li class="inimg"><img src="/static/img/jixiao/4.png" alt="" /></li>
+                    <li class="inhead"><p>目标与工作统一</p></li>
+                    <li class="indetail"><p>构建一个以岗位为依托的目标执行体系，并且可通过图表方便了解工作进度；</p></li>
+                </div>
+            </div>
+        </div>
+
+        <!-- 解决方案管理 -->
+        <div class="part solve" id="solve">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>MyeHR整体解决方案</p>
+            </div>
+            <div class="cont">
+            </div>
+        </div>
+
+        <v-foot class="page-12 page"></v-foot>
+        <v-top></v-top>
     </div>
 </template>
 <script type="text/javascript">
@@ -475,7 +534,7 @@
 
 /*薪酬管理*/
 
-.compensationManagement .cont{width: 50%;margin-left: 25%;margin-top: 3rem;}
+.compensationManagement .cont{width: 70%;margin-left: 15%;margin-top: 3rem;}
 .three-cols {margin: -1px 0 0 0!important;border-top: 1px solid #3099c2;border-bottom: 1px solid #3099c2;
     display: flex;}
 .compensationManagement  .three-cols{border:none;}
@@ -495,13 +554,13 @@
 .compensationManagement .cont .three-cols .brnone{border-right: 0;}
 
 /*人事管理*/
-.part.peopleManagement .cont{height: calc(100% - 115px);background: url(../../../static/img/renshi.png) no-repeat center;background-size: 65%;}
+.part.peopleManagement .cont{height: 80vh;background: url(../../../static/img/renshi.png) no-repeat center;background-size: 65%;}
 
 /*培训管理*/
-.part.training .cont{height: calc(100% - 115px);background: url(../../../static/img/training.png) no-repeat right;background-size: 60%;}
+.part.training .cont{height: 80vh;background: url(../../../static/img/training.png) no-repeat right;background-size: 60%;}
 .cont ul.lefttxt{padding: 10% 0 0 15%;color: #333;opacity: 1!important;}
-.cont ul.lefttxt h2{font-size: 24px;font-weight: 100;margin-bottom: 10px;}
-.cont ul.lefttxt li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
+.cont ul.lefttxt h2{font-size: 28px;font-weight: 100;margin-bottom: 10px;margin-left: -42px;line-height: 3em;}
+.cont ul.lefttxt li{line-height: 35px;list-style: disc;font-size: 18px;color: #666;}
 
 /*考勤管理*/
 .part.attenceManagement{background:url(../../../static/img/banner/1.jpg) no-repeat;background-size:cover; }
@@ -549,7 +608,7 @@
 .recruitManagement .cont .contentwrap .contentItem:hover p{display: block;}
 
 /*报表*/
-.part.baobiao .cont{height: 100%;background:url(../../../static/img/baobiao.png)no-repeat 80%/45%;}
+.part.baobiao .cont{height: 80vh;background:url(../../../static/img/baobiao.png)no-repeat 80%/45%;}
 .part.baobiao .cont ul{opacity: 1!important;}
 .part.baobiao .cont h2{font-size: 24px;line-height: 40px;}
 
@@ -578,7 +637,7 @@
  .part .cont .more a{display:block;width:100%;height:100%;color:#0079ef;text-align:center;font-size:16px;line-height:2.8rem;}
 
 /**/
-.part.solve .cont{height: 100%;background:url(../../../static/img/solve.png)no-repeat center/60%;}
+.part.solve .cont{height: 80vh;background:url(../../../static/img/solve.jpg)no-repeat center/60%;}
 
 @media screen and (max-width:1400px){
 
