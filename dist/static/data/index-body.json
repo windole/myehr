@@ -232,28 +232,28 @@
             "ProductId": "1",
             "ProductIcon": "iconfont icon-beijingtiaochaicon",
             "ProductTitle": "600万个人用户<br/>8千家企业用户",
-            "ProductTitlePlus": "HR用户体验，积累丰富的行业经验",
+            "ProductTitlePlus": "HR用户体验，<br/>积累丰富的行业经验",
             "ProductThumb": "static/img/whyChoose/1.png"
         },
         {
             "ProductId": "2",
             "ProductIcon": "iconfont icon-app",
-            "ProductTitle": "18年行业耕耘",
-            "ProductTitlePlus": "专业人力资源管理信息化软件服务",
+            "ProductTitle": "18年<br/>行业耕耘",
+            "ProductTitlePlus": "专业人力资源管理<br/>信息化软件服务",
             "ProductThumb": "static/img/whyChoose/2.png"
         },
         {
             "ProductId": "3",
             "ProductIcon": "iconfont icon-recruitmentinfor",
-            "ProductTitle": "22家全国性分支机构",
-            "ProductTitlePlus": "国内专业eHR专业厂商最强",
+            "ProductTitle": "22家<br/>全国性分支机构",
+            "ProductTitlePlus": "国内专业eHR<br/>专业厂商最强",
             "ProductThumb": "static/img/whyChoose/3.png"
         },
         {
             "ProductId": "4",
             "ProductIcon": "iconfont icon-shipin2",
-            "ProductTitle": "450名专业实施团队",
-            "ProductTitlePlus": "包含咨询顾问、项目经理、<br/>软件工程师等专业团队",
+            "ProductTitle": "450名<br/>专业实施团队",
+            "ProductTitlePlus": "包含咨询顾问、<br/>项目经理、软件<br/>工程师等专业团队",
             "ProductThumb": "static/img/whyChoose/4.png"
         }
     ],

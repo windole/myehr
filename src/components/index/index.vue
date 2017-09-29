@@ -313,10 +313,6 @@
             moveTo(index) {
                 this.$refs.example.$fullpage.moveTo(index, true); // Move to the next page
             },
-            checkNavIndex() {
-                let index = this.$refs.example.$fullpage.curIndex;
-                this.currentNavIndex = index;
-            },
             nextSolution() {
                 let len = $(this.$refs.solutionSwiper).find('.item').length - 5;
                 let oWidth = $(this.$refs.solutionSwiper).width() / 4;
@@ -446,7 +442,6 @@
         mounted() {
             window.addEventListener('scroll', this.menu);
             window.addEventListener('resize', this.rerender);
-            window.addEventListener('mousewheel', this.checkNavIndex);
             this.initial();
         },
         created() {
@@ -523,7 +518,7 @@
 .index .part.compare .compare-left .content li:nth-child(4) .img{background: rgb(142,92,212) url(../../../static/img/compare4.png)no-repeat center;background-size: 55%;}
 .index .part.compare .compare-right .content{margin-top:5rem;text-align: center;}
 .index .part.compare .compare-right .content img{width: 260px;}*/
-.index .part.company{height: 100vh;background:url(../../../static/img/banner/9.jpg) no-repeat;background-size: cover;    padding: 20px 0 0;}
+.index .part.company{height: 82vh;background:url(../../../static/img/banner/9.jpg) no-repeat;background-size: cover;    padding: 20px 0 0;}
 .index .part.company .title p{color: #fff;}
 .index .part.company .cont{height: calc(100% - 123px);}
 .index .part.company .item{width: 49%;display: inline-block;vertical-align: top;height:calc(100% - 7.8rem);}

@@ -52,5 +52,6 @@ export default new Router({
             name: 'MyeHR',
             component: MyeHR
         }
-    ]
+    ],
+    mode: 'history'
 });

@@ -52,6 +52,16 @@
                 </div>
             </div>
             <div class="code">
+                <div class="consult">
+                    <div class="tel">
+                        <i class="icon-phone"></i>13122069450                         
+                    </div>
+                    <div class="email">
+                        <a href="mailto:myehr@163.com">E-mail : myehr@163.com</a>                            
+                    </div>
+                    <a id="consult" class="ui inverted button"><i class="icon-consult"></i>企业咨询</a>
+                    <p>请点击填写咨询表单 将有客户专员回电</p>
+                </div>
                 <div class="code_item clear">
                     <div class="item">
                         <div class="img">
@@ -59,17 +69,6 @@
                         </div>
                         <p>官方微信二维码</p>
                     </div>
-                    <!-- <div class="item">
-                        <div class="img">
-                            <img src="../../static/img/weixinImg.jpg">
-                        </div>
-                        <p>官方微博二维码</p>
-                    </div> -->
-                </div>
-                <div class="logo">
-                    <!-- <img src="../../static/img/logo_footer.png"> -->
-                    <p>电话：13122069450</p>
-                    <p>邮箱：myehr@163.com</p>
                 </div>
             </div>
         </div>
@@ -112,7 +111,8 @@
 
 .footer {
     top: 5rem;
-    background: #fff;
+    background: #1f2f4f;
+    color: #ccc;
 }
 .foot-header{
     padding: 4rem;height: 14rem;text-align: center;background: #076ce0;
@@ -120,72 +120,100 @@
 .foot-header h1{color: #fff;padding-bottom: 2rem;}
 .foot-header button{border: none;outline: none;padding: 10px 50px;background: rgb(240,171,0);border-radius: 5px;font-size: 17px;letter-spacing: 1px;color: #fff;}
 .footer .foot_wrap {
-    width: 78.125%;
+    width: 90%;
     margin: 0 auto;
     padding-top: 2rem;
     padding-bottom: 2rem
 }
 
 .footer .foot_wrap .friend {
-    float: left
+    float: left;
+    width: 62.5%;
 }
 
 .footer .foot_wrap .friend .item {
     float: left;
-    margin-left: 3rem;
-    width: 9rem
+    padding: 0 1em;
+    width: 25%;
 }
 
-.footer .foot_wrap .friend .item:first-child {
-    width: 12rem
-}
 
 .footer .foot_wrap .friend .item .title {
     font-weight: 400;
     line-height: 3rem;
     font-size: 18px;
-    color: rgb(105,105,105);
 }
 
 .footer .foot_wrap .friend .item .list .list-item {
     font-size: 14px;
     line-height: 1.8rem;
-    color: rgb(105,105,105);
 }
 
 .footer .foot_wrap .friend .item .list .list-item a {
-    color: rgb(105,105,105);
+    color: #ccc;
 }
 
 .footer .foot_wrap .code {
     float: right;
-    margin-right: 3.5rem;
-    width: 15rem
+    width: 37.5%;
+}
+.footer .foot_wrap .code .consult {
+    width: 280px;
+    float: left;
+    border-left: 1px solid #758396;
+    padding-left: 70px;
+    margin-left: -50px;
+}
+.consult .tel {
+    font-size: 24px;
+    color: #fff;
+}
+.consult .email {
+    font-size: 13px;
+    padding-bottom: 27px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #758396;
+}
+.consult .email a{color: #ccc;}
+.consult a.ui.button {
+    text-align: center;
+    width: 124px;
+    border-radius: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-shadow: 0 0 0 1px #fff inset!important;
+}
+.consult p {
+    font-size: 12px;
+    color: #ccc;
 }
 
-.footer .foot_wrap .code div.logo {
+.footer .foot_wrap .code .logo {
     height: 3rem;
+    width: 140px;
+    float: right;
+    text-align: center;
 }
 
-.footer .foot_wrap .code div.logo img {
+.footer .foot_wrap .code .logo img {
     vertical-align: middle;
     max-width: 100%
 }
 
 .footer .foot_wrap .code .code_item {
-    width: 18rem
+    float: right;
 }
 
 .footer .foot_wrap .code .code_item .item {
-    float: left;
     margin-right: 2rem;
-    width: 6.5rem;
+    width: 12rem;
     display: inline-block
 }
 
 .footer .foot_wrap .code .code_item .item .img {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 12rem;
+    height: 12rem;
     margin-bottom: 1.4rem;
     background: #fff
 }
@@ -201,152 +229,152 @@
 
 .footer .foot_wrap .code .code_item .item p {
     font-size: 12px;
-    color: rgb(105,105,105);
+    color: #ccc;
     text-align: center
 }
 
 .footer .btm {
-    height: 4rem;
-    border-top: 1px solid #f1f1f1
+    /*height: 4rem;
+    border-top: 1px solid #f1f1f1*/
+    color: #ccc;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #162035;
 }
 
 .footer .btm .wrap {
     text-align: center;
     font-size: 12px;
-    color: rgb(105,105,105);
-    line-height: 4rem
+    color: #ccc;
+    /*line-height: 4rem*/
 }
 
 .footer .btm .wrap span.line {
     height: .6rem;
     width: 1px;
     background: #fff;
-    margin-top: 1.7rem;
     margin-left: .7rem;
     margin-right: .7rem;
     display: inline-block
 }
 
 @media screen and (max-width:1420px) {
-    div.footer div.foot_wrap div.friend div.item:first-child {
-        width: 12.5rem
-    }
+    
 }
 
 @media screen and (max-width:1200px) {
-    div.footer div.foot_wrap div.friend div.item:first-child {
-        width: 13.5rem
-    }
+    
 }
 
 @media screen and (max-width:1150px) {
-    div.footer div.foot_wrap div.friend div.item {
+    .footer .foot_wrap .friend .item {
         margin-left: 0;
         width: 110px
     }
-    div.footer div.foot_wrap div.friend div.item:first-child {
+    .footer .foot_wrap .friend .item:first-child {
         width: 160px
     }
-    div.footer div.foot_wrap div.friend div.item h4.title {
+    .footer .foot_wrap .friend .item h4.title {
         font-size: 14px
     }
-    div.footer div.foot_wrap div.friend div.item ul.list li.list-item {
+    .footer .foot_wrap .friend .item ul.list li.list-item {
         font-size: 12px;
         line-height: 26px
     }
-    div.footer div.foot_wrap div.code {
+    .footer .foot_wrap .code {
         margin-right: 0;
         width: 200px
     }
-    div.footer div.foot_wrap div.code div.logo {
+    .footer .foot_wrap .code .logo {
         height: 36px;
         line-height: 36px;
         margin-bottom: 50px
     }
-    div.footer div.foot_wrap div.code div.code_item {
+    .footer .foot_wrap .code .code_item {
         width: 100%
     }
-    div.footer div.foot_wrap div.code div.code_item div.item {
+    .footer .foot_wrap .code .code_item .item {
         width: 95px;
         margin-right: 10px
     }
-    div.footer div.foot_wrap div.code div.code_item div.item div.img {
+    .footer .foot_wrap .code .code_item .item .img {
         width: 100%;
         height: 95px;
         margin-bottom: 16px
     }
-    div.footer div.foot_wrap div.code div.code_item div.item p {
+    .footer .foot_wrap .code .code_item .item p {
         font-size: 12px
     }
-    div.footer div.foot_wrap div.code div.code_item div.item:last-child {
+    .footer .foot_wrap .code .code_item .item:last-child {
         margin-right: 0
     }
 }
 
 @media screen and (max-width:1050px) {
-    div.footer div.foot_wrap {
+    .footer .foot_wrap {
         width: 90%
     }
 }
 
 @media screen and (max-width:767px) {
-    div.footer {
+    .footer {
         padding-bottom: 5.5rem
     }
-    div.footer div.foot_wrap {
+    .footer .foot_wrap {
         width: 100%;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         padding-top: 4.5rem
     }
-    div.footer div.foot_wrap div.friend {
+    .footer .foot_wrap .friend {
         display: none
     }
-    div.footer div.foot_wrap div.code {
+    .footer .foot_wrap .code {
         float: none;
         width: 100%
     }
-    div.footer div.foot_wrap div.code div.logo {
+    .footer .foot_wrap .code .logo {
         text-align: center;
         height: 2.5rem;
         margin-bottom: 3.5rem
     }
-    div.footer div.foot_wrap div.code div.logo img {
+    .footer .foot_wrap .code .logo img {
         height: 100%
     }
-    div.footer div.foot_wrap div.code div.code_item {
+    .footer .foot_wrap .code .code_item {
         text-align: center
     }
-    div.footer div.foot_wrap div.code div.code_item div.item {
+    .footer .foot_wrap .code .code_item .item {
         float: none;
         width: 7rem;
         margin-left: 2.5rem;
         margin-right: 2.5rem
     }
-    div.footer div.foot_wrap div.code div.code_item div.item div.img {
+    .footer .foot_wrap .code .code_item .item .img {
         height: 7rem;
         margin-bottom: 1.5rem
     }
-    div.footer div.foot_wrap div.code div.code_item div.item div.img img {
+    .footer .foot_wrap .code .code_item .item .img img {
         width: 100%
     }
-    div.footer div.foot_wrap div.code div.code_item div.item p {
+    .footer .foot_wrap .code .code_item .item p {
         font-size: .9rem
     }
-    div.footer div.foot_wrap div.code div.code_item div.item:last-child {
+    .footer .foot_wrap .code .code_item .item:last-child {
         margin-right: 2.5rem
     }
-    div.footer div.btm {
+    .footer .btm {
         height: 6rem
     }
-    div.footer div.btm div.wrap {
+    .footer .btm .wrap {
         font-size: .9rem;
         line-height: 2rem
     }
-    div.footer div.btm div.wrap span.line {
+    .footer .btm .wrap span.line {
         display: none
     }
-    div.footer div.btm div.wrap span {
+    .footer .btm .wrap span {
         display: block;
         line-height: 2rem
     }

@@ -8,6 +8,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var env = config.build.env
 
@@ -90,7 +92,39 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    new PrerenderSpaPlugin(
+        path.join(__dirname, '../dist'),
+        [ '/', '/pass', '/hr', '/case', '/ecology', '/stuffServers', '/MyeHR'],
+        {
+            ignoreJSErrors: true,
+            maxAttempts: 10,
+            phantomOptions: '--disk-cache=true',
+            phantomPageSettings: {
+              loadImages: true
+            },
+            phantomPageViewportSize: {
+              width: 1280,
+              height: 800
+            },
+            postProcessHtml: function (context) {
+              var titles = {
+                '/': 'myehr高端人力资源管理软件',
+                '/pass': 'Our Story',
+                '/hr': 'Contact Us',
+                '/case': '344',
+                '/ecology': 'ddd',
+                '/stuffServers': 'sdsc',
+                '/MyeHR': 'dsgfsdfgdf'
+              }
+              return context.html.replace(
+                /<title>[^<]*<\/title>/i,
+                '<title>' + titles[context.route] + '</title>'
+              )
+            }
+        }
+      )
   ]
 })
 
