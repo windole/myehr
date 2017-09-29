@@ -1,8 +1,7 @@
  <template>
-    <div class="index fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="example">
+    <div class="index">
             <!-- banner广告 -->
-            <div class="bannerWrap page-1 page" v-if='showBanner'>
+            <div class="bannerWrap" v-if='showBanner'>
                 <div class="bannerLoop">
                     <swiper :options="bannerOption" ref="bannerOption" class="clear">
                         <swiper-slide class="item"  v-for="(item,index) in bannerLoop" key="index">
@@ -20,17 +19,16 @@
                             </div>
                         </swiper-slide>
                         <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                <div class="swiper-button-next btn next" slot="button-next"></div>
+                        <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
                 </div>
             </div>
             <loading v-if="!showBanner"></loading>
             <!-- 服务模式 -->
-            <div class="part solution clearfix page-2 page">
-                <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+            <div class="part solution clearfix">
+                <div class="title"  :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR服务模式</p>
                     <p class="desc">咨询+平台+应用+项目二次开发，基于员工服务的深度应用平台提供</p>
-                    <span class="line"></span>
                 </div>
                 <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="slideBox">
                     <swiper :options="solutionOption" ref="solutionSwiper" class="clear">
@@ -76,13 +74,12 @@
                 </div>
             </div>
             <!-- 解决方案 -->
-            <div class="part project page-3 page">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+            <div class="part project">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR解决方案</p>
-                    <p class="desc">全面化的员工管理及服务支撑平台，实现企业战略目标有效落地</p>
-                    <span class="line"></span>
+                    <p class="desc">全面化的员工管理及服务支撑平台，实现企业战略目标有效落地</p>             
                 </div>
-                <div class="cont" v-animate="{value: 'zoomIn',delay:600}" ref="project">
+                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }"  ref="project">
                     <div class="contentwrap">
                         <div v-for="item in projectData" class="contentitem" v-animate="{value: 'zoomInDown'}">
                             <div class="left-img" :style="{backgroundImage:' url(\'static/'+item.ProjectIcon+'\')'}" >
@@ -126,24 +123,24 @@
             </div>
  -->
             <!-- 优势 -->
-            <div class="part advantage page-4 page">
-                <div v-animate="{value: 'bounceInLeft', delay: 0}" style="height:100%;background:url(static/img/advantage.png) no-repeat 80% center;background-size:50%;opacity:1!important;">
-                    <ul >
+            <div class="part advantage">
+                <div style="height:100%;background:url(static/img/advantage.png) no-repeat 80% center;background-size:50%;">
+                    <ul class="cont">
                         <h2>MyeHR移动办公平台</h2>
                         <li>一次开发 多端运行</li>
                         <li>人性化UI设计</li>
                         <li>界面友好，操作便捷</li>
                         <li>灵活增加应用，可扩展性强</li>
                         <li>全面适应iOS、Android端</li>
-                    </ul>
+                    </ul>        
                 </div>
             </div>
 
             <!-- 产品与服务 -->
-            <div class="part product page-5 page">
-                <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
+            <div class="part product">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
                     <p>为什么选择MyeHR？</p>
-                    <span class="line"></span>
+                    <p class="desc">专业化、智能化、移动化、社交化的人才资源管理综合解决方案</p>
                 </div>
                 <div class="cont grid">
                     <div class="row" >
@@ -168,10 +165,10 @@
                 </div>
             </div>
             <!-- 我们的客户 -->
-            <div class="part client case clear page-6 page">
-                <div class="title"  v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+            <div class="part client case clear">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR典型客户</p>
-                    <span class="line"></span>
+                    <p class="desc">服务8000余家客户，与客户形成众多行业解决方案</p>
                 </div>
                 <div class="case_list" >
                     <div class="title">
@@ -191,20 +188,17 @@
                 </div>
             </div>
 
-            <div class="part company clear page-7 page">
+            <div class="part company clear">
                 <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>MyeHR战略伙伴联盟</p>
                     <p class="desc">携手多家合作伙伴，共同打造人力资源生态联盟</p>
-                    <span class="line"></span>
                 </div>
-                <div class="company-left item" v-animate="{value: 'rollIn'}"></div>
-                <div class="company-right item" v-animate="{value: 'bounceInRight', delay:600}"></div>
+                <div class="company-left item"></div>
+                <div class="company-right item"></div>
             </div>
 
             <v-foot class="page-8 page"></v-foot>
         </div>
-        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
-    </div>
 </template>
 <script type="text/javascript">
     import $ from 'jquery';
@@ -213,7 +207,6 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
-    import navBar from './../navBar.vue';
     const baseUrl = '';
     export default{
         data() {
@@ -311,8 +304,7 @@
             'loading': loading,
             'vFoot': foot,
             'swiper': swiper,
-            'swiperSlide': swiperSlide,
-            'navBar': navBar
+            'swiperSlide': swiperSlide
         },
         methods: {
             menu() {
@@ -465,13 +457,12 @@
 </script>
 <style type="text/css">
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
-.index{width:100%;color: rgb(105,105,105);}
+.index{width:100%;color: #333;}
 .index .swiper-button-disabled{pointer-events:auto;}
-.index .product.part .title p{color:rgb(105,105,105);}
 
 
 /*解决方案*/
-.index .part .title.active{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0);-ms-transform:translateY(0);}
+.index .part .title.active{transform:translateY(3%);}
 .index .solution.part .cont{margin:0 auto;width:100%;max-width:1200px;transition:all 1s .2s;transform:translateY(12%);}
 .index .solution.part .cont .swiper-container{position:relative;height:42rem;}
 .index .solution.part .cont .swiper-container .swiper-wrapper{height:100%!important;}
@@ -515,15 +506,8 @@
 .index .project .cont .contentwrap{width: 100%;display: flex; flex-wrap: wrap;}
 .index .project .cont .contentwrap .contentitem{display: inline-block;width: 33.3%;padding-top: 2rem;text-align: center;opacity: 1!important;-webkit-animation-name: bounceInUp;animation-name: bounceInUp;-webkit-transform-origin: center bottom;transform-origin: center bottom;}
 .index .project .cont .contentwrap .contentitem .left-img{width: 65px;height: 65px;border-radius: 10px;margin:0 auto 10px;background-position: center;background-repeat: no-repeat;}
-/*.contentitem:nth-child(1) .left-img{background-color: rgb(79,129,189);}
-.contentitem:nth-child(2) .left-img{background-color: rgb(192,80,77);}
-.contentitem:nth-child(3) .left-img{background-color: rgb(155,187,89);}
-.contentitem:nth-child(4) .left-img{background-color: rgb(128,100,162);}
-.contentitem:nth-child(5) .left-img{background-color: rgb(75,172,198);}
-.contentitem:nth-child(6) .left-img{background-color: rgb(247,150,70);}
-.contentitem:nth-child(7) .left-img{background-color: rgb(34,128,195);}
-.contentitem:nth-child(8) .left-img{background-color: rgb(88,88,172);}
-.contentitem:nth-child(9) .left-img{background-color: rgb(142,92,212);}*/
+
+
 .index .project .cont .contentwrap .contentitem .right-con{display: inline-block;font-size: 18px;line-height: 26px;color: #333;}
 .index .project .cont .contentwrap .contentitem p{color: #666;font-size: 14px;margin-top: .6em;}
 /*.index .part.compare{background:#076ce0;color: #fff;padding-top: 5rem;}
@@ -539,7 +523,8 @@
 .index .part.compare .compare-left .content li:nth-child(4) .img{background: rgb(142,92,212) url(../../../static/img/compare4.png)no-repeat center;background-size: 55%;}
 .index .part.compare .compare-right .content{margin-top:5rem;text-align: center;}
 .index .part.compare .compare-right .content img{width: 260px;}*/
-.index .part.company{background:url(../../../static/img/banner/9.jpg) no-repeat;background-size: cover;}
+.index .part.company{height: 100vh;background:url(../../../static/img/banner/9.jpg) no-repeat;background-size: cover;    padding: 20px 0 0;}
+.index .part.company .title p{color: #fff;}
 .index .part.company .cont{height: calc(100% - 123px);}
 .index .part.company .item{width: 49%;display: inline-block;vertical-align: top;height:calc(100% - 7.8rem);}
 
@@ -547,10 +532,9 @@
 .index .part.company .company-right{background: url(../../../static/img/company2.png) no-repeat 40%;background-size: 65%;}
 
 
-
-.index .part.advantage ul{padding: 13% 0 0 15%;color: #333;opacity: 1!important;}
-.index .part.advantage ul h2{font-size: 24px;font-weight: 100;margin-bottom: 10px;}
-.index .part.advantage ul li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
+.index .part.advantage ul{padding: 10% 0 0 15%;color: #333;text-align: left;min-height: 500px;}
+.index .part.advantage ul h2{font-size: 28px;font-weight: 100;margin-bottom: 10px;margin-left: -42px;-height: 3em;}
+.index .part.advantage ul li{line-height: 35px;list-style: disc;font-size: 18px;color: #666;}
 
 
 .index .part.product .cont{width: 80%;margin-left: 10%;margin-top: 5rem;}
@@ -558,8 +542,8 @@
 .index .part.product .cont .row .ui .content{width: 100%;height: 0;padding-bottom: 100%;background-size: cover;background-repeat: no-repeat;}
 .index .part.product .cont .row .ui .cell{text-align: center;}
 .index .part.product .cont .row .ui .visible .cell {display: flex;justify-content: center;align-items: center;height: 240px;}
-.index .part.product .cont .row .hidden .text {height: 100%;background-color: #0cf;margin-top: -12px;}
-.index .part.product .cont .row .ui  .cell p {color: #fff;font-size: 16px;margin-top: 12px;}
+.index .part.product .cont .row .hidden .text {height: 100%;background-color: #036;margin-top: -12px;}
+.index .part.product .cont .row .ui  .cell p {color: #fff;font-size: 25px;margin-top: 12px;}
 .index .part.product .cont .row .hidden p{padding-top: 30%;width: 80%;margin: 0 auto;word-wrap: break-word;text-align: center;}
 
 

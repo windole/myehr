@@ -59,12 +59,13 @@
 
 <style>
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
+.bannerWrap{height:100vh;}
 .op1{opacity: 1!important;}
-.page{padding-top:5rem;}
-.part .title{text-align:center;transition:all 1s;}
-.part .title p{line-height:5.3rem;font-size: 2.1em;font-weight: 400;color: #036;}
+.part{padding: 80px 0 0;min-height: 400px;}
+.part .title{text-align:center;transition:all 1s;font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;}
+.part .title p{font-size: 2.1em;font-weight: 400;color: #036;font-size: 38px;margin-bottom: 40px;line-height: 1.28571429em;}
 .part .title span.line{display:inline-block;margin:0 auto;width:4rem;height:.2rem;background:#0079ef;}
-.part .title p.desc{color:#333;font-size:20px;line-height:1rem;}
+.part .title p.desc{color:#333;font-size: 20px;line-height: 32px;margin-bottom: 30px;}
 .main-content{width: 100%;height: 100vh;}
  .swiper-button-disabled{pointer-events:auto;}
  .banner{position:relative;overflow:hidden;width:100%;height:46rem;background:rgba(0,0,0,.4);}
