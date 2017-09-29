@@ -1,8 +1,7 @@
  <template>
-    <div class="hr fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="hr">
+    <div class="hr">
             <!-- banner广告 -->
-            <div class="bannerWrap page-1 page" v-if='showBanner'>
+            <div class="bannerWrap" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
                     <swiper :options="bannerOption" ref="bannerOption" class="clear">
                         <swiper-slide class="item"  key="index">
@@ -39,25 +38,8 @@
                 </div>
             </div>
             <loading v-if="!showBanner"></loading>
-            <!-- 解决方案 -->
-            <div class="part project page-2 page">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>MyeHR解决方案</p>
-                    <span class="line"></span>
-                </div>
-                <div class="cont" v-animate="{value: 'zoomIn',delay:600}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contentwrap">
-                        <div v-for="item in projectData" class="contentitem">
-                            <div class="left-img" :style="{backgroundImage:' url(\'static/'+item.ProjectIcon+'\')'}" >
-                            </div>
-                            <div class="right-con">{{item.ProjectTit}}</div>
-                            <p>{{item.ProjectContent}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- 组织管理 -->
-            <div class="part control page-3 page" id="organzeManagement">
+            <div class="part control" id="organzeManagement">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>全面集团化管控</p>
                     <p class="desc">通过岗位职责、招聘、考核及标准组织管理模型的标准化管理，实现集团化管控；</p>
@@ -144,7 +126,7 @@
             </div>
 
             <!-- 薪酬管理 -->
-            <div class="part compensationManagement page-4 page" id="compensationManagement">
+            <div class="part compensationManagement" id="compensationManagement">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>精准高效薪酬管控</p>
                     <p class="desc">预算与薪酬额度管控，确保企业人工成本的可控性；</p>
@@ -190,7 +172,7 @@
             </div>
 
             <!-- 人事管理 -->
-            <div class="part peopleManagement page-5 page" id="peopleManagement">
+            <div class="part peopleManagement" id="peopleManagement">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>人员事务管理</p>
                     <p class="desc">丰富人事管理业务，人员职场全周期管控；</p>
@@ -201,7 +183,7 @@
             </div>
 
             <!-- 培训管理 -->
-            <div class="part training page-6 page" id="training">
+            <div class="part training" id="training">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>员工学习成长</p>
                     <p class="desc">清晰明确的员工成长路径，全面提升企业人才价值；</p>
@@ -219,7 +201,7 @@
             </div>
 
             <!-- 考勤管理 -->
-            <div class="part attenceManagement page-7 page" id="attenceManagement">
+            <div class="part attenceManagement" id="attenceManagement">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>生产效能提升</p>
                     <p class="desc">提高生产效率，生产力与任务的高度匹配</p>
@@ -275,7 +257,7 @@
             </div>
 
             <!-- 招聘管理 -->
-            <div class="part recruitManagement page-8 page" id="recruitManagement">
+            <div class="part recruitManagement" id="recruitManagement">
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>人岗精准匹配</p>
                     <p class="desc">岗位胜任要求管理，全面提升招聘效率</p>
@@ -332,8 +314,8 @@
             </div>
             
             <!-- 报表管理 -->
-            <div class="part baobiao page-9 page" id="baobiao">
-                <div class="cont"  v-animate="{value: 'bounceInRight', delay: 0}">
+            <div class="part baobiao" id="baobiao">
+                <div class="cont">
                     <ul class="lefttxt">
                         <h2>MyeHR报表管理</h2>
                         <li>为领导决策提供数据支持</li>
@@ -344,8 +326,8 @@
             </div>
             
             <!-- 绩效管理 -->
-            <div class="part jixiao page-10 page" id="jixiaoManagement">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+            <div class="part jixiao" id="jixiaoManagement">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>提升员工执行力</p>
                     <p class="desc">企业战略目标的全面有效落地及全过程管控</p>
                 </div>
@@ -374,8 +356,8 @@
             </div>
 
             <!-- 解决方案管理 -->
-            <div class="part solve page-11 page" id="solve">
-                <div class="cont" v-animate="{value: 'zoomIn'}">
+            <div class="part solve" id="solve">
+                <div class="cont">
                     <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                         <p>提升员工执行力</p>
                     </div>
@@ -383,24 +365,22 @@
             </div>
 
             <v-foot class="page-12 page"></v-foot>
-        </div>
-        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
+            <v-top></v-top>
     </div>
 </template>
 <script type="text/javascript">
-    import axios from 'axios';
     import foot from './../foot.vue';
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
-    import navBar from './../navBar.vue';
+    import top from './../top.vue';
     export default{
         data() {
             return {
                 head: {},
                 scroll: '',
                 next: 0,
-                showBanner: false,
+                showBanner: true,
                 dark: false,
                 plus: [],
                 projectData: [],
@@ -445,45 +425,15 @@
             'vFoot': foot,
             'swiper': swiper,
             'swiperSlide': swiperSlide,
-            'navBar': navBar
+            'vTop': top
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
-            },
-            moveTo(index) {
-                this.$refs.hr.$fullpage.moveTo(index, true); // Move to the next page
-            },
-            checkNavIndex() {
-                let index = this.$refs.hr.$fullpage.curIndex;
-                this.currentNavIndex = index;
-            },
-            getDate() {
-                let that = this;
-                // 获取banner数据设置
-                this.showBanner = false;
-                // 解决方案设置
-                this.showSol = false;
-                this.showSolBn = false;
-                axios.get('./../../static/data/index-body.json').then((response) => {
-                    // console.log(response);
-                    let data = response.data;
-                    that.bannerUrl = data.base_url;
-                    // 获取baner数据
-                    // that.bannerLoop = data.head.slide;
-                    // console.log(that.bannerLoop);
-                    that.showBanner = true;
-                    // 获取解决方案
-                    that.projectData = data.project;
-                });
             }
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
-            window.addEventListener('mousewheel', this.checkNavIndex);
-        },
-        created() {
-            this.getDate();
         }
     };
 </script>
