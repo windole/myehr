@@ -2,7 +2,7 @@
     <div class="pass fullpage-container">
         <div class="fullpage-wp" v-fullpage="opts" ref="pass">
             <!-- banner广告 -->
-            <div class="bannerWrap page-1 page" v-if='showBanner'>
+            <div class="bannerWrap  page-1 page" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
                     <swiper :options="bannerOption" ref="bannerOption" class="clear">
                         <swiper-slide class="item"  key="index">
@@ -105,7 +105,7 @@
                 head: {},
                 scroll: '',
                 next: 0,
-                showBanner: false,
+                showBanner: true,
                 dark: false,
                 plus: [],
                 projectData: [],
@@ -114,7 +114,7 @@
                 currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
-                    autoplay: false,
+                    autoplay: 2000,
                     loop: true,
                     setWrapperSize: true,
                     autoHeight: true,
@@ -208,10 +208,10 @@
 .part.advantage ul h2{font-size: 24px;font-weight: 100;margin-bottom: 10px;}
 .part.advantage ul li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
 /*modal*/
-.part.modal .cont{height: calc(100% - 115px);background: url(../../../static/img/pass-modal.png) no-repeat center;background-size: 78%;}
+.part.modal .cont{height: calc(100% - 13rem);background: url(../../../static/img/pass-modal.png) no-repeat center;background-size: 78%;}
 
 /*架构*/
-.architecture .cont{height: calc(100% - 115px);background: url(../../../static/img/architecture.jpg) no-repeat center;background-size: 52%;}
+.architecture .cont{height: calc(100% - 13rem);background: url(../../../static/img/architecture.jpg) no-repeat center;background-size: 52%;}
 
 
 @media screen and (max-width:767px){

@@ -7,9 +7,9 @@
                 </router-link>
             </div>
             <div class="lang clear">
-                <span><a href="#">登录</a></span>
+                <span><a href="javascript:;" @click="showSign(0)">登录</a></span>
                 <span class="line"></span>
-                <span><a href="#">注册</a></span>
+                <span><a href="javascript:;" @click="showSign(1)">注册</a></span>
             </div>
             <div class="search" style="display:none;">
                 <form class="form">
@@ -43,7 +43,7 @@
                             <span>{{item.menuItemName}}</span>
                         </router-link>
                         <span class="line"></span>
-                        <div class="submenu" :class="'width'+item.menuItemContent.length" v-if="item.menuItemContent.length">
+                        <div class="submenu" style="display:none" :class="'width'+item.menuItemContent.length" v-if="item.menuItemContent.length">
                             <ul class="sub_wrap clear">
                                 <li class="sub_list" v-for="item2 in item.menuItemContent">
                                     <router-link :to="{path:item.menuItemPath +'#'+item2.secondPath}">{{item2.secondName}}</router-link>
@@ -124,6 +124,9 @@
             },
             clearVal() {
                 $(this.$refs.pcSearch).val('');
+            },
+            showSign(index) {
+                this.$emit('showSign', index);
             }
         },
         computed: {

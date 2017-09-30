@@ -1,22 +1,22 @@
 <template>
   <div class="main-content">
     <keep-alive>
-        <v-header :dark='dark'></v-header>
+        <v-header :dark='dark' @showSign="showSign(index)"></v-header>
     </keep-alive>
 
     <keep-alive>
         <router-view  @isdark="getDark"></router-view>
     </keep-alive>
 
-    <!-- <keep-alive>
-        <v-top></v-top>
-    </keep-alive> -->
+    <keep-alive>
+        <v-sign :isShow='signTabShow' @on-close='closeTab' :showTabType='showTabType'></v-sign>
+    </keep-alive>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import header from './components/header.vue';
-  // import top from './components/top.vue';
+  import sign from './components/signin.vue';
   export default{
       data() {
           return {
@@ -27,12 +27,14 @@
               keywords: '',
               Newstitle: '',
               Newsdescription: '',
-              Newskeywords: ''
+              Newskeywords: '',
+              signTabShow: false,
+              showTabType: 0
           };
       },
       components: {
-          'vHeader': header
-          // 'vTop': top
+          'vHeader': header,
+          'vSign': sign
       },
       methods: {
           getDark() {
@@ -46,6 +48,13 @@
               } else {
                   ohtml.style.fontSize = screenWidth * 20 / 640 + 'px';
               };
+          },
+          showSign(index) {
+              this.signTabShow = true;
+              this.showTabType = Number(index);
+          },
+          closeTab() {
+              this.signTabShow = false;
           }
       },
       mounted() {
@@ -60,8 +69,12 @@
 <style>
 ::-webkit-scrollbar{display: none;}
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
+.animated{transition-duration: 1.5s;transition-delay: 3s;transition-timing-function: ease-out;}
 .bannerWrap{height:100vh;}
 .op1{opacity: 1!important;}
+.op0{opacity: 0;}
+.bounceInLeft,.bounceInRight,.rollIn{opacity: 1;}
+.page{top:2rem;}
 .part{padding: 72px 0 0;min-height: 400px;}
 .part .title{text-align:center;transition:all 1s;font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;}
 .part .title p{font-size: 2.1em;font-weight: 400;color: #036;font-size: 38px;margin-bottom: 40px;line-height: 1.28571429em;}

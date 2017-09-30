@@ -21,6 +21,9 @@
                         <div class="swiper-button-prev btn prev" slot="button-prev"></div>
                         <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
+                    <div class="more">
+                         <router-link to="/solution">免费体验</router-link>
+                     </div>
                 </div>
             </div>
             <loading v-if="!showBanner"></loading>
@@ -75,11 +78,11 @@
             </div>
             <!-- 解决方案 -->
             <div class="part project">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
                     <p>MyeHR解决方案</p>
                     <p class="desc">全面化的员工管理及服务支撑平台，实现企业战略目标有效落地</p>             
                 </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }"  ref="project">
+                <div class="cont" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }"  ref="project">
                     <div class="contentwrap">
                         <div v-for="item in projectData" class="contentitem" v-animate="{value: 'zoomInDown'}">
                             <div class="left-img" :style="{backgroundImage:' url(\'static/'+item.ProjectIcon+'\')'}" >
@@ -125,7 +128,7 @@
             <!-- 优势 -->
             <div class="part advantage">
                 <div style="height:100%;background:url(static/img/advantage.png) no-repeat 80% center;background-size:50%;">
-                    <ul class="cont">
+                    <ul class="cont animated op0" :class="{ bounceInLeft : scroll >= baseFont * ( 110 - 5 ) }">
                         <h2>MyeHR移动办公平台</h2>
                         <li>一次开发 多端运行</li>
                         <li>人性化UI设计</li>
@@ -138,7 +141,7 @@
 
             <!-- 产品与服务 -->
             <div class="part product">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 66 - 5 ) }">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 140 - 5 ) }">
                     <p>为什么选择MyeHR？</p>
                     <p class="desc">专业化、智能化、移动化、社交化的人才资源管理综合解决方案</p>
                 </div>
@@ -166,7 +169,7 @@
             </div>
             <!-- 我们的客户 -->
             <div class="part client case clear">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 170 - 5 ) }">
                     <p>MyeHR典型客户</p>
                     <p class="desc">服务8000余家客户，与客户形成众多行业解决方案</p>
                 </div>
@@ -189,12 +192,12 @@
             </div>
 
             <div class="part company clear">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <div class="title" :class="{ active : scroll >= baseFont * ( 200 - 5 ) }">
                     <p>MyeHR战略伙伴联盟</p>
                     <p class="desc">携手多家合作伙伴，共同打造人力资源生态联盟</p>
                 </div>
-                <div class="company-left item"></div>
-                <div class="company-right item"></div>
+                <div class="company-left item animated op0" :class="{ rollIn : scroll >= baseFont * ( 220 - 5 ) }"></div>
+                <div class="company-right item animated op0" :class="{ bounceInRight : scroll >= baseFont * ( 220 - 5 ) }"></div>
             </div>
 
             <v-foot class="page-8 page"></v-foot>
@@ -265,7 +268,7 @@
                 },
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
-                    autoplay: false,
+                    autoplay: 2000,
                     loop: true,
                     setWrapperSize: true,
                     autoHeight: true,
@@ -275,7 +278,7 @@
                     slidesPerView: 1,
                     nextButton: '.bannerLoop .swiper-button-next',
                     prevButton: '.bannerLoop .swiper-button-prev',
-                    speed: 3000
+                    speed: 1000
                 },
                 opts: {
                     start: 0,
@@ -458,9 +461,8 @@
 .index{width:100%;color: #333;}
 .index .swiper-button-disabled{pointer-events:auto;}
 
-
 /*解决方案*/
-.index .part .title.active{transform:translateY(3%);}
+.index .title.active{transform:translateY(5%);}
 .index .solution.part .cont{margin:0 auto;width:100%;max-width:1200px;transition:all 1s .2s;transform:translateY(12%);}
 .index .solution.part .cont .swiper-container{position:relative;height:42rem;}
 .index .solution.part .cont .swiper-container .swiper-wrapper{height:100%!important;}
@@ -497,10 +499,11 @@
 .index .solution.part .cont .swiper-container .btn.next{right:3rem;}
 .index .solution.part .cont .swiper-container .btn.next:before{background-image:url(../../../static/img/arrow_next.png);}
 .index .solution.part .cont .swiper-container .btn.prev{left:3rem;}
-.index .solution.part .cont.active{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0);-ms-transform:translateY(0);}
-.index .solution.part .cont.active .swiper-container .swiper-wrapper .item a .img{-webkit-transform:rotateY(0);-moz-transform:rotateY(0);-o-transform:rotateY(0);transform:rotateY(0);-ms-transform:rotateY(0);}
+.index .solution.part .cont.active{transform:translateY(5%);}
+.index .solution.part .cont.active .swiper-container .swiper-wrapper .item a .img{transform:rotateY(0);}
 
 .index .project .cont{width: 70%;margin-left: 15%;transform: translateY(8%);transition: all 1s .2s;}
+.index .project.part .cont.active{transform:translateY(3%);}
 .index .project .cont .contentwrap{width: 100%;display: flex; flex-wrap: wrap;}
 .index .project .cont .contentwrap .contentitem{display: inline-block;width: 33.3%;padding-top: 2rem;text-align: center;opacity: 1!important;-webkit-animation-name: bounceInUp;animation-name: bounceInUp;-webkit-transform-origin: center bottom;transform-origin: center bottom;}
 .index .project .cont .contentwrap .contentitem .left-img{width: 65px;height: 65px;border-radius: 10px;margin:0 auto 10px;background-position: center;background-repeat: no-repeat;}
@@ -527,7 +530,7 @@
 .index .part.company .item{width: 49%;display: inline-block;vertical-align: top;height:calc(100% - 7.8rem);}
 
 .index .part.company .company-left{margin-left: 1.66%;background: url(../../../static/img/company1.png) no-repeat 60% center;background-size: 60%;}
-.index .part.company .company-right{background: url(../../../static/img/company2.png) no-repeat 40%;background-size: 65%;}
+.index .part.company .company-right{background: url(../../../static/img/company2.png) no-repeat 40%;background-size: 65%;transition-delay: 4s;}
 
 .index .part.advantage{height: 80vh;}
 .index .part.advantage ul{padding: 10% 0 0 15%;color: #333;text-align: left;min-height: 500px;}
@@ -610,6 +613,8 @@
 .case .case_list .cont ul.list li:nth-child(6n+6){border-right:1px solid #e3e4e6;}
 .case .case_list .cont ul.list li a{display:block;width:100%;height:100%;}
 
+.index .footer{margin-top:0;}
+.index .foot-header{display: none;}
 
 @media screen and (max-width:1400px){.index .part.product .cont .tp .item a .text p{font-size:14px;}
     .index .part.product .cont .tp .item a .text p.tit{margin-top:1rem;margin-bottom:1.5rem;font-size:26px;}

@@ -82,7 +82,7 @@
                 currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
-                    autoplay: false,
+                    autoplay: 2000,
                     loop: true,
                     setWrapperSize: true,
                     autoHeight: true,

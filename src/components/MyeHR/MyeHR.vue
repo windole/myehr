@@ -163,7 +163,6 @@
         <v-foot></v-foot>
         <v-top></v-top>
     </div>
-    </div>
 </template>
 <script type="text/javascript">
     import axios from 'axios';
@@ -188,7 +187,7 @@
                 currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
-                    autoplay: false,
+                    autoplay: 2000,
                     loop: true,
                     setWrapperSize: true,
                     autoHeight: true,
@@ -334,6 +333,9 @@
 .cell:hover a {
     color: #006DB6;
 }
+
+.MyeHR .footer{margin-top:0;}
+.MyeHR .foot-header{display: none;}
 
 @media screen and (max-width:767px){
      .part .title p{font-size:1.7rem;}

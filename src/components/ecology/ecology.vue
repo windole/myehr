@@ -97,7 +97,7 @@
                 currentType: 1,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
-                    autoplay: false,
+                    autoplay: 2000,
                     loop: true,
                     setWrapperSize: true,
                     autoHeight: true,
@@ -189,6 +189,8 @@
 
 
 .ecology .footer{top: 0;}
+.ecology .footer{margin-top:0;}
+.ecology .foot-header{display: none;}
 
 @media screen and (max-width:767px){
      .part .title p{font-size:1.7rem;}

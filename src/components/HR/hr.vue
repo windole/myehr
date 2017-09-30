@@ -177,7 +177,8 @@
                 <p class="desc">丰富人事管理业务，人员职场全周期管控；</p>
             </div>
             <div class="cont">
-                <div class="contwrap" style="display:none;">
+                <div class="rotatepic" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }"><img src="static/img/renshi.png"></div>
+                <div class="contwrap" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <div class="left-items">
                         <div class="item">
                             <div class="right"></div>
@@ -448,7 +449,7 @@
                 currentNavIndex: 0,
                 bannerOption: {
                     //  所有配置均为可选（同Swiper配置）
-                    autoplay: false,
+                    autoplay: 2000,
                     loop: true,
                     setWrapperSize: true,
                     autoHeight: true,
@@ -549,12 +550,52 @@
 .three-cols:nth-child(2) .col-sm-4:nth-child(1) .col-img{background: url(../../../static/img/moneycom/4.png)no-repeat center/40%;}
 .three-cols:nth-child(2) .col-sm-4:nth-child(2) .col-img{background: url(../../../static/img/moneycom/5.png)no-repeat center/40%;}
 .three-cols:nth-child(2) .col-sm-4:nth-child(3) .col-img{background: url(../../../static/img/moneycom/6.png)no-repeat center/40%;}
-.three-cols h4{line-height: 2em;}
+.three-cols h4{line-height: 6em;}
 .three-cols p{width: 90%;margin: 0 auto;font-weight: 400;font-size: 14px;line-height: 1.25125rem;}
 .compensationManagement .cont .three-cols .brnone{border-right: 0;}
 
 /*人事管理*/
-.part.peopleManagement .cont{height: 80vh;background: url(../../../static/img/renshi.png) no-repeat center;background-size: 65%;}
+.part.peopleManagement .cont{height: 65vh;width: 70%;margin-left: 15%;margin-top: 2rem;position: relative;}
+.rotatepic{height: 100%;text-align: center;transform: scale(1,1) rotate(0deg);opacity: 1;transition-property: opacity, transform;transition-duration: 1s;transition-delay: 3s;transition-timing-function: ease-in;}
+.rotatepic img{height: 100%;}
+.active.rotatepic {transform: scale(0,0) rotate(720deg);opacity: 0;}
+
+.peopleManagement .cont .contwrap{width: 100%;display: flex; flex-wrap: wrap;position: absolute;
+    top: 6em;
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+    transition-property: opacity, transform;
+    transition-duration: 1.5s;
+    transition-delay: 3.5s;
+    transition-timing-function: ease-out;
+}
+.peopleManagement .cont .contwrap.active{
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+.peopleManagement .cont .contwrap>div{width: 48%;display: inline-block;}
+.peopleManagement .cont .contwrap h3{color: #333;margin-bottom: .5em;}
+.peopleManagement .cont .contwrap .left-items{margin-right: 2%;}
+.peopleManagement .cont .contwrap .right-items{margin-left: 2%;}
+.peopleManagement .cont .contwrap .item{height: 80px;margin-bottom:10px;vertical-align: middle;}
+.peopleManagement .cont .contwrap .left-items{text-align: right;}
+.peopleManagement .cont .contwrap .left-items .right{height: 70px;width: 70px;float: right;background-color: red;margin-left: 3%;
+    border-radius: 50%;}
+.peopleManagement .cont .contwrap .right-items .left{height: 70px;width: 70px;float: left;background-color: red;margin-right: 3%;
+    border-radius: 50%;}
+.peopleManagement .cont .contwrap .left-items .item:nth-child(1) .right{background:rgb(79,129,189) url(../../../static/img/control/control1.png) no-repeat center center/50%;}
+.peopleManagement .cont .contwrap .left-items .item:nth-child(2) .right{background:rgb(155,187,89) url(../../../static/img/control/control3.png) no-repeat center center/50%;}
+.peopleManagement .cont .contwrap .left-items .item:nth-child(3) .right{background:rgb(75,172,198) url(../../../static/img/control/control5.png) no-repeat center center/50%;}
+.peopleManagement .cont .contwrap .left-items .item:nth-child(4) .right{background:rgb(250,157,76) url(../../../static/img/control/control7.png) no-repeat center center/50%;}
+
+.peopleManagement .cont .contwrap .right-items .item:nth-child(1) .left{background:rgb(192,80,77) url(../../../static/img/control/control2.png) no-repeat center center/50%;}
+.peopleManagement .cont .contwrap .right-items .item:nth-child(2) .left{background:rgb(128,100,162) url(../../../static/img/control/control4.png) no-repeat center center/50%;}
+.peopleManagement .cont .contwrap .right-items .item:nth-child(3) .left{background:rgb(247,150,70) url(../../../static/img/control/control6.png) no-repeat center center/50%;}
+.peopleManagement .cont .contwrap .right-items .item:nth-child(4) .left{background:rgb(177,188,57) url(../../../static/img/control/control8.png) no-repeat center center/50%;}
+
 
 /*培训管理*/
 .part.training .cont{height: 80vh;background: url(../../../static/img/training.png) no-repeat right;background-size: 60%;}
@@ -622,6 +663,8 @@
 .part.jixiao .inner .indetail p{color:#666;padding:0 10%}
 .part.jixiao .inner img{width:20%}
 
+.hr .footer{margin-top:0;}
+.hr .foot-header{display: none;}
 
 
 @media screen and (max-width:767px){
