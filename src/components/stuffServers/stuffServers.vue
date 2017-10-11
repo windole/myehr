@@ -44,7 +44,7 @@
                 <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>员工服务新模式</p>
                     <p class="desc">社交化、游戏化，充分发挥主观能动性，实现组织目标</p>
-                    <span class="line"></span>
+                    <!-- <span class="line"></span> -->
                 </div>
                 <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
                     <div class="contentwrap">
@@ -65,7 +65,7 @@
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>新挑战下，管理如何开展 ？</p>
                     <p class="desc">通过员工贴心服务及员工个人发展计划，帮助激发员工活力</p>
-                    <span class="line"></span>
+                    <!-- <span class="line"></span> -->
                 </div>
                 <div class="cont flexbox">
                   <div class="inner">
@@ -99,7 +99,7 @@
                 <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
                     <p>员工服务应用场景</p>
                     <p class="desc">通过多场景员工自助服务，有效帮助员工快速融入组织</p>
-                    <span class="line"></span>
+                    <!-- <span class="line"></span> -->
                 </div>
                 <div class="cont">
                     <div class="cont grid" ref="aboutus">

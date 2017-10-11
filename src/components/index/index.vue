@@ -22,7 +22,7 @@
                         <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
                     <div class="more">
-                         <router-link to="/solution">免费体验</router-link>
+                         <router-link to="/">免费体验</router-link>
                      </div>
                 </div>
             </div>
@@ -74,6 +74,9 @@
                         <div class="swiper-button-prev btn prev" slot="button-prev"></div>
                         <div class="swiper-button-next btn next" slot="button-next"></div>
                     </swiper>
+                    <div class="more">
+                         <router-link to="/">免费体验</router-link>
+                     </div>
                 </div>
             </div>
             <!-- 解决方案 -->
@@ -460,6 +463,11 @@
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
 .index{width:100%;color: #333;}
 .index .swiper-button-disabled{pointer-events:auto;}
+.index .part .cont .more{margin:3rem auto 5rem;width:10rem;height:2.8rem;border-radius:1.4rem;background:url(../../../static/img/more_border.png) no-repeat center center;background-size:contain;}
+.index .part .cont .more:hover{background-image:url(../../../static/img/more_active.png);}
+.index .part .cont .more:hover a{color:#fff;}
+.index .part .cont .more a{display:block;width:100%;height:100%;color:#0079ef;text-align:center;font-size:16px;line-height:2.8rem;}
+
 
 /*解决方案*/
 .index .title.active{transform:translateY(5%);}
