@@ -1,245 +1,244 @@
  <template>
-    <div class="stuffServers fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="stuffServers">
-            <!-- banner广告 -->
-            <div class="bannerWrap page-1 page" v-if='showBanner'>
-                <div class="bannerLoop" ref="bannerLoop">
-                    <swiper :options="bannerOption" ref="bannerOption" class="clear">
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner4.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <h4>激发员工活力</h4>
-                                    <div class="tips" style="display:block;">
-                                        <!-- <p style="width:100%;"></p> -->
-                                    </div>
-                                </div>
-                                <div class="en tit">
-                                    <h4>移动化、社交化、游戏化</h4>
+    <div class="stuffServers">
+        <!-- banner广告 -->
+        <div class="bannerWrap" v-if='showBanner'>
+            <div class="bannerLoop" ref="bannerLoop">
+                <swiper :options="bannerOption" ref="bannerOption" class="clear">
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner4.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <h4>激发员工活力</h4>
+                                <div class="tips" style="display:block;">
+                                    <!-- <p style="width:100%;"></p> -->
                                 </div>
                             </div>
-                        </swiper-slide>
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner11.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <h4>社交化人才管理模式</h4>
-                                    <div class="tips" style="display:block;">
-                                        <!-- <p style="width:100%;"></p> -->
-                                    </div>
-                                </div>
-                                <div class="en tit">
-                                    <h4>提高全员参与度</h4>
+                            <div class="en tit">
+                                <h4>移动化、社交化、游戏化</h4>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner11.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <h4>社交化人才管理模式</h4>
+                                <div class="tips" style="display:block;">
+                                    <!-- <p style="width:100%;"></p> -->
                                 </div>
                             </div>
-                        </swiper-slide>
-                        <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                      <div class="swiper-button-next btn next" slot="button-next"></div>
-                    </swiper>
-                </div>
+                            <div class="en tit">
+                                <h4>提高全员参与度</h4>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-button-prev btn prev" slot="button-prev"></div>
+                  <div class="swiper-button-next btn next" slot="button-next"></div>
+                </swiper>
             </div>
-            <loading v-if="!showBanner"></loading>
-            <!-- 解决方案 -->
-            <div class="part scenenet page-2 page">
-                <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>员工服务新模式</p>
-                    <p class="desc">社交化、游戏化，充分发挥主观能动性，实现组织目标</p>
-                    <!-- <span class="line"></span> -->
-                </div>
-                <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
-                    <div class="contentwrap">
-                        <div class="item">游戏化</div>
-                        <div class="item">社群化</div>
-                        <div class="item">战略驱动</div>
-                        <div class="item">全员参与</div>
-                        <div class="item">网状结构关系</div>
-                        <div class="item">文化共建</div>
-                        <div class="item">个体崛起</div>
-                        <div class="item">市场内部化</div>
-                        <div class="item">实时互动</div>
-                    </div>
-                </div>
-            </div>
-            <!-- 挑战 -->
-            <div class="part challenge page-3 page">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>新挑战下，管理如何开展 ？</p>
-                    <p class="desc">通过员工贴心服务及员工个人发展计划，帮助激发员工活力</p>
-                    <!-- <span class="line"></span> -->
-                </div>
-                <div class="cont flexbox">
-                  <div class="inner">
-                    <li class="inimg"><img src="/static/img/challenge/icon2.png" alt="" /></li>
-                    <li class="inhead"><p>激发员工活力</p></li>
-                    <li class="indetail"><p>让员工能在工作中得到实时激励</p></li>
-                  </div>
-                  <div class="inner">
-                    <li class="inimg"><img src="/static/img/challenge/icon3.png" alt="" /></li>
-                    <li class="inhead"><p>员工贴心服务</p></li>
-                    <li class="indetail"><p>帮助员工解决工作和生活中遇到的问题</p></li>
-                  </div>
-                  <div class="inner">
-                    <li class="inimg"><img src="/static/img/challenge/icon7.png" alt="" /></li>
-                    <li class="inhead"><p>员工时间管理</p></li>
-                    <li class="indetail"><p>利用碎片化时间提升员工工作技能</p></li>
-                  </div>
-                  <div class="inner">
-                    <li class="inimg"><img src="/static/img/challenge/icon8.png" alt="" /></li>
-                    <li class="inhead"><p>个人价值实现</p></li>
-                    <li class="indetail"><p>鼓励员工提出建设性的意见及创意</p></li>
-                  </div>
-                  <div class="inner">
-                    <li class="inimg"><img src="/static/img/challenge/icon7.png" alt="" /></li>
-                    <li class="inhead"><p>员工能力发挥</p></li>
-                    <li class="indetail"><p>满足员工深度需求，获得个人成就感</p></li>
-                  </div>
-                </div>
-            </div>
-            <div class="part scene page-4 page">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>员工服务应用场景</p>
-                    <p class="desc">通过多场景员工自助服务，有效帮助员工快速融入组织</p>
-                    <!-- <span class="line"></span> -->
-                </div>
-                <div class="cont">
-                    <div class="cont grid" ref="aboutus">
-                      <div class="row">
-                          <div class="ui item slide down instant reveal" v-for="item in scene.row1">
-                              <div class="visible content">
-                                  <div class="graphic health content" :style="{backgroundImage:'url('+ item.SceneThumb +')'}">
-                                      <div class="cell">
-                                          <p v-html="item.SceneTitle"></p>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="hidden content">
-                                  <div class="text dark content">
-                                      <div class="cell">
-                                          <p v-html="item.SceneTitlePlus"></p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>    
-                      </div>
-                      <div class="row">
-                          <div class="ui item slide down instant reveal" v-for="item2 in scene.row2">
-                              <div class="visible content">
-                                  <div class="graphic health content" :style="{backgroundImage:'url('+ item2.SceneThumb +')'}">
-                                      <div class="cell">
-                                          <p v-html="item2.SceneTitle"></p>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="hidden content">
-                                  <div class="text dark content">
-                                      <div class="cell">
-                                          <p v-html="item2.SceneTitlePlus"></p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>    
-                      </div>
-                  </div>
-                </div>
-            </div>
-
-            <!-- scene1 -->
-            <div class="part attendance scene1 page-5 page">
-              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
-                <div class="AtteLtext">
-                  <h3>MyeHR员工自助之考勤管理</h3>
-                  <p>根据地理位置定位，轻松打卡，</p>
-                  <p>便捷移动端考勤管理；</p>
-                </div>
-              </div>
-              <div class="AtteR">
-                <img class="AtteRimg" src="/static/img/attendance/page68.png" alt="" />
-              </div>
-            </div>
-            <!-- scene2 -->
-            <div class="part attendance scene2 page-6 page">
-              <div class="AtteL">
-                <img class="AtteRimg" src="/static/img/attendance/page69.png" alt="" />
-              </div>
-              <div class="AtteR" v-animate="{value: 'bounceInRight', delay: 0}">
-                  <div class="AtteLtext">
-                      <h3>MyeHR员工自助之即时沟通</h3>
-                      <p>在系统内方便了解本部门同事，</p>
-                      <p>线上即时沟通，打造团队融洽的沟通氛围；</p>
-                  </div>
-              </div>
-            </div>
-            <!-- scene3 -->
-            <div class="part attendance scene3 page-7 page">
-              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
-                <div class="AtteLtext">
-                  <h3>MyeHR员工自助之任务管理</h3>
-                  <p>系统自动推送给员工需完成任务，</p>
-                  <p>完成进度在线反馈，方便领导查阅指导，<br/>提升员工执行力；</p>
-                </div>
-              </div>
-              <div class="AtteR">
-                <img class="AtteRimg" src="/static/img/attendance/page70.png" alt="" />
-              </div>
-            </div>
-            <!-- scene4 -->
-            <div class="part attendance scene4 page-8 page">
-              <div class="AtteL">
-                <img class="AtteRimg" src="/static/img/attendance/page71.png" alt="" />
-              </div>
-              <div class="AtteR" v-animate="{value: 'bounceInRight', delay: 0}">
-                  <div class="AtteLtext">
-                      <h3>MyeHR员工自助之社区服务</h3>
-                      <p>形成员工服务社区，可进行问题互动讨论，<br/>
-                        结合积分发放及打赏方式，对员工提供的<br/>
-                        优质信息进行反馈激励；
-                        </p>
-                  </div>
-              </div>
-            </div>
-            <!-- scene5 -->
-            <div class="part attendance scene5 page-9 page">
-              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
-                <div class="AtteLtext">
-                  <h3>MyeHR员工自助之工资查询</h3>
-                  <p>员工可自助查询个人工资信息及发放明细，</p>
-                  <p>并对工资异常情况，直接在线咨询HR负责人；</p>
-                </div>
-              </div>
-              <div class="AtteR">
-                <img class="AtteRimg" src="/static/img/attendance/page72.png" alt="" />
-              </div>
-            </div>
-            <!-- scene6 -->
-            <div class="part attendance scene6 page-10 page">
-              <div class="AtteL">
-                <img class="AtteRimg" src="/static/img/attendance/page73.png" alt="" />
-              </div>
-              <div class="AtteR" v-animate="{value: 'bounceInRight', delay: 0}">
-                  <div class="AtteLtext">
-                      <h3>MyeHR员工自助之请假管理</h3>
-                      <p>员工可自助查询个人请假额度，</p>
-                      <p>请假之后可快速查看领导反馈意见及审批情况；</p>
-                  </div>
-              </div>
-            </div>
-            <!-- scene7 -->
-            <div class="part attendance scene7 page-11 page">
-              <div class="AtteL" v-animate="{value: 'bounceInLeft', delay: 0}">
-                <div class="AtteLtext">
-                  <h3>MyeHR员工自助之感恩的心</h3>
-                  <p>企业内部好人好事积分及时奖励系统，</p>
-                  <p>可给想要感谢的同事赠送积分，</p>
-                  <p>鼓励企业员工对同事伙伴常存感恩心，增进团结；</p>
-                </div>
-              </div>
-              <div class="AtteR">
-                <img class="AtteRimg" src="/static/img/attendance/page74.png" alt="" />
-              </div>
-            </div>
-            <v-foot class="page-12 page"></v-foot>
         </div>
-        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
+        <loading v-if="!showBanner"></loading>
+        <!-- 解决方案 -->
+        <div class="part scenenet">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>员工服务新模式</p>
+                <p class="desc">社交化、游戏化，充分发挥主观能动性，实现组织目标</p>
+                <!-- <span class="line"></span> -->
+            </div>
+            <div class="cont" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }" ref="project">
+                <div class="contentwrap">
+                    <div class="item">游戏化</div>
+                    <div class="item">社群化</div>
+                    <div class="item">战略驱动</div>
+                    <div class="item">全员参与</div>
+                    <div class="item">网状结构关系</div>
+                    <div class="item">文化共建</div>
+                    <div class="item">个体崛起</div>
+                    <div class="item">市场内部化</div>
+                    <div class="item">实时互动</div>
+                </div>
+            </div>
+        </div>
+        <!-- 挑战 -->
+        <div class="part challenge">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>新挑战下，管理如何开展 ？</p>
+                <p class="desc">通过员工贴心服务及员工个人发展计划，帮助激发员工活力</p>
+                <!-- <span class="line"></span> -->
+            </div>
+            <div class="cont flexbox">
+              <div class="inner">
+                <li class="inimg"><img src="/static/img/challenge/icon2.png" alt="" /></li>
+                <li class="inhead"><p>激发员工活力</p></li>
+                <li class="indetail"><p>让员工能在工作中得到实时激励</p></li>
+              </div>
+              <div class="inner">
+                <li class="inimg"><img src="/static/img/challenge/icon3.png" alt="" /></li>
+                <li class="inhead"><p>员工贴心服务</p></li>
+                <li class="indetail"><p>帮助员工解决工作和生活中遇到的问题</p></li>
+              </div>
+              <div class="inner">
+                <li class="inimg"><img src="/static/img/challenge/icon7.png" alt="" /></li>
+                <li class="inhead"><p>员工时间管理</p></li>
+                <li class="indetail"><p>利用碎片化时间提升员工工作技能</p></li>
+              </div>
+              <div class="inner">
+                <li class="inimg"><img src="/static/img/challenge/icon8.png" alt="" /></li>
+                <li class="inhead"><p>个人价值实现</p></li>
+                <li class="indetail"><p>鼓励员工提出建设性的意见及创意</p></li>
+              </div>
+              <div class="inner">
+                <li class="inimg"><img src="/static/img/challenge/icon7.png" alt="" /></li>
+                <li class="inhead"><p>员工能力发挥</p></li>
+                <li class="indetail"><p>满足员工深度需求，获得个人成就感</p></li>
+              </div>
+            </div>
+        </div>
+        <div class="part scene">
+            <div class="title"  :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>员工服务应用场景</p>
+                <p class="desc">通过多场景员工自助服务，有效帮助员工快速融入组织</p>
+                <!-- <span class="line"></span> -->
+            </div>
+            <div class="cont">
+                <div class="cont grid" ref="aboutus">
+                  <div class="row">
+                      <div class="ui item slide down instant reveal" v-for="item in scene.row1">
+                          <div class="visible content">
+                              <div class="graphic health content" :style="{backgroundImage:'url('+ item.SceneThumb +')'}">
+                                  <div class="cell">
+                                      <p v-html="item.SceneTitle"></p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="hidden content">
+                              <div class="text dark content">
+                                  <div class="cell">
+                                      <p v-html="item.SceneTitlePlus"></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>    
+                  </div>
+                  <div class="row">
+                      <div class="ui item slide down instant reveal" v-for="item2 in scene.row2">
+                          <div class="visible content">
+                              <div class="graphic health content" :style="{backgroundImage:'url('+ item2.SceneThumb +')'}">
+                                  <div class="cell">
+                                      <p v-html="item2.SceneTitle"></p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="hidden content">
+                              <div class="text dark content">
+                                  <div class="cell">
+                                      <p v-html="item2.SceneTitlePlus"></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>    
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- scene1 -->
+        <div class="part attendance scene1">
+          <div class="AtteL">
+            <div class="AtteLtext">
+              <h3>MyeHR员工自助之考勤管理</h3>
+              <p>根据地理位置定位，轻松打卡，</p>
+              <p>便捷移动端考勤管理；</p>
+            </div>
+          </div>
+          <div class="AtteR">
+            <img class="AtteRimg" src="/static/img/attendance/page68.png" alt="" />
+          </div>
+        </div>
+        <!-- scene2 -->
+        <div class="part attendance scene2">
+          <div class="AtteL">
+            <img class="AtteRimg" src="/static/img/attendance/page69.png" alt="" />
+          </div>
+          <div class="AtteR">
+              <div class="AtteLtext">
+                  <h3>MyeHR员工自助之即时沟通</h3>
+                  <p>在系统内方便了解本部门同事，</p>
+                  <p>线上即时沟通，打造团队融洽的沟通氛围；</p>
+              </div>
+          </div>
+        </div>
+        <!-- scene3 -->
+        <div class="part attendance scene3">
+          <div class="AtteL">
+            <div class="AtteLtext">
+              <h3>MyeHR员工自助之任务管理</h3>
+              <p>系统自动推送给员工需完成任务，</p>
+              <p>完成进度在线反馈，方便领导查阅指导，<br/>提升员工执行力；</p>
+            </div>
+          </div>
+          <div class="AtteR">
+            <img class="AtteRimg" src="/static/img/attendance/page70.png" alt="" />
+          </div>
+        </div>
+        <!-- scene4 -->
+        <div class="part attendance scene4">
+          <div class="AtteL">
+            <img class="AtteRimg" src="/static/img/attendance/page71.png" alt="" />
+          </div>
+          <div class="AtteR">
+              <div class="AtteLtext">
+                  <h3>MyeHR员工自助之社区服务</h3>
+                  <p>形成员工服务社区，可进行问题互动讨论，<br/>
+                    结合积分发放及打赏方式，对员工提供的<br/>
+                    优质信息进行反馈激励；
+                    </p>
+              </div>
+          </div>
+        </div>
+        <!-- scene5 -->
+        <div class="part attendance scene5">
+          <div class="AtteL">
+            <div class="AtteLtext">
+              <h3>MyeHR员工自助之工资查询</h3>
+              <p>员工可自助查询个人工资信息及发放明细，</p>
+              <p>并对工资异常情况，直接在线咨询HR负责人；</p>
+            </div>
+          </div>
+          <div class="AtteR">
+            <img class="AtteRimg" src="/static/img/attendance/page72.png" alt="" />
+          </div>
+        </div>
+        <!-- scene6 -->
+        <div class="part attendance scene6">
+          <div class="AtteL">
+            <img class="AtteRimg" src="/static/img/attendance/page73.png" alt="" />
+          </div>
+          <div class="AtteR">
+              <div class="AtteLtext">
+                  <h3>MyeHR员工自助之请假管理</h3>
+                  <p>员工可自助查询个人请假额度，</p>
+                  <p>请假之后可快速查看领导反馈意见及审批情况；</p>
+              </div>
+          </div>
+        </div>
+        <!-- scene7 -->
+        <div class="part attendance scene7">
+          <div class="AtteL">
+            <div class="AtteLtext">
+              <h3>MyeHR员工自助之感恩的心</h3>
+              <p>企业内部好人好事积分及时奖励系统，</p>
+              <p>可给想要感谢的同事赠送积分，</p>
+              <p>鼓励企业员工对同事伙伴常存感恩心，增进团结；</p>
+            </div>
+          </div>
+          <div class="AtteR">
+            <img class="AtteRimg" src="/static/img/attendance/page74.png" alt="" />
+          </div>
+        </div>
+        <v-foot class="page-12 page"></v-foot>
+        <v-top></v-top>
+     <!--    <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar> -->
     </div>
 </template>
 <script type="text/javascript">
@@ -248,7 +247,8 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
-    import navBar from './../navBar.vue';
+    // import navBar from './../navBar.vue';
+    import top from './../top.vue';
     export default{
         data() {
             return {
@@ -301,19 +301,20 @@
             'vFoot': foot,
             'swiper': swiper,
             'swiperSlide': swiperSlide,
-            'navBar': navBar
+            'vTop': top
+            // 'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveTo(index) {
-                this.$refs.stuffServers.$fullpage.moveTo(index, true); // Move to the next page
-            },
-            checkNavIndex() {
-                let index = this.$refs.stuffServers.$fullpage.curIndex;
-                this.currentNavIndex = index;
-            },
+            // moveTo(index) {
+            //     this.$refs.stuffServers.$fullpage.moveTo(index, true); // Move to the next page
+            // },
+            // checkNavIndex() {
+            //     let index = this.$refs.stuffServers.$fullpage.curIndex;
+            //     this.currentNavIndex = index;
+            // },
             getDate() {
                 let that = this;
                 // 获取banner数据设置
@@ -336,7 +337,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
-            window.addEventListener('mousewheel', this.checkNavIndex);
+            // window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();
@@ -355,7 +356,7 @@
 .stuffServers .item a:hover .img .shadow span.icon{-webkit-transform:translate(-50%,-50%) scale(1);transform:translate(-50%,-50%) scale(1);}
 
 /*服务场景*/
-.part.scenenet .cont{height: calc(100% - 144px);width: 100%;}
+.part.scenenet .cont{height: calc(100vh - 144px);width: 100%;}
 .part.scenenet .cont .contentwrap{width: 80%;margin-left: 10%;height:100%;background: url(../../../static/img/scenenet.png) no-repeat center;background-size: 65%;position: relative;}
 .part.scenenet .cont .contentwrap .item{width: 90px;height: 90px;border-radius:50%;background-color: hotpink;line-height: 90px;text-align: center;color: #fff;position: absolute;}
 .part.scenenet .cont .contentwrap .item:nth-child(1){top: 27.8%;left: 27.2%;background-color: rgb(79,129,189);}
@@ -399,12 +400,14 @@
 .part.scene .cont .row .hidden p{padding-top: 30%;width: 80%;margin: 0 auto;word-wrap: break-word;text-align: center;}
 
 /*考勤管理 begin*/
-.attendance{background:#076ce0;opacity: 1!important;}
+.attendance{height:calc(100vh);background:#076ce0;opacity: 1!important;padding-top: 0;}
 .attendance>div{height:100%;width:50%;position:relative;float:left;opacity: 1!important;}
 .AtteLtext{height:40%;width:80%;color: #fff;padding: 80px 20px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.attendance:nth-child(2n){background:#fff; color: #333;}
+.attendance:nth-child(2n) .AtteLtext{color: #333;}
 .attendance h3{font-size: 2rem;font-weight: 100;line-height: 2em;}
 .attendance p{font-size: 16px;line-height: 26px;}
-.AtteRimg{width:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.AtteRimg{width:90%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
 /*考勤管理end*/
 
 

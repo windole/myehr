@@ -1,95 +1,94 @@
  <template>
-    <div class="pass fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="pass">
-            <!-- banner广告 -->
-            <div class="bannerWrap  page-1 page" v-if='showBanner'>
-                <div class="bannerLoop" ref="bannerLoop">
-                    <swiper :options="bannerOption" ref="bannerOption" class="clear">
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner7.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <h4>基于乐高式的配置组件</h4>
-                                    <div class="tips" style="display:block;">
-                                        <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
-                                    </div>
-                                </div>
-                                <div class="en tit">
-                                    <h4>灵活定义不同业务场景</h4>
+    <div class="pass">
+        <!-- banner广告 -->
+        <div class="bannerWrap  page-1 page" v-if='showBanner'>
+            <div class="bannerLoop" ref="bannerLoop">
+                <swiper :options="bannerOption" ref="bannerOption" class="clear">
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner7.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <h4>基于乐高式的配置组件</h4>
+                                <div class="tips" style="display:block;">
+                                    <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
                                 </div>
                             </div>
-                        </swiper-slide>
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner6.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <h4>灵活可扩展的应用平台</h4>
-                                    <div class="tips" style="display:block;">
-                                        <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
-                                    </div>
-                                </div>
-                                <div class="en tit">
-                                    <h4>深度满足企业业务需求</h4>
+                            <div class="en tit">
+                                <h4>灵活定义不同业务场景</h4>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner6.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <h4>灵活可扩展的应用平台</h4>
+                                <div class="tips" style="display:block;">
+                                    <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
                                 </div>
                             </div>
-                        </swiper-slide>
-                        <swiper-slide class="item"  key="index">
-                            <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner8.jpg)'}"></div>
-                            <div class="txt">
-                                <div class="tit clear">
-                                    <h4>多种可配置建模引擎</h4>
-                                    <div class="tips" style="display:block;">
-                                        <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
-                                    </div>
-                                </div>
-                                <div class="en tit">
-                                    <h4>实现项目的快速交付</h4>
+                            <div class="en tit">
+                                <h4>深度满足企业业务需求</h4>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="item"  key="index">
+                        <div class="bg" :style="{backgroundImage:'url(static/img/banner/banner8.jpg)'}"></div>
+                        <div class="txt">
+                            <div class="tit clear">
+                                <h4>多种可配置建模引擎</h4>
+                                <div class="tips" style="display:block;">
+                                    <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
                                 </div>
                             </div>
-                        </swiper-slide>
-                        <div class="swiper-button-prev btn prev" slot="button-prev"></div>
-                        <div class="swiper-button-next btn next" slot="button-next"></div>
-                    </swiper>
-                </div>
+                            <div class="en tit">
+                                <h4>实现项目的快速交付</h4>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-button-prev btn prev" slot="button-prev"></div>
+                    <div class="swiper-button-next btn next" slot="button-next"></div>
+                </swiper>
             </div>
-            <loading v-if="!showBanner"></loading>
-            <!-- 解决方案 -->
-            <!-- 优势 -->
-            <div class="part advantage page-2 page">
-                <div v-animate="{value: 'bounceInLeft', delay: 0}" style="height:100%;background:url(static/img/advantage.png) no-repeat 80% center;background-size:50%;">
-                    <ul>
-                        <h2>MyeHR移动办公平台</h2>
-                        <li>一次开发 多端运行</li>
-                        <li>人性化UI设计</li>
-                        <li>界面友好，操作便捷</li>
-                        <li>灵活增加应用，可扩展性强</li>
-                        <li>全面适应iOS、Android端</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- 数据建模 -->
-            <div class="part modal clear page-3 page">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>多平台数据建模</p>
-                    <p class="desc">MyeHR统一技术平台</p>
-                </div>
-                <div class="cont">
-                    
-                </div>
-            </div>
-            <!-- 架构 -->
-            <div class="part architecture clear page-4 page">
-                <div class="title" v-animate="{value: 'bounceInDown'}" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
-                    <p>技术平台总体架构</p>
-                    <p class="desc">MyeHR产品设计理念</p>
-                </div>
-                <div class="cont">
-                    
-                </div>
-            </div>
-            <v-foot class="page-5 page"></v-foot>
         </div>
-        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
+        <loading v-if="!showBanner"></loading>
+        <!-- 解决方案 -->
+        <!-- 优势 -->
+        <div class="part advantage">
+            <div style="height:100%;background:url(static/img/advantage.png) no-repeat 80% center;background-size:50%;">
+                <ul>
+                    <h2>MyeHR移动办公平台</h2>
+                    <li>一次开发 多端运行</li>
+                    <li>人性化UI设计</li>
+                    <li>界面友好，操作便捷</li>
+                    <li>灵活增加应用，可扩展性强</li>
+                    <li>全面适应iOS、Android端</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 数据建模 -->
+        <div class="part modal clear">
+            <div class="title" :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>多平台数据建模</p>
+                <p class="desc">MyeHR统一技术平台</p>
+            </div>
+            <div class="cont">
+                
+            </div>
+        </div>
+        <!-- 架构 -->
+        <div class="part architecture clear">
+            <div class="title"  :class="{ active : scroll >= baseFont * ( 30 - 5 ) }">
+                <p>技术平台总体架构</p>
+                <p class="desc">MyeHR产品设计理念</p>
+            </div>
+            <div class="cont">
+                
+            </div>
+        </div>
+        <v-foot class="page-5 page"></v-foot>
+        <v-top></v-top>
+        <!-- <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar> -->
     </div>
 </template>
 <script type="text/javascript">
@@ -98,7 +97,8 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
-    import navBar from './../navBar.vue';
+    import top from './../top.vue';
+    // import navBar from './../navBar.vue';
     export default{
         data() {
             return {
@@ -156,20 +156,21 @@
             'vFoot': foot,
             'swiper': swiper,
             'swiperSlide': swiperSlide,
-            'navBar': navBar
+            'vTop': top
+            // 'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveTo(index) {
-                this.$refs.pass.$fullpage.moveTo(index, true); // Move to the next page
-                this.currentNavIndex = index;
-            },
-            checkNavIndex() {
-                let index = this.$refs.pass.$fullpage.curIndex;
-                this.currentNavIndex = index;
-            },
+            // moveTo(index) {
+            //     this.$refs.pass.$fullpage.moveTo(index, true); // Move to the next page
+            //     this.currentNavIndex = index;
+            // },
+            // checkNavIndex() {
+            //     let index = this.$refs.pass.$fullpage.curIndex;
+            //     this.currentNavIndex = index;
+            // },
             getDate() {
                 console.log(this);
                 let that = this;
@@ -193,7 +194,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
-            window.addEventListener('mousewheel', this.checkNavIndex);
+            // window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();
@@ -208,10 +209,10 @@
 .part.advantage ul h2{font-size: 24px;font-weight: 100;margin-bottom: 10px;}
 .part.advantage ul li{line-height: 35px;list-style: disc;font-size: 16px;color: #666;}
 /*modal*/
-.part.modal .cont{height: calc(100% - 13rem);background: url(../../../static/img/pass-modal.png) no-repeat center;background-size: 78%;}
+.part.modal .cont{height: calc(100vh - 13rem);background: url(../../../static/img/pass-modal.png) no-repeat center;background-size: 78%;}
 
 /*架构*/
-.architecture .cont{height: calc(100% - 13rem);background: url(../../../static/img/architecture.jpg) no-repeat center;background-size: 52%;}
+.architecture .cont{height: calc(100vh - 13rem);background: url(../../../static/img/architecture.jpg) no-repeat center;background-size: 52%;}
 
 
 @media screen and (max-width:767px){

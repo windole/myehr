@@ -4,10 +4,10 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import 'animate.css';
-import 'fullpage-vue/src/fullpage.css';
-import VueFullpage from 'fullpage-vue';
+// import 'fullpage-vue/src/fullpage.css';
+// import VueFullpage from 'fullpage-vue';
 
-Vue.use(VueFullpage);
+// Vue.use(VueFullpage);
 
 Vue.config.productionTip = false;
 

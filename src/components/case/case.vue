@@ -1,6 +1,5 @@
  <template>
-    <div class="case fullpage-container">
-        <div class="fullpage-wp" v-fullpage="opts" ref="case">
+    <div class="case">
             <!-- banner广告 -->
             <div class="bannerWrap page-1 page" v-if='showBanner'>
                 <div class="bannerLoop" ref="bannerLoop">
@@ -53,8 +52,8 @@
                 </div>
             </div>
             <v-foot class="page-3 page"></v-foot>
-        </div>
-        <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar>
+            <v-top></v-top>
+        <!-- <nav-bar :pageNum="pageNum" :currentNavIndex="currentNavIndex" @selectMove="moveTo"></nav-bar> -->
     </div>
 </template>
 <script type="text/javascript">
@@ -63,7 +62,8 @@
     import loading from './../loading.vue';
     import swiper from './../swiper.vue';
     import swiperSlide from './../slide.vue';
-    import navBar from './../navBar.vue';
+    import top from './../top.vue';
+    // import navBar from './../navBar.vue';
     export default{
         data() {
             return {
@@ -118,19 +118,20 @@
             'vFoot': foot,
             'swiper': swiper,
             'swiperSlide': swiperSlide,
-            'navBar': navBar
+            'vTop': top
+            // 'navBar': navBar
         },
         methods: {
             menu() {
                 this.scroll = document.body.scrollTop || document.documentElement.scrollTop;
             },
-            moveTo(index) {
-                this.$refs.case.$fullpage.moveTo(index, true); // Move to the next page
-            },
-            checkNavIndex() {
-                let index = this.$refs.case.$fullpage.curIndex;
-                this.currentNavIndex = index;
-            },
+            // moveTo(index) {
+            //     this.$refs.case.$fullpage.moveTo(index, true); // Move to the next page
+            // },
+            // checkNavIndex() {
+            //     let index = this.$refs.case.$fullpage.curIndex;
+            //     this.currentNavIndex = index;
+            // },
             getDate() {
                 let that = this;
                 // 获取banner数据设置
@@ -187,7 +188,7 @@
         },
         mounted() {
             window.addEventListener('scroll', this.menu);
-            window.addEventListener('mousewheel', this.checkNavIndex);
+            // window.addEventListener('mousewheel', this.checkNavIndex);
         },
         created() {
             this.getDate();
@@ -197,7 +198,7 @@
 </script>
 <style type="text/css" scoped>
 .fullpage-container{position:absolute;top:0;left:0;width:100%;height:100%;}
-.case{width:100%;color: rgb(105,105,105);}
+.case{width:100%;color: rgb(105,105,105);padding-top: 1em;}
 
 .case .title{position: relative;margin:0 auto 1em;color: #fff;}
 .bg-w {position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: 1;overflow: hidden;}

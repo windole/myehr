@@ -54,7 +54,7 @@
             <div class="code">
                 <div class="consult">
                     <div class="tel">
-                        <i class="icon-phone"></i>13122069450                         
+                        <i class="icon-phone"></i>021-80394748                         
                     </div>
                     <div class="email">
                         <a href="mailto:myehr@163.com">E-mail : myehr@163.com</a>                            
@@ -88,8 +88,8 @@
         data() {
             return {
                 foot: {},
-                CopyRight: '@2016 合协版权所有',
-                BackUp: '151511'
+                CopyRight: '上海合协软件有限公司',
+                BackUp: '沪ICP备05043669号-1'
             };
         },
         created() {
