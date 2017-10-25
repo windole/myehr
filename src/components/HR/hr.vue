@@ -13,8 +13,8 @@
                                     <!-- <p style="width:100%;">MyeHR 社交化 实时互动</p> -->
                                 </div>
                             </div>
-                            <div class="en">
-                                <p>个性化配置满足深度应用</p>
+                            <div class="en tit">
+                                <h4>个性化配置满足深度应用</h4>
                             </div>
                         </div>
                     </swiper-slide>
@@ -27,8 +27,8 @@
                                     <!-- <p style="width:100%;">MyeHR 社交化 实时互动</p> -->
                                 </div>
                             </div>
-                            <div class="en">
-                                <p>优化企业信息化管理模式应用</p>
+                            <div class="en tit">
+                                <h4>优化企业信息化管理模式应用</h4>
                             </div>
                         </div>
                     </swiper-slide>

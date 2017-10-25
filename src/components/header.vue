@@ -3,7 +3,7 @@
         <div class="header_wrap clear">
             <div class="logo" ref='logo'>
                 <router-link to="/">
-                    <img src="./../../static/img/logo_01.png">
+                    <img src="./../../static/img/logo_03.png">
                 </router-link>
             </div>
             <div class="lang clear">

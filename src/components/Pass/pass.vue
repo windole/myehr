@@ -14,8 +14,8 @@
                                         <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
                                     </div>
                                 </div>
-                                <div class="en">
-                                    <p>灵活定义不同业务场景</p>
+                                <div class="en tit">
+                                    <h4>灵活定义不同业务场景</h4>
                                 </div>
                             </div>
                         </swiper-slide>
@@ -28,8 +28,8 @@
                                         <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
                                     </div>
                                 </div>
-                                <div class="en">
-                                    <p>深度满足企业业务需求</p>
+                                <div class="en tit">
+                                    <h4>深度满足企业业务需求</h4>
                                 </div>
                             </div>
                         </swiper-slide>
@@ -42,8 +42,8 @@
                                         <!-- <p style="width:100%;">基于乐高式的配置组件</p> -->
                                     </div>
                                 </div>
-                                <div class="en">
-                                    <p>实现项目的快速交付</p>
+                                <div class="en tit">
+                                    <h4>实现项目的快速交付</h4>
                                 </div>
                             </div>
                         </swiper-slide>

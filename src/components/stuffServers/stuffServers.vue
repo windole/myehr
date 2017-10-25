@@ -14,8 +14,8 @@
                                         <!-- <p style="width:100%;"></p> -->
                                     </div>
                                 </div>
-                                <div class="en">
-                                    <p>移动化、社交化、游戏化</p>
+                                <div class="en tit">
+                                    <h4>移动化、社交化、游戏化</h4>
                                 </div>
                             </div>
                         </swiper-slide>
@@ -28,8 +28,8 @@
                                         <!-- <p style="width:100%;"></p> -->
                                     </div>
                                 </div>
-                                <div class="en">
-                                    <p>提高全员参与度</p>
+                                <div class="en tit">
+                                    <h4>提高全员参与度</h4>
                                 </div>
                             </div>
                         </swiper-slide>
